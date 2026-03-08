@@ -1,0 +1,536 @@
+2026-03-07 07:54:37 - InitDatabase - INFO - [__main__] 开始初始化数据库...
+2026-03-07 07:54:37 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 07:54:37 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 07:54:37 - InitDatabase - INFO - [create_database] 数据库 ustocks 创建成功（或已存在）
+2026-03-07 07:54:38 - InitDatabase - INFO - [create_option_quote_table] 数据表 option_quote 创建成功（或已存在）
+2026-03-07 07:54:38 - InitDatabase - INFO - [__main__] 数据表 option_quote 创建成功（或已存在）
+2026-03-07 07:54:38 - InitDatabase - INFO - [create_max_pain_table] 数据表 max_pain 创建成功（或已存在）
+2026-03-07 07:54:38 - InitDatabase - INFO - [__main__] 数据表 max_pain 创建成功（或已存在）
+2026-03-07 07:54:38 - InitDatabase - INFO - [create_stock_data_table] 数据表 stock_data 创建成功（或已存在）
+2026-03-07 07:54:38 - InitDatabase - INFO - [__main__] 数据表 stock_data 创建成功（或已存在）
+2026-03-07 07:54:38 - InitDatabase - INFO - [__main__] 数据库初始化完成！
+2026-03-07 07:54:38 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 07:54:38 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-07 08:01:57 - InitDatabase - INFO - [__main__] 开始初始化数据库...
+2026-03-07 08:01:57 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:01:57 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 08:01:58 - InitDatabase - INFO - [create_database] 数据库 ustocks 创建成功（或已存在）
+2026-03-07 08:01:58 - InitDatabase - INFO - [create_option_quote_table] 数据表 option_quote 创建成功（或已存在）
+2026-03-07 08:01:58 - InitDatabase - INFO - [__main__] 数据表 option_quote 创建成功（或已存在）
+2026-03-07 08:01:58 - InitDatabase - INFO - [create_max_pain_table] 数据表 max_pain 创建成功（或已存在）
+2026-03-07 08:01:58 - InitDatabase - INFO - [__main__] 数据表 max_pain 创建成功（或已存在）
+2026-03-07 08:01:58 - InitDatabase - INFO - [create_stock_data_table] 数据表 stock_data 创建成功（或已存在）
+2026-03-07 08:01:58 - InitDatabase - INFO - [__main__] 数据表 stock_data 创建成功（或已存在）
+2026-03-07 08:01:58 - InitDatabase - INFO - [__main__] 数据库初始化完成！
+2026-03-07 08:01:58 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:01:58 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-07 08:03:30 - StockDataMigration - INFO - ============================================================
+2026-03-07 08:03:30 - StockDataMigration - INFO - 开始迁移股票数据从 SQLite 到 MySQL
+2026-03-07 08:03:30 - StockDataMigration - INFO - ============================================================
+2026-03-07 08:03:30 - StockDataMigration - INFO - 正在从 us_market_data.db 读取数据...
+2026-03-07 08:03:30 - StockDataMigration - INFO - 从 SQLite 数据库读取到 32560 条股票数据记录
+2026-03-07 08:03:30 - StockDataMigration - INFO - 成功读取 32560 条记录
+2026-03-07 08:03:30 - StockDataMigration - INFO - 正在保存数据到 MySQL 数据库...
+2026-03-07 08:03:30 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:03:31 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 08:03:33 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 32560 条记录
+2026-03-07 08:03:33 - StockDataMigration - INFO - ============================================================
+2026-03-07 08:03:33 - StockDataMigration - INFO - 迁移完成！成功保存 32560 条记录到 MySQL 数据库
+2026-03-07 08:03:33 - StockDataMigration - INFO - ============================================================
+2026-03-07 08:03:33 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:03:33 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-07 08:05:16 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-03-07 08:05:16 - GetStockData - INFO - [__main__] ==================================================
+2026-03-07 08:05:16 - GetStockData - INFO - [__main__] 📊 示例1: 获取单个股票数据到数据库
+2026-03-07 08:05:16 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:05:16 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 08:05:17 - GetStockData - INFO - [__main__] 股票代码列表: ['AAPL.US', 'HIMS.US', 'NVDA.US', 'PLTR.US', 'QQQ.US', 'SPY.US', 'TEM.US', 'TSLA.US']
+2026-03-07 08:05:23 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 37 条记录
+2026-03-07 08:05:23 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 37 条 AAPL.US 的数据到数据库
+2026-03-07 08:05:23 - GetStockData - INFO - [__main__] AAPL.US,结果: 成功
+2026-03-07 08:05:28 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 37 条记录
+2026-03-07 08:05:28 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 37 条 HIMS.US 的数据到数据库
+2026-03-07 08:05:28 - GetStockData - INFO - [__main__] HIMS.US,结果: 成功
+2026-03-07 08:05:33 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 37 条记录
+2026-03-07 08:05:33 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 37 条 NVDA.US 的数据到数据库
+2026-03-07 08:05:33 - GetStockData - INFO - [__main__] NVDA.US,结果: 成功
+2026-03-07 08:05:38 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 37 条记录
+2026-03-07 08:05:38 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 37 条 PLTR.US 的数据到数据库
+2026-03-07 08:05:38 - GetStockData - INFO - [__main__] PLTR.US,结果: 成功
+2026-03-07 08:05:43 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 37 条记录
+2026-03-07 08:05:43 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 37 条 QQQ.US 的数据到数据库
+2026-03-07 08:05:43 - GetStockData - INFO - [__main__] QQQ.US,结果: 成功
+2026-03-07 08:05:48 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 37 条记录
+2026-03-07 08:05:48 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 37 条 SPY.US 的数据到数据库
+2026-03-07 08:05:48 - GetStockData - INFO - [__main__] SPY.US,结果: 成功
+2026-03-07 08:05:53 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 37 条记录
+2026-03-07 08:05:53 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 37 条 TEM.US 的数据到数据库
+2026-03-07 08:05:53 - GetStockData - INFO - [__main__] TEM.US,结果: 成功
+2026-03-07 08:05:58 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 37 条记录
+2026-03-07 08:05:58 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 37 条 TSLA.US 的数据到数据库
+2026-03-07 08:05:58 - GetStockData - INFO - [__main__] TSLA.US,结果: 成功
+2026-03-07 08:05:58 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:05:58 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-07 08:08:26 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-03-07 08:08:26 - GetStockData - INFO - [__main__] ==================================================
+2026-03-07 08:08:26 - GetStockData - INFO - [__main__] 📊 示例1: 获取单个股票数据到数据库
+2026-03-07 08:08:26 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:08:26 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 08:08:27 - GetStockData - INFO - [__main__] 股票代码列表: ['AAPL.US', 'HIMS.US', 'NVDA.US', 'PLTR.US', 'QQQ.US', 'SPY.US', 'TEM.US', 'TSLA.US']
+2026-03-07 08:08:29 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-07 08:08:29 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 AAPL.US 的数据到数据库
+2026-03-07 08:08:29 - GetStockData - INFO - [__main__] AAPL.US,结果: 成功
+2026-03-07 08:08:31 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-07 08:08:31 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 HIMS.US 的数据到数据库
+2026-03-07 08:08:31 - GetStockData - INFO - [__main__] HIMS.US,结果: 成功
+2026-03-07 08:08:33 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-07 08:08:33 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 NVDA.US 的数据到数据库
+2026-03-07 08:08:33 - GetStockData - INFO - [__main__] NVDA.US,结果: 成功
+2026-03-07 08:08:35 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-07 08:08:35 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 PLTR.US 的数据到数据库
+2026-03-07 08:08:35 - GetStockData - INFO - [__main__] PLTR.US,结果: 成功
+2026-03-07 08:08:37 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-07 08:08:37 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 QQQ.US 的数据到数据库
+2026-03-07 08:08:37 - GetStockData - INFO - [__main__] QQQ.US,结果: 成功
+2026-03-07 08:08:39 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-07 08:08:39 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 SPY.US 的数据到数据库
+2026-03-07 08:08:39 - GetStockData - INFO - [__main__] SPY.US,结果: 成功
+2026-03-07 08:08:41 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-07 08:08:41 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 TEM.US 的数据到数据库
+2026-03-07 08:08:41 - GetStockData - INFO - [__main__] TEM.US,结果: 成功
+2026-03-07 08:08:43 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-07 08:08:43 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 TSLA.US 的数据到数据库
+2026-03-07 08:08:43 - GetStockData - INFO - [__main__] TSLA.US,结果: 成功
+2026-03-07 08:08:43 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:08:43 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-07 08:16:50 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:16:50 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-07 08:16:58 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:16:58 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 08:19:45 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:19:46 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 08:21:40 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:21:40 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 08:22:32 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:22:32 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 08:23:05 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:23:05 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 08:40:54 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:40:54 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-07 08:40:54 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:40:54 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-07 08:40:54 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:40:54 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-07 08:40:54 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:40:54 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-07 08:40:54 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:40:54 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-07 08:43:09 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:43:09 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 08:43:30 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:43:30 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-07 08:43:49 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:43:50 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 08:44:21 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:44:21 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-07 08:47:28 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:47:28 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 08:47:55 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:47:55 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-07 08:48:02 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:48:02 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 08:48:42 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:48:42 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-07 08:48:47 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:48:48 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 08:50:48 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:50:48 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-07 08:50:53 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:50:54 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 08:54:13 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:54:13 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-07 08:54:18 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:54:18 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 08:56:01 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 08:56:01 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-07 08:56:08 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 08:56:09 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 16:14:06 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-07 16:14:06 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-07 20:33:48 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 20:33:48 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 20:59:51 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 20:59:52 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 21:00:43 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 21:00:43 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 21:01:07 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 21:01:08 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 21:10:00 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 21:10:00 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 21:16:35 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 21:16:35 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 21:20:06 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 21:20:06 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 21:33:52 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 21:33:52 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 21:37:39 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 21:37:39 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 21:42:46 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 21:42:46 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 21:43:09 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 21:43:09 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-07 21:45:44 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-07 21:45:45 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 07:08:26 - InitDatabase - ERROR - [DatabaseConnectionManager::_create_connection] 创建数据库连接时出错: 2013 (HY000): Lost connection to MySQL server at 'reading initial communication packet', system error: 316
+Traceback (most recent call last):
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/streamlit/runtime/caching/storage/in_memory_cache_storage_wrapper.py", line 87, in get
+    entry_bytes = self._read_from_mem_cache(key)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/streamlit/runtime/caching/storage/in_memory_cache_storage_wrapper.py", line 137, in _read_from_mem_cache
+    raise CacheStorageKeyNotFoundError("Key not found in mem cache")
+streamlit.runtime.caching.storage.cache_storage_protocol.CacheStorageKeyNotFoundError: Key not found in mem cache
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/streamlit/runtime/caching/cache_data_api.py", line 634, in read_result
+    pickled_entry = self.storage.get(key)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/streamlit/runtime/caching/storage/in_memory_cache_storage_wrapper.py", line 89, in get
+    entry_bytes = self._persist_storage.get(key)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/streamlit/runtime/caching/storage/local_disk_cache_storage.py", line 155, in get
+    raise CacheStorageKeyNotFoundError(
+streamlit.runtime.caching.storage.cache_storage_protocol.CacheStorageKeyNotFoundError: Local disk cache storage is disabled (persist=None)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/streamlit/runtime/caching/cache_utils.py", line 264, in _get_or_create_cached_value
+    cached_result = cache.read_result(value_key)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/streamlit/runtime/caching/cache_data_api.py", line 636, in read_result
+    raise CacheKeyNotFoundError(str(e)) from e
+streamlit.runtime.caching.cache_errors.CacheKeyNotFoundError: Local disk cache storage is disabled (persist=None)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/streamlit/runtime/caching/storage/in_memory_cache_storage_wrapper.py", line 87, in get
+    entry_bytes = self._read_from_mem_cache(key)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/streamlit/runtime/caching/storage/in_memory_cache_storage_wrapper.py", line 137, in _read_from_mem_cache
+    raise CacheStorageKeyNotFoundError("Key not found in mem cache")
+streamlit.runtime.caching.storage.cache_storage_protocol.CacheStorageKeyNotFoundError: Key not found in mem cache
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/streamlit/runtime/caching/cache_data_api.py", line 634, in read_result
+    pickled_entry = self.storage.get(key)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/streamlit/runtime/caching/storage/in_memory_cache_storage_wrapper.py", line 89, in get
+    entry_bytes = self._persist_storage.get(key)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/streamlit/runtime/caching/storage/local_disk_cache_storage.py", line 155, in get
+    raise CacheStorageKeyNotFoundError(
+streamlit.runtime.caching.storage.cache_storage_protocol.CacheStorageKeyNotFoundError: Local disk cache storage is disabled (persist=None)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/streamlit/runtime/caching/cache_utils.py", line 312, in _handle_cache_miss
+    cached_result = cache.read_result(value_key)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/streamlit/runtime/caching/cache_data_api.py", line 636, in read_result
+    raise CacheKeyNotFoundError(str(e)) from e
+streamlit.runtime.caching.cache_errors.CacheKeyNotFoundError: Local disk cache storage is disabled (persist=None)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server at 'reading initial communication packet', system error: 316
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/init_database.py", line 75, in _create_connection
+    connection = mysql.connector.connect(**config)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.OperationalError: 2013 (HY000): Lost connection to MySQL server at 'reading initial communication packet', system error: 316
+2026-03-08 07:08:26 - InitDatabase - ERROR - [DatabaseConnectionManager::get_connection] 无法创建数据库连接
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 1 个连接
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 07:09:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 07:10:21 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 07:10:21 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 07:26:41 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 07:26:41 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 1 个连接
+2026-03-08 07:26:47 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 07:26:47 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 07:30:02 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 07:30:02 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 07:31:51 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 07:31:52 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 07:37:10 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 07:37:10 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 07:42:45 - InitDatabase - WARNING - [DatabaseConnectionManager::get_connection] 池中连接已失效，创建新连接
+2026-03-08 07:42:46 - InitDatabase - WARNING - [DatabaseConnectionManager::get_connection] 池中连接已失效，创建新连接
+2026-03-08 07:52:02 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 07:52:02 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 07:57:15 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 07:57:15 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 08:05:18 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 08:05:18 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 10:52:25 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 10:52:25 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 10:59:09 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 10:59:09 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 11:02:17 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 11:02:17 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 11:06:18 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 11:06:19 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 11:10:08 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 11:10:08 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 11:13:04 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-03-08 11:13:04 - GetStockData - INFO - [__main__] ==================================================
+2026-03-08 11:13:08 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 11:13:08 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 11:13:47 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 502 条记录
+2026-03-08 11:13:47 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 502 条 MSFT.US 的数据到数据库
+2026-03-08 11:14:17 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 294 条记录
+2026-03-08 11:14:17 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 294 条 MSFT.US 的数据到数据库
+2026-03-08 11:14:22 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:22 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 11:14:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 11:14:33 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 11:14:33 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 11:23:06 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 11:23:07 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 11:30:15 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 11:30:15 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 12:42:58 - InitDatabase - WARNING - [DatabaseConnectionManager::get_connection] 池中连接已失效，创建新连接
+2026-03-08 15:00:02 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-03-08 15:00:02 - GetStockData - INFO - [__main__] ==================================================
+2026-03-08 15:00:08 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 15:00:08 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 15:00:52 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 502 条记录
+2026-03-08 15:00:52 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 502 条 COIN.US 的数据到数据库
+2026-03-08 15:01:23 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 294 条记录
+2026-03-08 15:01:23 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 294 条 COIN.US 的数据到数据库
+2026-03-08 15:01:28 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 15:01:28 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-08 15:07:03 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 15:07:03 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 15:14:52 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 15:14:52 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 15:15:51 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 15:15:51 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-08 15:15:51 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 15:15:51 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 15:15:51 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 15:15:51 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 15:15:51 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 15:15:51 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 15:15:51 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 15:15:51 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 15:16:44 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 15:16:44 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 15:19:08 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-03-08 15:19:08 - GetStockData - INFO - [__main__] ==================================================
+2026-03-08 15:19:12 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 15:19:12 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 15:19:51 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 502 条记录
+2026-03-08 15:19:51 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 502 条 SNOW.US 的数据到数据库
+2026-03-08 15:20:22 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 294 条记录
+2026-03-08 15:20:22 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 294 条 SNOW.US 的数据到数据库
+2026-03-08 15:20:27 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 15:20:27 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-08 15:24:24 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 15:24:24 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 15:31:17 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 15:31:17 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 15:44:50 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 15:44:50 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 15:51:21 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 15:51:21 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 16:03:34 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 16:03:34 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 16:03:35 - StockData - INFO - [StockData::delete_by_stock_code] 已删除 NVDA.US 共 6583 条记录
+2026-03-08 16:03:35 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 16:03:35 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-08 16:06:23 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-03-08 16:06:23 - GetStockData - INFO - [__main__] ==================================================
+2026-03-08 16:06:27 - GetStockData - WARNING - [get_single_stock_data_to_db] 未获取到 SNOW.US 的数据
+2026-03-08 16:06:34 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 16:06:34 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 16:06:42 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-03-08 16:06:42 - GetStockData - INFO - [__main__] ==================================================
+2026-03-08 16:06:44 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 16:06:44 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 16:08:10 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 752 条记录
+2026-03-08 16:08:10 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 752 条 NVDA.US 的数据到数据库
+2026-03-08 16:09:18 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 756 条记录
+2026-03-08 16:09:18 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 756 条 NVDA.US 的数据到数据库
+2026-03-08 16:10:06 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 502 条记录
+2026-03-08 16:10:06 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 502 条 NVDA.US 的数据到数据库
+2026-03-08 16:11:14 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 757 条记录
+2026-03-08 16:11:14 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 757 条 NVDA.US 的数据到数据库
+2026-03-08 16:12:21 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 754 条记录
+2026-03-08 16:12:21 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 754 条 NVDA.US 的数据到数据库
+2026-03-08 16:13:29 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 756 条记录
+2026-03-08 16:13:29 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 756 条 NVDA.US 的数据到数据库
+2026-03-08 16:14:37 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 754 条记录
+2026-03-08 16:14:37 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 754 条 NVDA.US 的数据到数据库
+2026-03-08 16:15:48 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 756 条记录
+2026-03-08 16:15:48 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 756 条 NVDA.US 的数据到数据库
+2026-03-08 16:16:55 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 752 条记录
+2026-03-08 16:16:55 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 752 条 NVDA.US 的数据到数据库
+2026-03-08 16:17:06 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 44 条记录
+2026-03-08 16:17:06 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 44 条 NVDA.US 的数据到数据库
+2026-03-08 16:17:11 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 16:17:11 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-08 16:36:53 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 16:36:53 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 16:41:56 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 16:41:56 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-08 16:41:56 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 16:41:56 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 16:41:56 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 16:41:56 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 16:41:56 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 16:41:56 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 16:41:56 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 16:41:56 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 16:41:56 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 16:41:56 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 16:42:05 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 16:42:05 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 16:44:03 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 16:44:03 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 16:59:10 - InitDatabase - INFO - [__main__] 开始初始化数据库...
+2026-03-08 16:59:10 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 16:59:10 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 16:59:10 - InitDatabase - INFO - [create_database] 数据库 ustocks 创建成功（或已存在）
+2026-03-08 16:59:10 - InitDatabase - INFO - [create_stock_split_table] 数据表 stock_split 创建成功（或已存在）
+2026-03-08 16:59:10 - InitDatabase - INFO - [__main__] 数据表 stock_split 创建成功（或已存在）
+2026-03-08 16:59:10 - InitDatabase - INFO - [__main__] 数据库初始化完成！
+2026-03-08 16:59:10 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 16:59:10 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-08 17:07:22 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 17:07:23 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 17:07:23 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 17:07:23 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-08 17:09:16 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 17:09:17 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 21:21:07 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 21:21:07 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 21:27:14 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 21:27:14 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 21:27:14 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 21:27:14 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 21:27:14 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 21:27:14 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 21:27:14 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 21:27:14 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 21:27:14 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 21:27:14 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 21:27:14 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 21:27:14 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 21:27:22 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 21:27:22 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 21:30:44 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 21:30:44 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 21:30:44 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 21:30:44 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-08 21:30:52 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 21:30:52 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 21:55:45 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 21:55:46 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 22:10:30 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 22:10:30 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 22:11:50 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 22:11:50 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-08 22:11:50 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 22:11:50 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 22:11:50 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-08 22:11:50 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-08 22:11:58 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 22:11:58 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 22:12:52 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 22:12:52 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 22:17:04 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 22:17:05 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 22:20:41 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 22:20:42 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-08 22:26:04 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-08 22:26:04 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2

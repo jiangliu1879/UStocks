@@ -1,0 +1,20 @@
+# Web框架
+streamlit>=1.28.0
+
+# 数据处理
+pandas>=2.0.0
+
+# 数据可视化
+plotly>=5.17.0
+
+# 长桥API
+longport>=0.2.0
+
+# 时区处理
+pytz>=2023.3
+
+# MySQL数据库连接
+mysql-connector-python>=8.2.0
+
+# 任务调度
+schedule>=1.2.0
