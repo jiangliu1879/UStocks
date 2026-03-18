@@ -72,13 +72,25 @@ def get_option_quote(list_option_symbol: list[str], expiry_date: date, update_ti
     return list_option_quote
 
 if __name__ == "__main__":
-    underlying_symbol = "NVDA.US"
-    expiry_date = date(2026, 1, 23)
-    strike_price_range = (100, 250)
-    eastern_time = get_eastern_time()
-    update_time = eastern_time.strftime('%Y-%m-%d %H:%M:%S')
-    list_option_symbol = get_option_chain_info_by_data(underlying_symbol, expiry_date, strike_price_range)
-    list_option_quote = get_option_quote(list_option_symbol, expiry_date, update_time)
-    # 保存到数据库
-    saved_count = OptionQuote.batch_save(list_option_quote)
-    logger.info(f"保存到数据库成功，共保存 {saved_count} 条期权报价记录")
+      # 获取标的的期权链到期日列表
+    import json
+    import time
+    with open('stock_option_info.json', 'r') as f:
+        stock_option_info = json.load(f)
+
+    for item in stock_option_info:
+        underlying_symbol = item.get("stock_code")
+        expiry_dates = item.get("expiry_dates")
+        strike_price_range = item.get("strike_price_range")
+        for expiry_date in expiry_dates:
+            expiry_date = date.fromisoformat(expiry_date)
+            eastern_time = get_eastern_time()
+            update_time = eastern_time.strftime('%Y-%m-%d %H:%M:%S')
+            list_option_symbol = get_option_chain_info_by_data(underlying_symbol, expiry_date, strike_price_range)
+            list_option_quote = get_option_quote(list_option_symbol, expiry_date, update_time)
+            # 保存到数据库
+            saved_count = OptionQuote.batch_save(list_option_quote)
+            logger.info(f"保存到数据库成功，共保存 {saved_count} 条期权报价记录: {underlying_symbol} - {expiry_date} - {strike_price_range}")
+            time.sleep(10)
+
+        time.sleep(30)

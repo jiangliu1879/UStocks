@@ -23,6 +23,7 @@ from datetime import datetime, timedelta, date
 # 添加项目根目录到路径
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from data_models.stock_data import StockData
+from data_models.stock_valuation import StockValuation
 
 CACHE_TTL_SECONDS = 300
 
@@ -316,7 +317,7 @@ def main():
             f"{df_filtered['timestamp'].max().strftime('%Y-%m-%d')}")
     
     # 交易统计：股价变化、涨跌幅度 = 所选日期范围最后1个交易日收盘价 - 第1个交易日收盘价
-    st.markdown("### 📊 交易统计")
+    st.subheader("📊 交易统计")
     if len(df_filtered) >= 2:
         first_close = df_filtered["close"].iloc[0]
         last_close = df_filtered["close"].iloc[-1]
@@ -346,8 +347,64 @@ def main():
             st.metric("股价变化", f"${df_filtered['close'].iloc[-1]:.2f}")
         with col2:
             st.metric("股价涨跌幅度", "N/A", help="仅有一条数据，无法计算变化")
+
+    # 估值信息：估值区间、更新日期，估值区间下有「编辑」按钮（逻辑同 1_Stock_OverView）
+    st.subheader("估值信息")
+    _code = selected_stock
+    val_range_key = f"ana_val_range_{_code}"
+    val_date_key = f"ana_val_date_{_code}"
+    edit_val_key = f"ana_edit_val_{_code}"
+    latest_valuation = StockValuation.query(
+        conditions={"stock_code": _code},
+        limit=1,
+        order_by="valuation_date DESC",
+    )
+    default_range = ""
+    default_date = ""
+    if latest_valuation:
+        default_range = latest_valuation[0].valuation_range or ""
+        default_date = latest_valuation[0].valuation_date or ""
+        if hasattr(default_date, "strftime"):
+            default_date = default_date.strftime("%Y-%m-%d")
+        default_date = str(default_date)[:10]
+    if val_range_key not in st.session_state or st.session_state.get("ana_val_stock") != _code:
+        st.session_state[val_range_key] = default_range
+        st.session_state[val_date_key] = default_date
+        st.session_state[edit_val_key] = False
+        st.session_state["ana_val_stock"] = _code
+    if st.session_state.get(edit_val_key, False):
+        current_range = st.text_input("估值区间", key=val_range_key)
+        current_date = st.text_input("更新日期", key=val_date_key)
+        if st.button("更新", key="ana_val_btn_update"):
+            r = (st.session_state.get(val_range_key) or "").strip()
+            d = (st.session_state.get(val_date_key) or "").strip()
+            if r and d:
+                v = StockValuation(stock_code=_code, valuation_range=r, valuation_date=d)
+                if v.save():
+                    st.cache_data.clear()
+                    st.session_state[edit_val_key] = False
+                    st.success(f"已更新 {_code} 的估值信息。")
+                    st.rerun()
+                else:
+                    st.error("更新失败，请重试。")
+            else:
+                st.warning("请填写估值区间和更新日期。")
+    else:
+        display_range = st.session_state.get(val_range_key) or ""
+        display_date = st.session_state.get(val_date_key) or ""
+        col_v1, col_v2, col_v3 = st.columns([2, 2, 1])
+        with col_v1:
+            st.write("**估值区间：**", display_range or "*暂无*")
+        with col_v2:
+            st.write("**更新日期：**", display_date or "*暂无*")
+        with col_v3:
+            if st.button("编辑", key="ana_val_edit_btn"):
+                st.session_state[val_range_key] = default_range
+                st.session_state[val_date_key] = default_date
+                st.session_state[edit_val_key] = True
+                st.rerun()
     st.markdown("---")
-    
+
     # 显示图表
     st.subheader("📈 股票数据图表")
     create_stock_charts(df_filtered)

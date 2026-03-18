@@ -303,4 +303,39 @@ class OptionQuote:
             db_manager.close_connection(connection)
             return []
 
-    
+    @classmethod
+    def query_by_latest_update_date(cls, limit: int = 50000) -> tuple:
+        """
+        读取 update_time 最新日期的全部期权数据。
+        Returns:
+            (latest_date_str, list of OptionQuote)，latest_date_str 为 'YYYY-MM-DD'
+        """
+        connection = db_manager.get_connection()
+        if not connection:
+            return None, []
+        try:
+            cursor = connection.cursor(dictionary=True)
+            cursor.execute("SELECT MAX(DATE(update_time)) AS d FROM option_quote")
+            row = cursor.fetchone()
+            if not row or not row.get("d"):
+                cursor.close()
+                db_manager.close_connection(connection)
+                return None, []
+            latest_date = row["d"]
+            if hasattr(latest_date, "strftime"):
+                latest_date_str = latest_date.strftime("%Y-%m-%d")
+            else:
+                latest_date_str = str(latest_date)[:10]
+            cursor.execute(
+                "SELECT * FROM option_quote WHERE DATE(update_time) = %s ORDER BY underlying_symbol, expiry_date, strike_price LIMIT %s",
+                (latest_date_str, limit),
+            )
+            rows = cursor.fetchall()
+            cursor.close()
+            db_manager.close_connection(connection)
+            return latest_date_str, [cls.from_dict(r) for r in rows]
+        except Error as e:
+            logger.error(f"[OptionQuote::query_by_latest_update_date] 查询出错: {e}", exc_info=True)
+            db_manager.close_connection(connection)
+            return None, []
+

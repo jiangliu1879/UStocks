@@ -329,9 +329,6 @@ def main():
         st.sidebar.warning("⚠️ 无法获取年份信息")
     
     st.sidebar.markdown("---")
-
-    # 计算每个股票的年化收益
-    st.subheader("📊 年化收益率分析")
     
     # 显示年份筛选信息
     if use_year_filter and start_year is not None and end_year is not None:

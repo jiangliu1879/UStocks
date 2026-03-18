@@ -171,13 +171,14 @@ if __name__ == "__main__":
     # 演示新的数据库方法
     logger.info("[__main__] 🚀 演示股票数据获取方法")
     logger.info("[__main__] " + "=" * 50)
+
     
     # 示例1: 获取单个股票数据到数据库
     # logger.info("[__main__] 📊 示例1: 获取单个股票数据到数据库")
     # list_stock_codes = StockData.get_stock_codes()
     # logger.info(f"[__main__] 股票代码列表: {list_stock_codes}")
     # for stock_code in list_stock_codes:
-    #     result = get_single_stock_data_to_db(stock_code, date(2026, 3, 6), date(2026, 3, 6))
+    #     result = get_single_stock_data_to_db(stock_code, date(2026, 3, 13), date(2026, 3, 18))
     #     logger.info(f"[__main__] {stock_code},结果: {'成功' if result else '失败'}")
 
     # pair_years = [(2000, 2002), (2003, 2005), (2006, 2007), (2008, 2010), (2011, 2013), (2014, 2016), (2017, 2019), (2020, 2022), (2023, 2025)]
@@ -187,9 +188,9 @@ if __name__ == "__main__":
     #     import time
     #     time.sleep(10)
 
-    pair_years = [(2000, 2002), (2003, 2005), (2006, 2007), (2008, 2010), (2011, 2013), (2014, 2016), (2017, 2019), (2020, 2022), (2023, 2025), (2026, 2026)]
+    pair_years = [(2020, 2022), (2023, 2025), (2026, 2026)]
     for start_year, end_year in pair_years:
-        result = get_single_stock_data_to_db("NVDA.US", date(start_year, 1, 1), date(end_year, 12, 31))
+        result = get_single_stock_data_to_db("HOOD.US", date(start_year, 1, 1), date(end_year, 12, 31))
         print(f"结果: {'成功' if result else '失败'}")
         import time
         time.sleep(5)

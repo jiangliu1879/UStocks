@@ -13,6 +13,7 @@ import streamlit as st
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from data_models.stock_data import StockData
+from data_models.stock_valuation import StockValuation
 
 st.set_page_config(page_title="股票概览", page_icon="📋", layout="wide")
 
@@ -189,6 +190,8 @@ for code in valid_codes:
         st.write(f"**成交量水位:** {format_volume_ratio(info['volume_ratio'])}")
         st.write(f"**成交量:** {info['volume']:,.0f}")
         st.write(f"**今日区间:** ${info['low']:.2f} - ${info['high']:.2f}")
+        latest_val = StockValuation.query(conditions={"stock_code": code}, limit=1, order_by="valuation_date DESC")
+        st.write("**估值区间:**", latest_val[0].valuation_range if latest_val else "*暂无*")
     with col_right:
         st.write("**市场概述：**")
         desc_key = f"ov_desc_{code}"
@@ -209,7 +212,8 @@ for code in valid_codes:
                 placeholder="输入或编辑市场概述…（支持 Markdown）",
             )
             if st.button("更新", key=f"ov_btn_{code}"):
-                new_desc = (current_text or "").replace("\r\n", "\n").replace("\r", "\n")
+                # 以 session_state 为准，避免同轮渲染中 text_area 返回值未及时更新
+                new_desc = (st.session_state.get(desc_key) or "").replace("\r\n", "\n").replace("\r", "\n")
                 target_date_str = _timestamp_to_date_str(info["timestamp"])
                 # 按 stock_code 取最近记录，再按日期匹配，避免 DB 中 timestamp 格式不一致导致查不到
                 recent = StockData.query(
@@ -223,7 +227,9 @@ for code in valid_codes:
                         rec = r
                         break
                 if rec:
+                    # 写回时保持与 DB 一致的 timestamp 字符串格式，确保 ON DUPLICATE KEY UPDATE 命中
                     rec.description = new_desc
+                    rec.timestamp = _timestamp_to_date_str(rec.timestamp)
                     if rec.save():
                         st.cache_data.clear()
                         st.session_state[edit_key] = False

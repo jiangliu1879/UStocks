@@ -468,6 +468,39 @@ def create_stock_split_table():
         return False
 
 
+def create_stock_valuation_table():
+    """
+    根据 StockValuation 类创建 stock_valuation 估值表
+    """
+    connection = db_manager.get_connection()
+    if not connection:
+        return False
+    try:
+        cursor = connection.cursor()
+        create_table_sql = """
+        CREATE TABLE IF NOT EXISTS stock_valuation (
+            id BIGINT AUTO_INCREMENT PRIMARY KEY,
+            stock_code VARCHAR(32) NOT NULL COMMENT '股票代码',
+            valuation_range VARCHAR(64) NOT NULL COMMENT '估值区间',
+            valuation_date VARCHAR(32)  NOT NULL COMMENT '估值日期',
+            INDEX idx_stock_code (stock_code),
+            INDEX idx_valuation_range (valuation_range),
+            INDEX idx_valuation_date (valuation_date),
+            UNIQUE KEY uk_stock_valuation (stock_code, valuation_range, valuation_date)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='股票估值表';
+        """
+        cursor.execute(create_table_sql)
+        connection.commit()
+        logger.info("[create_stock_valuation_table] 数据表 stock_valuation 创建成功（或已存在）")
+        cursor.close()
+        db_manager.close_connection(connection)
+        return True
+    except Error as e:
+        logger.error(f"[create_stock_valuation_table] 创建数据表时出错: {e}", exc_info=True)
+        db_manager.close_connection(connection)
+        return False
+
+
 def create_stock_data_table():
     """
     根据StockData类创建stock_data数据表
@@ -547,10 +580,15 @@ if __name__ == "__main__":
         # else:
         #     logger.error("[__main__] 数据表 stock_data 创建失败！")
 
-        if create_stock_split_table():
-            logger.info("[__main__] 数据表 stock_split 创建成功（或已存在）")
+        # if create_stock_split_table():
+        #     logger.info("[__main__] 数据表 stock_split 创建成功（或已存在）")
+        # else:
+        #     logger.error("[__main__] 数据表 stock_split 创建失败！")
+
+        if create_stock_valuation_table():
+            logger.info("[__main__] 数据表 stock_valuation 创建成功（或已存在）")
         else:
-            logger.error("[__main__] 数据表 stock_split 创建失败！")
+            logger.error("[__main__] 数据表 stock_valuation 创建失败！")
     else:
         logger.error("[__main__] 数据库创建失败！")
 
