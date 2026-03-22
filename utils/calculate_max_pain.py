@@ -9,7 +9,6 @@ from data_models.option_quote import OptionQuote
 from data_models.max_pain import MaxPain
 # 添加 utils 目录到路径以便导入同目录下的模块
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from get_stock_data import get_stock_realtime_price
 from utils.logger import setup_logger
 
 # 创建模块级别的日志记录器

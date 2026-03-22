@@ -17,5 +17,5 @@ from longport.openapi import QuoteContext, Config, CalcIndex
 config = Config.from_env()
 ctx = QuoteContext(config)
 
-resp = ctx.calc_indexes(["NVDA260123C190000.US"], [CalcIndex.Gamma, CalcIndex.Theta, CalcIndex.ImpliedVolatility, CalcIndex.Gamma, CalcIndex.ExpiryDate])
+resp = ctx.calc_indexes(["NVDA260320C185000.US"], [CalcIndex.Delta, CalcIndex.Gamma, CalcIndex.Theta, CalcIndex.ImpliedVolatility, CalcIndex.Gamma, CalcIndex.ExpiryDate, CalcIndex.OpenInterest])
 logger.info(f"[__main__] 计算结果: {resp}")
