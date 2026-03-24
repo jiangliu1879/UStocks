@@ -602,10 +602,10 @@ if __name__ == "__main__":
     
     # 创建数据库
     if create_database():
-        # if create_option_quote_table():
-        #     logger.info("[__main__] 数据表 option_quote 创建成功（或已存在）")
-        # else:
-        #     logger.error("[__main__] 数据表 option_quote 创建失败！")
+        if create_option_quote_table():
+            logger.info("[__main__] 数据表 option_quote 创建成功（或已存在）")
+        else:
+            logger.error("[__main__] 数据表 option_quote 创建失败！")
 
         # if create_max_pain_table():
         #     logger.info("[__main__] 数据表 max_pain 创建成功（或已存在）")
@@ -627,10 +627,10 @@ if __name__ == "__main__":
         # else:
         #     logger.error("[__main__] 数据表 stock_valuation 创建失败！")
 
-        if create_stock_data_min_table():
-            logger.info("[__main__] 数据表 stock_data_min 创建成功（或已存在）")
-        else:
-            logger.error("[__main__] 数据表 stock_data_min 创建失败！")
+        # if create_stock_data_min_table():
+        #     logger.info("[__main__] 数据表 stock_data_min 创建成功（或已存在）")
+        # else:
+        #     logger.error("[__main__] 数据表 stock_data_min 创建失败！")
     else:
         logger.error("[__main__] 数据库创建失败！")
 

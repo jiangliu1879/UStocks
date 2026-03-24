@@ -7,66 +7,27 @@ from longport.openapi import QuoteContext, Config, Period, AdjustType
 import pandas as pd
 import os
 import sys
-
+import pytz
 # 添加项目根目录到路径，以便导入模型
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from data_models.stock_data import StockData
 from utils.logger import setup_logger
+from data_models.stock_data_min import StockDataMin
+from data_models.stock_data import StockData
 
 # 创建模块级别的日志记录器
 logger = setup_logger('GetStockData')
 
-def get_stock_history_data(stock_code, file_path, start_date, end_date):
+def _to_eastern(dt: datetime) -> datetime:
     """
-    获取股票历史K线数据并保存到CSV文件
-    
-    参数:
-    stock_code (str): 股票代码，如 "SPY.US"
-    file_path (str): 数据文件存储路径
-    start_date (date, optional): 开始日期
-    end_date (date, optional): 结束日期
-    
-    返回:
-    bool: 是否成功获取并保存数据
+    将 LongPort 返回的时间戳转换为美东时间（US/Eastern）。
+    如果 dt 是 naive（无时区信息），默认认为是中国时区（Asia/Shanghai）。
     """
-    
-    config = Config.from_env()
-    ctx = QuoteContext(config)
+    eastern = pytz.timezone("US/Eastern")
+    if dt.tzinfo is None:
+        shanghai = pytz.timezone("Asia/Shanghai")
+        dt = shanghai.localize(dt)
+    return dt.astimezone(eastern)
 
-    # 获取历史K线数据
-    resp = ctx.history_candlesticks_by_date(stock_code, Period.Day, AdjustType.NoAdjust, start_date, end_date)
-    logger.debug(f"[get_stock_history_data] 获取到数据: {resp}")
-
-    # 将数据转换为DataFrame并保存到CSV文件
-    if resp and len(resp) > 0:
-        # 提取数据并转换为DataFrame
-        data_list = []
-        for candle in resp:
-            data_list.append({
-                'timestamp': candle.timestamp.date(),
-                'open': candle.open,
-                'high': candle.high,
-                'low': candle.low,
-                'close': candle.close,
-                'volume': candle.volume,
-                'turnover': candle.turnover
-            })
-        
-        df = pd.DataFrame(data_list)
-        
-        # 检查文件是否存在，决定是创建新文件还是追加数据
-        if os.path.exists(file_path):
-            # 文件存在，追加数据
-            df.to_csv(file_path, mode='a', header=False, index=False)
-            logger.info(f"[get_stock_history_data] 数据已追加到 {file_path}，共 {len(df)} 条记录")
-        else:
-            # 文件不存在，创建新文件
-            df.to_csv(file_path, index=False)
-            logger.info(f"[get_stock_history_data] 数据已保存到 {file_path}，共 {len(df)} 条记录")
-        return True
-    else:
-        logger.warning(f"[get_stock_history_data] 未获取到数据")
-        return False
 
 def get_all_stocks_data_to_db(start_date, end_date):
     """
@@ -167,6 +128,66 @@ def get_single_stock_data_to_db(stock_code, start_date, end_date):
         logger.error(f"[get_single_stock_data_to_db] 获取 {stock_code} 数据时出错: {str(e)}", exc_info=True)
         return False
 
+
+def get_single_stock_data_to_db_by_minutes(stock_code, start_date, end_date, interval=1):
+    """
+    获取指定股票代码的指定日期范围内的数据，并写入数据库
+    
+    参数:
+    stock_code (str): 股票代码，如 "SPY.US"
+    start_date (date): 开始日期
+    end_date (date): 结束日期
+    interval (int): 间隔时间
+    返回:
+    bool: 是否成功获取并保存数据
+    """
+    try:
+        config = Config.from_env()
+        ctx = QuoteContext(config)
+
+        # 获取历史K线数据
+        resp = ctx.history_candlesticks_by_date(stock_code, Period.Min_1, AdjustType.NoAdjust, start_date, end_date)
+        
+        if not resp or len(resp) == 0:
+            logger.warning(f"[get_single_stock_data_to_db_by_minutes] 未获取到 {stock_code} 的数据")
+            return False
+
+        # 准备数据写入数据库
+        try:
+            # 提取数据并转换为数据库记录
+            data_list = []
+            for candle in resp:
+                candle_eastern = _to_eastern(candle.timestamp)
+                # 检查是否已存在相同记录（避免重复）
+                existing_data = StockDataMin.query(conditions={
+                    'stock_code': stock_code,
+                    'timestamp': candle_eastern.strftime('%Y-%m-%d %H:%M:%S'),
+                    'interval': interval,
+                })
+                if len(existing_data) == 0:
+                    data_list.append(StockDataMin(
+                        stock_code=stock_code,
+                        timestamp=candle_eastern.strftime('%Y-%m-%d %H:%M:%S'),
+                        open=candle.open,
+                        high=candle.high,
+                        low=candle.low,
+                        close=candle.close,
+                        volume=candle.volume,
+                        turnover=candle.turnover,
+                        interval=interval
+                    ))
+            StockDataMin.batch_save(data_list)
+            logger.info(f"[get_single_stock_data_to_db_by_minutes] 成功保存 {len(data_list)} 条 {stock_code} 的数据到数据库")
+            return True
+        except Exception as e:
+            logger.error(f"[get_single_stock_data_to_db] 保存 {stock_code} 数据到数据库时出错: {str(e)}", exc_info=True)
+            return False
+            
+    except Exception as e:
+        logger.error(f"[get_single_stock_data_to_db] 获取 {stock_code} 数据时出错: {str(e)}", exc_info=True)
+        return False
+
+
 if __name__ == "__main__":
     # 演示新的数据库方法
     logger.info("[__main__] 🚀 演示股票数据获取方法")
@@ -174,12 +195,12 @@ if __name__ == "__main__":
 
     
     # 示例1: 获取单个股票数据到数据库
-    logger.info("[__main__] 📊 示例1: 获取单个股票数据到数据库")
-    list_stock_codes = StockData.get_stock_codes()
-    logger.info(f"[__main__] 股票代码列表: {list_stock_codes}")
-    for stock_code in list_stock_codes:
-        result = get_single_stock_data_to_db(stock_code, date(2026, 3, 17), date(2026, 3, 20))
-        logger.info(f"[__main__] {stock_code},结果: {'成功' if result else '失败'}")
+    # logger.info("[__main__] 📊 示例1: 获取单个股票数据到数据库")
+    # list_stock_codes = StockData.get_stock_codes()
+    # logger.info(f"[__main__] 股票代码列表: {list_stock_codes}")
+    # for stock_code in list_stock_codes:
+    #     result = get_single_stock_data_to_db(stock_code, date(2026, 3, 19), date(2026, 3, 23))
+    #     logger.info(f"[__main__] {stock_code},结果: {'成功' if result else '失败'}")
 
     # pair_years = [(2000, 2002), (2003, 2005), (2006, 2007), (2008, 2010), (2011, 2013), (2014, 2016), (2017, 2019), (2020, 2022), (2023, 2025)]
     # for start_year, end_year in pair_years:
@@ -188,9 +209,9 @@ if __name__ == "__main__":
     #     import time
     #     time.sleep(10)
 
-    # pair_years = [(2020, 2022), (2023, 2025), (2026, 2026)]
-    # for start_year, end_year in pair_years:
-    #     result = get_single_stock_data_to_db("HOOD.US", date(start_year, 1, 1), date(end_year, 12, 31))
-    #     print(f"结果: {'成功' if result else '失败'}")
-    #     import time
-    #     time.sleep(5)
+    stock_code = "TSLA.US"
+    result = get_single_stock_data_to_db_by_minutes(stock_code, date(2026, 3, 23), date(2026, 3, 23))
+    if result:
+        logger.info(f"[__main__] ✅ {stock_code} {current_day} 获取成功")
+    else:
+        logger.warning(f"[__main__] ❌ {stock_code} {current_day} 获取失败")

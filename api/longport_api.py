@@ -34,13 +34,21 @@ import sys
 from datetime import datetime, date
 from longport.openapi import QuoteContext, Config, Period, AdjustType
 
+# config = Config.from_env()
+# ctx = QuoteContext(config)
+
+# # Query after 2023-01-01
+# resp = ctx.history_candlesticks_by_date("NVDA.US", Period.Min_1, AdjustType.NoAdjust, date(2026, 3, 17), date(2026, 3, 17))
+# for candle in resp:
+#     # 用于调试：打印 K 线时间戳
+#     print(candle.timestamp)
+# resp = ctx.history_candlesticks_by_offset("NVDA.US", Period.Min_1, AdjustType.NoAdjust, True, 1000, datetime(2026, 3, 17))
+# print(resp)
+
+from longport.openapi import QuoteContext, Config
+
 config = Config.from_env()
 ctx = QuoteContext(config)
 
-# Query after 2023-01-01
-resp = ctx.history_candlesticks_by_date("NVDA.US", Period.Min_1, AdjustType.NoAdjust, date(2026, 3, 17), date(2026, 3, 17))
-for candle in resp:
-    # 用于调试：打印 K 线时间戳
-    print(candle.timestamp)
-# resp = ctx.history_candlesticks_by_offset("NVDA.US", Period.Min_1, AdjustType.NoAdjust, True, 1000, datetime(2026, 3, 17))
-# print(resp)
+resp = ctx.trading_session()
+print(resp)

@@ -3135,3 +3135,257 @@ Traceback (most recent call last):
     raise get_mysql_exception(
 mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on '175.178.54.203:3306' (60)
 2026-03-20 22:49:33 - InitDatabase - ERROR - [DatabaseConnectionManager::get_connection] 无法创建数据库连接
+2026-03-24 15:35:47 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-03-24 15:35:47 - GetStockData - INFO - [__main__] ==================================================
+2026-03-24 15:35:47 - GetStockData - INFO - [__main__] 📊 示例1: 获取单个股票数据到数据库
+2026-03-24 15:35:47 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-24 15:35:48 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-24 15:35:48 - GetStockData - INFO - [__main__] 股票代码列表: ['AAPL.US', 'COIN.US', 'HIMS.US', 'HOOD.US', 'MSFT.US', 'NVDA.US', 'PLTR.US', 'QQQ.US', 'SNOW.US', 'SPY.US', 'TEM.US', 'TSLA.US']
+2026-03-24 15:35:51 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-24 15:35:51 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 AAPL.US 的数据到数据库
+2026-03-24 15:35:51 - GetStockData - INFO - [__main__] AAPL.US,结果: 成功
+2026-03-24 15:35:54 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-24 15:35:54 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 COIN.US 的数据到数据库
+2026-03-24 15:35:54 - GetStockData - INFO - [__main__] COIN.US,结果: 成功
+2026-03-24 15:35:56 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-24 15:35:56 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 HIMS.US 的数据到数据库
+2026-03-24 15:35:56 - GetStockData - INFO - [__main__] HIMS.US,结果: 成功
+2026-03-24 15:35:58 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-24 15:35:58 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 HOOD.US 的数据到数据库
+2026-03-24 15:35:58 - GetStockData - INFO - [__main__] HOOD.US,结果: 成功
+2026-03-24 15:36:00 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-24 15:36:00 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 MSFT.US 的数据到数据库
+2026-03-24 15:36:00 - GetStockData - INFO - [__main__] MSFT.US,结果: 成功
+2026-03-24 15:36:02 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-24 15:36:02 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 NVDA.US 的数据到数据库
+2026-03-24 15:36:02 - GetStockData - INFO - [__main__] NVDA.US,结果: 成功
+2026-03-24 15:36:04 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-24 15:36:04 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 PLTR.US 的数据到数据库
+2026-03-24 15:36:04 - GetStockData - INFO - [__main__] PLTR.US,结果: 成功
+2026-03-24 15:36:06 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-24 15:36:06 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 QQQ.US 的数据到数据库
+2026-03-24 15:36:06 - GetStockData - INFO - [__main__] QQQ.US,结果: 成功
+2026-03-24 15:36:08 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-24 15:36:08 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 SNOW.US 的数据到数据库
+2026-03-24 15:36:08 - GetStockData - INFO - [__main__] SNOW.US,结果: 成功
+2026-03-24 15:36:11 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-24 15:36:11 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 SPY.US 的数据到数据库
+2026-03-24 15:36:11 - GetStockData - INFO - [__main__] SPY.US,结果: 成功
+2026-03-24 15:36:13 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-24 15:36:13 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 TEM.US 的数据到数据库
+2026-03-24 15:36:13 - GetStockData - INFO - [__main__] TEM.US,结果: 成功
+2026-03-24 15:36:15 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 1 条记录
+2026-03-24 15:36:15 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 1 条 TSLA.US 的数据到数据库
+2026-03-24 15:36:15 - GetStockData - INFO - [__main__] TSLA.US,结果: 成功
+2026-03-24 15:36:15 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-24 15:36:15 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-24 15:36:51 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-03-24 15:36:51 - GetStockData - INFO - [__main__] ==================================================
+2026-03-24 15:36:51 - GetStockData - INFO - [__main__] 📊 示例1: 获取单个股票数据到数据库
+2026-03-24 15:36:51 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-24 15:36:51 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-24 15:36:51 - GetStockData - INFO - [__main__] 股票代码列表: ['AAPL.US', 'COIN.US', 'HIMS.US', 'HOOD.US', 'MSFT.US', 'NVDA.US', 'PLTR.US', 'QQQ.US', 'SNOW.US', 'SPY.US', 'TEM.US', 'TSLA.US']
+2026-03-24 15:36:54 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 3 条记录
+2026-03-24 15:36:54 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 3 条 AAPL.US 的数据到数据库
+2026-03-24 15:36:54 - GetStockData - INFO - [__main__] AAPL.US,结果: 成功
+2026-03-24 15:36:56 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 3 条记录
+2026-03-24 15:36:56 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 3 条 COIN.US 的数据到数据库
+2026-03-24 15:36:56 - GetStockData - INFO - [__main__] COIN.US,结果: 成功
+2026-03-24 15:36:59 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 3 条记录
+2026-03-24 15:36:59 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 3 条 HIMS.US 的数据到数据库
+2026-03-24 15:36:59 - GetStockData - INFO - [__main__] HIMS.US,结果: 成功
+2026-03-24 15:37:01 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 3 条记录
+2026-03-24 15:37:01 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 3 条 HOOD.US 的数据到数据库
+2026-03-24 15:37:01 - GetStockData - INFO - [__main__] HOOD.US,结果: 成功
+2026-03-24 15:37:03 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 3 条记录
+2026-03-24 15:37:03 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 3 条 MSFT.US 的数据到数据库
+2026-03-24 15:37:03 - GetStockData - INFO - [__main__] MSFT.US,结果: 成功
+2026-03-24 15:37:06 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 3 条记录
+2026-03-24 15:37:06 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 3 条 NVDA.US 的数据到数据库
+2026-03-24 15:37:06 - GetStockData - INFO - [__main__] NVDA.US,结果: 成功
+2026-03-24 15:37:08 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 3 条记录
+2026-03-24 15:37:08 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 3 条 PLTR.US 的数据到数据库
+2026-03-24 15:37:08 - GetStockData - INFO - [__main__] PLTR.US,结果: 成功
+2026-03-24 15:37:11 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 3 条记录
+2026-03-24 15:37:11 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 3 条 QQQ.US 的数据到数据库
+2026-03-24 15:37:11 - GetStockData - INFO - [__main__] QQQ.US,结果: 成功
+2026-03-24 15:37:13 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 3 条记录
+2026-03-24 15:37:13 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 3 条 SNOW.US 的数据到数据库
+2026-03-24 15:37:13 - GetStockData - INFO - [__main__] SNOW.US,结果: 成功
+2026-03-24 15:37:15 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 3 条记录
+2026-03-24 15:37:15 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 3 条 SPY.US 的数据到数据库
+2026-03-24 15:37:15 - GetStockData - INFO - [__main__] SPY.US,结果: 成功
+2026-03-24 15:37:18 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 3 条记录
+2026-03-24 15:37:18 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 3 条 TEM.US 的数据到数据库
+2026-03-24 15:37:18 - GetStockData - INFO - [__main__] TEM.US,结果: 成功
+2026-03-24 15:37:20 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 3 条记录
+2026-03-24 15:37:20 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 3 条 TSLA.US 的数据到数据库
+2026-03-24 15:37:20 - GetStockData - INFO - [__main__] TSLA.US,结果: 成功
+2026-03-24 15:37:20 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-24 15:37:20 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-24 15:38:47 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-24 15:38:47 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-24 15:38:55 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-24 15:38:55 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-24 15:48:48 - InitDatabase - WARNING - [DatabaseConnectionManager::get_connection] 池中连接已失效，创建新连接
+2026-03-24 15:48:48 - InitDatabase - ERROR - [DatabaseConnectionManager::_create_connection] 创建数据库连接时出错: 2003 (HY000): Can't connect to MySQL server on '175.178.54.203:3306' (51)
+Traceback (most recent call last):
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/mysql/connector/connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on '175.178.54.203:3306' (51)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/init_database.py", line 75, in _create_connection
+    connection = mysql.connector.connect(**config)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/mysql/connector/pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/mysql/connector/connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+  File "/Users/zego/anaconda3/lib/python3.11/site-packages/mysql/connector/connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on '175.178.54.203:3306' (51)
+2026-03-24 15:48:48 - InitDatabase - ERROR - [DatabaseConnectionManager::get_connection] 无法创建数据库连接
+2026-03-24 16:41:28 - GetStockDataMinutes - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-03-24 16:41:28 - GetStockDataMinutes - INFO - [__main__] ==================================================
+2026-03-24 16:41:30 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-24 16:41:31 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-24 16:42:32 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-03-24 16:42:32 - GetStockDataMinutes - INFO - [get_single_stock_data_to_db] 成功保存 390 条 NVDA.US 的数据到数据库
+2026-03-24 16:42:32 - GetStockDataMinutes - INFO - [__main__] ✅ NVDA.US 2026-03-20 获取成功
+2026-03-24 16:42:44 - GetStockDataMinutes - WARNING - [get_single_stock_data_to_db] 未获取到 NVDA.US 的数据
+2026-03-24 16:42:44 - GetStockDataMinutes - WARNING - [__main__] ❌ NVDA.US 2026-03-21 获取失败
+2026-03-24 16:42:56 - GetStockDataMinutes - WARNING - [get_single_stock_data_to_db] 未获取到 NVDA.US 的数据
+2026-03-24 16:42:56 - GetStockDataMinutes - WARNING - [__main__] ❌ NVDA.US 2026-03-22 获取失败
+2026-03-24 16:44:02 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-03-24 16:44:02 - GetStockDataMinutes - INFO - [get_single_stock_data_to_db] 成功保存 390 条 NVDA.US 的数据到数据库
+2026-03-24 16:44:02 - GetStockDataMinutes - INFO - [__main__] ✅ NVDA.US 2026-03-23 获取成功
+2026-03-24 16:44:12 - GetStockDataMinutes - INFO - [__main__] 完成：成功 2，失败 2，区间 2026-03-20 ~ 2026-03-23
+2026-03-24 16:44:12 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-24 16:44:12 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-24 16:51:50 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-03-24 16:51:50 - GetStockData - INFO - [__main__] ==================================================
+2026-03-24 16:51:54 - GetStockData - ERROR - [get_single_stock_data_to_db] 保存 TSLA.US 数据到数据库时出错: name 'pytz' is not defined
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/utils/get_stock_data.py", line 159, in get_single_stock_data_to_db_by_minutes
+    candle_eastern = _to_eastern(candle.timestamp)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zego/UStocks/utils/get_stock_data.py", line 24, in _to_eastern
+    eastern = pytz.timezone("US/Eastern")
+              ^^^^
+NameError: name 'pytz' is not defined
+2026-03-24 16:51:54 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-24 16:51:54 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-24 16:52:27 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-03-24 16:52:27 - GetStockData - INFO - [__main__] ==================================================
+2026-03-24 16:52:29 - GetStockData - ERROR - [get_single_stock_data_to_db] 保存 TSLA.US 数据到数据库时出错: name 'StockDataMin' is not defined
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/utils/get_stock_data.py", line 163, in get_single_stock_data_to_db_by_minutes
+    existing_data = StockDataMin.query(conditions={
+                    ^^^^^^^^^^^^
+NameError: name 'StockDataMin' is not defined
+2026-03-24 16:52:29 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-24 16:52:29 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-24 16:55:26 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-03-24 16:55:26 - GetStockData - INFO - [__main__] ==================================================
+2026-03-24 16:55:28 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-24 16:55:28 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-24 16:56:07 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-03-24 16:56:07 - GetStockData - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 TSLA.US 的数据到数据库
+2026-03-24 16:56:07 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-24 16:56:07 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-24 17:00:06 - InitDatabase - INFO - [__main__] 开始初始化数据库...
+2026-03-24 17:00:06 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-24 17:00:07 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-24 17:00:07 - InitDatabase - INFO - [create_database] 数据库 ustocks 创建成功（或已存在）
+2026-03-24 17:00:07 - InitDatabase - INFO - [create_option_quote_table] 数据表 option_quote 创建成功（或已存在）
+2026-03-24 17:00:07 - InitDatabase - INFO - [__main__] 数据表 option_quote 创建成功（或已存在）
+2026-03-24 17:00:07 - InitDatabase - INFO - [__main__] 数据库初始化完成！
+2026-03-24 17:00:07 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-24 17:00:07 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-24 17:30:23 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-24 17:30:23 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-24 17:30:23 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 58 条记录
+2026-03-24 17:30:23 - UStocks - INFO - 保存到数据库成功，共保存 58 条期权报价记录: NVDA.US - 2026-03-25 - [150, 220]
+2026-03-24 17:30:34 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 52 条记录
+2026-03-24 17:30:34 - UStocks - INFO - 保存到数据库成功，共保存 52 条期权报价记录: NVDA.US - 2026-03-27 - [150, 220]
+2026-03-24 17:30:44 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 30 条记录
+2026-03-24 17:30:44 - UStocks - INFO - 保存到数据库成功，共保存 30 条期权报价记录: NVDA.US - 2026-03-30 - [150, 220]
+2026-03-24 17:30:54 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 30 条记录
+2026-03-24 17:30:54 - UStocks - INFO - 保存到数据库成功，共保存 30 条期权报价记录: NVDA.US - 2026-04-01 - [150, 220]
+2026-03-24 17:31:05 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 52 条记录
+2026-03-24 17:31:05 - UStocks - INFO - 保存到数据库成功，共保存 52 条期权报价记录: NVDA.US - 2026-04-02 - [150, 220]
+2026-03-24 17:31:16 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 30 条记录
+2026-03-24 17:31:16 - UStocks - INFO - 保存到数据库成功，共保存 30 条期权报价记录: NVDA.US - 2026-04-06 - [150, 220]
+2026-03-24 17:31:26 - UStocks - INFO - 保存到数据库成功，共保存 0 条期权报价记录: NVDA.US - 2026-04-08 - [150, 220]
+2026-03-24 17:31:36 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 50 条记录
+2026-03-24 17:31:36 - UStocks - INFO - 保存到数据库成功，共保存 50 条期权报价记录: NVDA.US - 2026-04-10 - [150, 220]
+2026-03-24 17:31:47 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 50 条记录
+2026-03-24 17:31:47 - UStocks - INFO - 保存到数据库成功，共保存 50 条期权报价记录: NVDA.US - 2026-04-17 - [150, 220]
+2026-03-24 17:31:57 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 30 条记录
+2026-03-24 17:31:57 - UStocks - INFO - 保存到数据库成功，共保存 30 条期权报价记录: NVDA.US - 2026-04-24 - [150, 220]
+2026-03-24 17:32:08 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 30 条记录
+2026-03-24 17:32:08 - UStocks - INFO - 保存到数据库成功，共保存 30 条期权报价记录: NVDA.US - 2026-05-01 - [150, 220]
+2026-03-24 17:32:48 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 134 条记录
+2026-03-24 17:32:48 - UStocks - INFO - 保存到数据库成功，共保存 134 条期权报价记录: PLTR.US - 2026-03-27 - [110, 250]
+2026-03-24 17:32:59 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 122 条记录
+2026-03-24 17:32:59 - UStocks - INFO - 保存到数据库成功，共保存 122 条期权报价记录: PLTR.US - 2026-04-02 - [110, 250]
+2026-03-24 17:33:09 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 86 条记录
+2026-03-24 17:33:09 - UStocks - INFO - 保存到数据库成功，共保存 86 条期权报价记录: PLTR.US - 2026-04-10 - [110, 250]
+2026-03-24 17:33:20 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 76 条记录
+2026-03-24 17:33:20 - UStocks - INFO - 保存到数据库成功，共保存 76 条期权报价记录: PLTR.US - 2026-04-17 - [110, 250]
+2026-03-24 17:33:30 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 58 条记录
+2026-03-24 17:33:30 - UStocks - INFO - 保存到数据库成功，共保存 58 条期权报价记录: PLTR.US - 2026-04-24 - [110, 250]
+2026-03-24 17:33:41 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 58 条记录
+2026-03-24 17:33:41 - UStocks - INFO - 保存到数据库成功，共保存 58 条期权报价记录: PLTR.US - 2026-05-01 - [110, 250]
+2026-03-24 17:34:22 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 86 条记录
+2026-03-24 17:34:22 - UStocks - INFO - 保存到数据库成功，共保存 86 条期权报价记录: TEM.US - 2026-03-27 - [40, 80]
+2026-03-24 17:34:32 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 84 条记录
+2026-03-24 17:34:32 - UStocks - INFO - 保存到数据库成功，共保存 84 条期权报价记录: TEM.US - 2026-04-02 - [40, 80]
+2026-03-24 17:34:43 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 70 条记录
+2026-03-24 17:34:43 - UStocks - INFO - 保存到数据库成功，共保存 70 条期权报价记录: TEM.US - 2026-04-10 - [40, 80]
+2026-03-24 17:34:53 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 58 条记录
+2026-03-24 17:34:53 - UStocks - INFO - 保存到数据库成功，共保存 58 条期权报价记录: TEM.US - 2026-04-17 - [40, 80]
+2026-03-24 17:35:03 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 58 条记录
+2026-03-24 17:35:03 - UStocks - INFO - 保存到数据库成功，共保存 58 条期权报价记录: TEM.US - 2026-04-24 - [40, 80]
+2026-03-24 17:35:14 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 56 条记录
+2026-03-24 17:35:14 - UStocks - INFO - 保存到数据库成功，共保存 56 条期权报价记录: TEM.US - 2026-05-01 - [40, 80]
+2026-03-24 17:35:54 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 82 条记录
+2026-03-24 17:35:54 - UStocks - INFO - 保存到数据库成功，共保存 82 条期权报价记录: HOOD.US - 2026-03-27 - [60, 100]
+2026-03-24 17:36:05 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 74 条记录
+2026-03-24 17:36:05 - UStocks - INFO - 保存到数据库成功，共保存 74 条期权报价记录: HOOD.US - 2026-04-02 - [60, 100]
+2026-03-24 17:36:15 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 70 条记录
+2026-03-24 17:36:15 - UStocks - INFO - 保存到数据库成功，共保存 70 条期权报价记录: HOOD.US - 2026-04-10 - [60, 100]
+2026-03-24 17:36:25 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 54 条记录
+2026-03-24 17:36:25 - UStocks - INFO - 保存到数据库成功，共保存 54 条期权报价记录: HOOD.US - 2026-04-17 - [60, 100]
+2026-03-24 17:36:35 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 68 条记录
+2026-03-24 17:36:35 - UStocks - INFO - 保存到数据库成功，共保存 68 条期权报价记录: HOOD.US - 2026-04-24 - [60, 100]
+2026-03-24 17:36:46 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 60 条记录
+2026-03-24 17:36:46 - UStocks - INFO - 保存到数据库成功，共保存 60 条期权报价记录: HOOD.US - 2026-05-01 - [60, 100]
+2026-03-24 17:37:26 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 82 条记录
+2026-03-24 17:37:26 - UStocks - INFO - 保存到数据库成功，共保存 82 条期权报价记录: COIN.US - 2026-03-27 - [150, 250]
+2026-03-24 17:37:38 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 82 条记录
+2026-03-24 17:37:38 - UStocks - INFO - 保存到数据库成功，共保存 82 条期权报价记录: COIN.US - 2026-04-02 - [150, 250]
+2026-03-24 17:37:48 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 60 条记录
+2026-03-24 17:37:48 - UStocks - INFO - 保存到数据库成功，共保存 60 条期权报价记录: COIN.US - 2026-04-10 - [150, 250]
+2026-03-24 17:37:59 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 60 条记录
+2026-03-24 17:37:59 - UStocks - INFO - 保存到数据库成功，共保存 60 条期权报价记录: COIN.US - 2026-04-17 - [150, 250]
+2026-03-24 17:38:09 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 42 条记录
+2026-03-24 17:38:09 - UStocks - INFO - 保存到数据库成功，共保存 42 条期权报价记录: COIN.US - 2026-04-24 - [150, 250]
+2026-03-24 17:38:20 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 42 条记录
+2026-03-24 17:38:20 - UStocks - INFO - 保存到数据库成功，共保存 42 条期权报价记录: COIN.US - 2026-05-01 - [150, 250]
+2026-03-24 17:39:00 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-24 17:39:00 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-03-24 17:39:28 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-24 17:41:28 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-03-24 17:54:11 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-24 17:54:11 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-24 17:54:11 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-03-24 17:54:11 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-03-24 17:54:20 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-03-24 17:54:20 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
