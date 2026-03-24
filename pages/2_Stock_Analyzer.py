@@ -26,16 +26,17 @@ from data_models.stock_data import StockData
 from data_models.stock_valuation import StockValuation
 
 CACHE_TTL_SECONDS = 300
+ANALYZER_DATA_VERSION_KEY = "ana_data_version"
 
 
 @st.cache_data(ttl=CACHE_TTL_SECONDS)
-def get_stock_codes_cached():
+def get_stock_codes_cached(_refresh_key: int = 0):
     """缓存股票代码列表，减少重复查询"""
     return sorted(StockData.get_stock_codes())
 
 
 @st.cache_data(ttl=CACHE_TTL_SECONDS)
-def load_stock_data(stock_code: str):
+def load_stock_data(stock_code: str, _refresh_key: int = 0):
     """从数据库加载指定股票代码的全部数据，带缓存以加快重复访问"""
     try:
         results = StockData.query(
@@ -196,12 +197,16 @@ def create_stock_charts(df_filtered):
 
 def main():
     """主函数"""
+    if ANALYZER_DATA_VERSION_KEY not in st.session_state:
+        st.session_state[ANALYZER_DATA_VERSION_KEY] = 0
+    data_version = st.session_state[ANALYZER_DATA_VERSION_KEY]
+
     st.title("📊 股票数据分析")
     st.markdown("---")
     
     # 侧边栏筛选器（先选股票，再按所选股票加载数据）
     st.sidebar.header("🔍 数据筛选")
-    available_stocks = get_stock_codes_cached()
+    available_stocks = get_stock_codes_cached(data_version)
     if not available_stocks:
         st.sidebar.warning("暂无股票代码")
         st.stop()
@@ -215,7 +220,7 @@ def main():
 
     # 只读取所选股票的全部数据
     with st.spinner(f"🔄 正在加载 {selected_stock} 数据..."):
-        df = load_stock_data(selected_stock)
+        df = load_stock_data(selected_stock, data_version)
     if df.empty:
         st.warning(f"⚠️ 数据库中没有 {selected_stock} 的数据，请先运行数据收集脚本")
         st.stop()
@@ -381,7 +386,7 @@ def main():
             if r and d:
                 v = StockValuation(stock_code=_code, valuation_range=r, valuation_date=d)
                 if v.save():
-                    st.cache_data.clear()
+                    st.session_state[ANALYZER_DATA_VERSION_KEY] = st.session_state.get(ANALYZER_DATA_VERSION_KEY, 0) + 1
                     st.session_state[edit_val_key] = False
                     st.success(f"已更新 {_code} 的估值信息。")
                     st.rerun()

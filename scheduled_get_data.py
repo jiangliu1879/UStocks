@@ -57,9 +57,13 @@ class DailyStockDataScheduler:
         now_et = get_eastern_now()
         target_date = now_et.date()
         logger.info(f"[run_once] 开始更新全部股票数据（美东日期 {target_date}）")
-        result = get_all_stocks_data_to_db(target_date, target_date)
-        logger.info(f"[run_once] 更新完成: {result}")
-        self.last_run_date = target_date
+        try:
+            result = get_all_stocks_data_to_db(target_date, target_date)
+            logger.info(f"[run_once] 更新完成: {result}")
+            self.last_run_date = target_date
+        except Exception as e:
+            # 任务失败不应导致调度器退出，保留到下次循环继续尝试
+            logger.error(f"[run_once] 更新失败: {e}", exc_info=True)
 
     def start(self):
         """启动调度循环（每分钟检查一次）。"""

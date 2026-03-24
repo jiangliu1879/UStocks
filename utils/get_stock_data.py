@@ -101,22 +101,17 @@ def get_single_stock_data_to_db(stock_code, start_date, end_date):
             # 提取数据并转换为数据库记录
             data_list = []
             for candle in resp:
-                # 检查是否已存在相同记录（避免重复）
-                existing_data = StockData.query(conditions={
-                    'stock_code': stock_code,
-                    'timestamp': candle.timestamp.date()
-                })
-                if len(existing_data) == 0:
-                    data_list.append(StockData(
-                        stock_code=stock_code,
-                        timestamp=candle.timestamp.date(),
-                        open=candle.open,
-                        high=candle.high,
-                        low=candle.low,
-                        close=candle.close,
-                        volume=candle.volume,
-                        turnover=candle.turnover
-                    ))
+                # 直接构建批量数据，依赖表唯一键 + ON DUPLICATE KEY UPDATE 去重/更新
+                data_list.append(StockData(
+                    stock_code=stock_code,
+                    timestamp=candle.timestamp.date(),
+                    open=candle.open,
+                    high=candle.high,
+                    low=candle.low,
+                    close=candle.close,
+                    volume=candle.volume,
+                    turnover=candle.turnover
+                ))
             StockData.batch_save(data_list)
             logger.info(f"[get_single_stock_data_to_db] 成功保存 {len(data_list)} 条 {stock_code} 的数据到数据库")
             return True
@@ -158,24 +153,18 @@ def get_single_stock_data_to_db_by_minutes(stock_code, start_date, end_date, int
             data_list = []
             for candle in resp:
                 candle_eastern = _to_eastern(candle.timestamp)
-                # 检查是否已存在相同记录（避免重复）
-                existing_data = StockDataMin.query(conditions={
-                    'stock_code': stock_code,
-                    'timestamp': candle_eastern.strftime('%Y-%m-%d %H:%M:%S'),
-                    'interval': interval,
-                })
-                if len(existing_data) == 0:
-                    data_list.append(StockDataMin(
-                        stock_code=stock_code,
-                        timestamp=candle_eastern.strftime('%Y-%m-%d %H:%M:%S'),
-                        open=candle.open,
-                        high=candle.high,
-                        low=candle.low,
-                        close=candle.close,
-                        volume=candle.volume,
-                        turnover=candle.turnover,
-                        interval=interval
-                    ))
+                # 直接构建批量数据，依赖表唯一键 + ON DUPLICATE KEY UPDATE 去重/更新
+                data_list.append(StockDataMin(
+                    stock_code=stock_code,
+                    timestamp=candle_eastern.strftime('%Y-%m-%d %H:%M:%S'),
+                    open=candle.open,
+                    high=candle.high,
+                    low=candle.low,
+                    close=candle.close,
+                    volume=candle.volume,
+                    turnover=candle.turnover,
+                    interval=interval
+                ))
             StockDataMin.batch_save(data_list)
             logger.info(f"[get_single_stock_data_to_db_by_minutes] 成功保存 {len(data_list)} 条 {stock_code} 的数据到数据库")
             return True
@@ -212,6 +201,6 @@ if __name__ == "__main__":
     stock_code = "TSLA.US"
     result = get_single_stock_data_to_db_by_minutes(stock_code, date(2026, 3, 23), date(2026, 3, 23))
     if result:
-        logger.info(f"[__main__] ✅ {stock_code} {current_day} 获取成功")
+        logger.info(f"[__main__] ✅ {stock_code} 获取成功")
     else:
-        logger.warning(f"[__main__] ❌ {stock_code} {current_day} 获取失败")
+        logger.warning(f"[__main__] ❌ {stock_code} 获取失败")

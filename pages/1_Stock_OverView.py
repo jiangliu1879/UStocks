@@ -18,6 +18,7 @@ from data_models.stock_valuation import StockValuation
 st.set_page_config(page_title="股票概览", page_icon="📋", layout="wide")
 
 CACHE_TTL_SECONDS = 300
+OVERVIEW_DATA_VERSION_KEY = "ov_data_version"
 
 
 def _timestamp_to_date_str(t) -> str:
@@ -27,7 +28,7 @@ def _timestamp_to_date_str(t) -> str:
 
 
 @st.cache_data(ttl=CACHE_TTL_SECONDS)
-def get_latest_trade_date() -> date:
+def get_latest_trade_date(_refresh_key: int) -> date:
     recs = StockData.query(
         conditions={"stock_code": "SPY.US"},
         limit=1,
@@ -42,12 +43,12 @@ def get_latest_trade_date() -> date:
 
 
 @st.cache_data(ttl=CACHE_TTL_SECONDS)
-def get_stock_codes() -> list[str]:
+def get_stock_codes(_refresh_key: int) -> list[str]:
     return StockData.get_stock_codes()
 
 
 @st.cache_data(ttl=CACHE_TTL_SECONDS)
-def get_latest_stock_info(stock_code: str, target_date: date | None = None):
+def get_latest_stock_info(stock_code: str, target_date: date | None = None, _refresh_key: int = 0):
     recent_data = StockData.query(
         conditions={"stock_code": stock_code},
         limit=60,
@@ -101,6 +102,14 @@ def get_latest_stock_info(stock_code: str, target_date: date | None = None):
     }
 
 
+@st.cache_data(ttl=CACHE_TTL_SECONDS)
+def get_latest_valuations_map(stock_codes: tuple[str, ...], _refresh_key: int):
+    """批量获取股票最新估值，减少页面 N+1 查询。"""
+    if not stock_codes:
+        return {}
+    return StockValuation.query_latest_by_stock_codes(list(stock_codes))
+
+
 def format_change_pct(change_pct: float) -> str:
     sign = "+" if change_pct >= 0 else ""
     return f"{sign}{change_pct:.2f}%"
@@ -121,7 +130,11 @@ def format_volume_ratio(volume_ratio: float) -> str:
 
 
 # ---------- 侧边栏：股票勾选（不展示 QQQ、SPY）----------
-all_codes = get_stock_codes()
+if OVERVIEW_DATA_VERSION_KEY not in st.session_state:
+    st.session_state[OVERVIEW_DATA_VERSION_KEY] = 0
+data_version = st.session_state[OVERVIEW_DATA_VERSION_KEY]
+
+all_codes = get_stock_codes(data_version)
 stock_codes = [c for c in all_codes if c not in ("QQQ.US", "SPY.US", "AAPL.US")]
 if not stock_codes:
     st.warning("暂无股票数据")
@@ -153,7 +166,7 @@ with st.sidebar:
 selected_codes = [c for c in stock_codes if st.session_state.get(f"ov_cb_{c}", True)]
 
 # ---------- 主区域 ----------
-trade_date = get_latest_trade_date()
+trade_date = get_latest_trade_date(data_version)
 st.title("📋 股票概览")
 
 if not selected_codes:
@@ -163,7 +176,7 @@ if not selected_codes:
 # 拉取选中股票的最新交易日数据
 info_by_code = {}
 for code in selected_codes:
-    info = get_latest_stock_info(code, target_date=trade_date)
+    info = get_latest_stock_info(code, target_date=trade_date, _refresh_key=data_version)
     if info is None:
         continue
     info_by_code[code] = info
@@ -175,6 +188,7 @@ if not info_by_code:
 st.subheader(f"最新交易日统计（{trade_date.strftime('%Y-%m-%d')}）")
 # 一行一只股票，左侧为指标、右侧为市场概述
 valid_codes = [c for c in selected_codes if c in info_by_code]
+valuation_map = get_latest_valuations_map(tuple(valid_codes), data_version)
 for code in valid_codes:
     info = info_by_code[code]
     st.markdown("---")
@@ -190,8 +204,8 @@ for code in valid_codes:
         st.write(f"**成交量水位:** {format_volume_ratio(info['volume_ratio'])}")
         st.write(f"**成交量:** {info['volume']:,.0f}")
         st.write(f"**今日区间:** ${info['low']:.2f} - ${info['high']:.2f}")
-        latest_val = StockValuation.query(conditions={"stock_code": code}, limit=1, order_by="valuation_date DESC")
-        st.write("**估值区间:**", latest_val[0].valuation_range if latest_val else "*暂无*")
+        latest_val = valuation_map.get(code)
+        st.write("**估值区间:**", latest_val.valuation_range if latest_val else "*暂无*")
     with col_right:
         st.write("**市场概述：**")
         desc_key = f"ov_desc_{code}"
@@ -231,7 +245,7 @@ for code in valid_codes:
                     rec.description = new_desc
                     rec.timestamp = _timestamp_to_date_str(rec.timestamp)
                     if rec.save():
-                        st.cache_data.clear()
+                        st.session_state[OVERVIEW_DATA_VERSION_KEY] = st.session_state.get(OVERVIEW_DATA_VERSION_KEY, 0) + 1
                         st.session_state[edit_key] = False
                         st.success(f"已更新 {code} 的市场概述。")
                         st.rerun()
