@@ -13,20 +13,11 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.logger import setup_logger
 from data_models.stock_data_min import StockDataMin
 from data_models.stock_data import StockData
+from utils.longport_utils import LongportUtils
+from utils.time_utils import to_eastern_time
 
 # 创建模块级别的日志记录器
 logger = setup_logger('GetStockData')
-
-def _to_eastern(dt: datetime) -> datetime:
-    """
-    将 LongPort 返回的时间戳转换为美东时间（US/Eastern）。
-    如果 dt 是 naive（无时区信息），默认认为是中国时区（Asia/Shanghai）。
-    """
-    eastern = pytz.timezone("US/Eastern")
-    if dt.tzinfo is None:
-        shanghai = pytz.timezone("Asia/Shanghai")
-        dt = shanghai.localize(dt)
-    return dt.astimezone(eastern)
 
 
 def get_all_stocks_data_to_db(start_date, end_date):
@@ -84,11 +75,7 @@ def get_single_stock_data_to_db(stock_code, start_date, end_date):
     bool: 是否成功获取并保存数据
     """
     try:
-        config = Config.from_env()
-        ctx = QuoteContext(config)
-
-        # 获取历史K线数据
-        resp = ctx.history_candlesticks_by_date(stock_code, Period.Day, AdjustType.NoAdjust, start_date, end_date)
+        resp = LongportUtils.get_history_candlesticks_by_date(stock_code, Period.Day, AdjustType.NoAdjust, start_date, end_date)
 
         logger.debug(f"[get_single_stock_data_to_db] 获取到 {stock_code} 的数据: {resp}")
         
@@ -137,11 +124,7 @@ def get_single_stock_data_to_db_by_minutes(stock_code, start_date, end_date, int
     bool: 是否成功获取并保存数据
     """
     try:
-        config = Config.from_env()
-        ctx = QuoteContext(config)
-
-        # 获取历史K线数据
-        resp = ctx.history_candlesticks_by_date(stock_code, Period.Min_1, AdjustType.NoAdjust, start_date, end_date)
+        resp = LongportUtils.get_history_candlesticks_by_date(stock_code, Period.Min_1, AdjustType.NoAdjust, start_date, end_date)
         
         if not resp or len(resp) == 0:
             logger.warning(f"[get_single_stock_data_to_db_by_minutes] 未获取到 {stock_code} 的数据")
@@ -152,7 +135,7 @@ def get_single_stock_data_to_db_by_minutes(stock_code, start_date, end_date, int
             # 提取数据并转换为数据库记录
             data_list = []
             for candle in resp:
-                candle_eastern = _to_eastern(candle.timestamp)
+                candle_eastern = to_eastern_time(candle.timestamp)
                 # 直接构建批量数据，依赖表唯一键 + ON DUPLICATE KEY UPDATE 去重/更新
                 data_list.append(StockDataMin(
                     stock_code=stock_code,
@@ -181,14 +164,13 @@ if __name__ == "__main__":
     # 演示新的数据库方法
     logger.info("[__main__] 🚀 演示股票数据获取方法")
     logger.info("[__main__] " + "=" * 50)
-
     
     # 示例1: 获取单个股票数据到数据库
     # logger.info("[__main__] 📊 示例1: 获取单个股票数据到数据库")
     # list_stock_codes = StockData.get_stock_codes()
     # logger.info(f"[__main__] 股票代码列表: {list_stock_codes}")
     # for stock_code in list_stock_codes:
-    #     result = get_single_stock_data_to_db(stock_code, date(2026, 3, 19), date(2026, 3, 23))
+    #     result = get_single_stock_data_to_db(stock_code, date(2026, 3, 25), date(2026, 3, 25))
     #     logger.info(f"[__main__] {stock_code},结果: {'成功' if result else '失败'}")
 
     # pair_years = [(2000, 2002), (2003, 2005), (2006, 2007), (2008, 2010), (2011, 2013), (2014, 2016), (2017, 2019), (2020, 2022), (2023, 2025)]
@@ -198,8 +180,8 @@ if __name__ == "__main__":
     #     import time
     #     time.sleep(10)
 
-    stock_code = "TSLA.US"
-    result = get_single_stock_data_to_db_by_minutes(stock_code, date(2026, 3, 23), date(2026, 3, 23))
+    stock_code = "NVDA.US"
+    result = get_single_stock_data_to_db_by_minutes(stock_code, date(2026, 3, 25), date(2026, 3, 25))
     if result:
         logger.info(f"[__main__] ✅ {stock_code} 获取成功")
     else:

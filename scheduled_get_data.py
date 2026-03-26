@@ -6,20 +6,15 @@
 """
 
 import time
-from datetime import datetime
+from datetime import datetime, time as dt_time
 import pytz
 
 from utils.get_stock_data import get_all_stocks_data_to_db
 from utils.longport_utils import LongportUtils
 from utils.logger import setup_logger
+from utils.time_utils import get_eastern_now
 
 logger = setup_logger("ScheduledStockData")
-
-
-def get_eastern_now() -> datetime:
-    """获取当前美东时间（US/Eastern）。"""
-    eastern = pytz.timezone("US/Eastern")
-    return datetime.now(pytz.UTC).astimezone(eastern)
 
 
 class DailyStockDataScheduler:
@@ -43,14 +38,19 @@ class DailyStockDataScheduler:
             # 兜底：若接口异常，按 18:00 执行
             return (now_et.hour > 18) or (now_et.hour == 18 and now_et.minute >= 0)
 
-        # 统一转换到美东时区后，仅比较“时:分:秒”，保证任务每天都会执行一次
-        if market_close_dt.tzinfo is None:
-            eastern = pytz.timezone("US/Eastern")
-            market_close_dt = eastern.localize(market_close_dt)
+        # LongPort 可能返回 time 或 datetime；统一转换为 close_time 后比较
+        if isinstance(market_close_dt, dt_time):
+            close_time = market_close_dt
         else:
-            market_close_dt = market_close_dt.astimezone(pytz.timezone("US/Eastern"))
+            # datetime 场景：转到美东后取 time
+            if market_close_dt.tzinfo is None:
+                eastern = pytz.timezone("US/Eastern")
+                market_close_dt = eastern.localize(market_close_dt)
+            else:
+                market_close_dt = market_close_dt.astimezone(pytz.timezone("US/Eastern"))
+            close_time = market_close_dt.time()
 
-        return now_et.time() >= market_close_dt.time()
+        return now_et.time() >= close_time
 
     def run_once(self):
         """执行一次更新任务：更新当日数据。"""

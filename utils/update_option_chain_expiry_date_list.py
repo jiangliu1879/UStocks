@@ -4,29 +4,14 @@
 import json
 import os
 from datetime import date, timedelta
-
-from longport.openapi import QuoteContext, Config
-
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from utils.logger import setup_logger
+logger = setup_logger('GetOptionChainExpiryDateList')
+from utils.longport_utils import LongportUtils
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STOCK_OPTION_INFO_PATH = os.path.join(PROJECT_ROOT, "stock_option_info.json")
-
-
-def get_option_chain_expiry_date_list(underlying_symbol: str) -> list[date]:
-    """从长桥 API 获取期权链到期日列表，返回 datetime.date 列表。"""
-    config = Config.from_env()
-    ctx = QuoteContext(config)
-    resp = ctx.option_chain_expiry_date_list(underlying_symbol)
-    if not resp:
-        return []
-    out = []
-    for item in resp:
-        if isinstance(item, date):
-            out.append(item)
-        else:
-            d = getattr(item, "date", None) or getattr(item, "expiry_date", None)
-            if isinstance(d, date):
-                out.append(d)
-    return sorted(set(out))
 
 
 def filter_expiry_dates_within_days(expiry_dates: list[date], days: int = 50) -> list[date]:
@@ -95,7 +80,7 @@ if __name__ == "__main__":
         symbol = item.get("stock_code")
         strike_range = item.get("strike_price_range")
         expiry_dates = item.get("expiry_dates")
-        all_dates = get_option_chain_expiry_date_list(symbol)
+        all_dates = LongportUtils.get_option_chain_expiry_date_list(symbol)
         filtered = filter_expiry_dates_within_days(all_dates, days=50)
         write_stock_option_info(symbol, filtered, strike_price_range=strike_range)
 
