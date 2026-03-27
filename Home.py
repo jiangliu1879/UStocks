@@ -4,6 +4,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 from datetime import datetime, timedelta, date
 import os
 import sys
@@ -142,6 +143,113 @@ def format_volume_ratio(volume_ratio: float) -> str:
     
     return f"{emoji} {level} ({volume_ratio:.1f}%)"
 
+
+@st.cache_data(ttl=CACHE_TTL_SECONDS)
+def load_recent_stock_data(stock_code: str, end_date: date):
+    """
+    读取指定股票最近一个月数据（截至 end_date），返回 DataFrame。
+    """
+    results = StockData.query(
+        conditions={"stock_code": stock_code},
+        limit=120,
+        order_by="timestamp DESC",
+    )
+    if not results:
+        return pd.DataFrame()
+
+    rows = []
+    for r in results:
+        ts = pd.to_datetime(str(r.timestamp))
+        rows.append(
+            {
+                "stock_code": r.stock_code,
+                "timestamp": ts,
+                "open": r.open,
+                "high": r.high,
+                "low": r.low,
+                "close": r.close,
+                "volume": r.volume,
+                "turnover": r.turnover,
+            }
+        )
+    df = pd.DataFrame(rows)
+    if df.empty:
+        return df
+    start_date = pd.to_datetime(end_date) - pd.Timedelta(days=30)
+    end_dt = pd.to_datetime(end_date) + pd.Timedelta(days=1)
+    df = df[(df["timestamp"] >= start_date) & (df["timestamp"] < end_dt)].copy()
+    return df.sort_values("timestamp")
+
+
+def create_stock_charts(df_filtered: pd.DataFrame, title_suffix: str):
+    """创建股票数据图表（close、volume、turnover），样式对齐 2_Stock_Analyzer。"""
+    if df_filtered.empty:
+        st.warning("⚠️ 没有数据可以显示")
+        return
+
+    df_filtered = df_filtered.sort_values("timestamp")
+    fig = make_subplots(
+        rows=3,
+        cols=1,
+        subplot_titles=("收盘价 (Close)", "成交量 (Volume)", "成交额 (Turnover)"),
+        vertical_spacing=0.08,
+        shared_xaxes=True,
+    )
+
+    close_color = "#1f77b4"
+    volume_color = "#ff7f0e"
+    turnover_color = "#2ca02c"
+
+    fig.add_trace(
+        go.Scatter(
+            x=df_filtered["timestamp"],
+            y=df_filtered["close"],
+            mode="lines+markers",
+            name="收盘价",
+            line=dict(color=close_color, width=2),
+            marker=dict(size=4, color=close_color),
+        ),
+        row=1,
+        col=1,
+    )
+    fig.add_trace(
+        go.Scatter(
+            x=df_filtered["timestamp"],
+            y=df_filtered["volume"],
+            mode="lines+markers",
+            name="成交量",
+            line=dict(color=volume_color, width=2),
+            marker=dict(size=4, color=volume_color),
+        ),
+        row=2,
+        col=1,
+    )
+    fig.add_trace(
+        go.Scatter(
+            x=df_filtered["timestamp"],
+            y=df_filtered["turnover"].fillna(0),
+            mode="lines+markers",
+            name="成交额",
+            line=dict(color=turnover_color, width=2),
+            marker=dict(size=4, color=turnover_color),
+        ),
+        row=3,
+        col=1,
+    )
+
+    fig.update_layout(
+        height=700,
+        title={"text": f"股票数据图表 - {title_suffix}", "x": 0.5, "xanchor": "center"},
+        showlegend=True,
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    )
+    fig.update_xaxes(title_text="时间", row=3, col=1, tickformat="%Y-%m-%d", tickangle=45)
+    fig.update_yaxes(title_text="价格 ($)", row=1, col=1)
+    fig.update_yaxes(title_text="成交量", row=2, col=1, tickformat=",.0f")
+    fig.update_yaxes(title_text="成交额 ($)", row=3, col=1, tickformat=",.2f")
+
+    st.plotly_chart(fig, use_container_width=True)
+
 col1, col2 = st.columns(2)
 
 # SPY
@@ -190,6 +298,26 @@ with col2:
 
 if spy_info is None and qqq_info is None:
     st.info("没有交易数据")
+
+st.markdown("---")
+st.subheader("📈 SPY / QQQ 最近一个月图表")
+chart_col1, chart_col2 = st.columns(2)
+
+with chart_col1:
+    st.markdown("#### SPY")
+    df_spy_1m = load_recent_stock_data("SPY.US", selected_date)
+    if df_spy_1m.empty:
+        st.warning("暂无 SPY 最近一个月数据")
+    else:
+        create_stock_charts(df_spy_1m, "SPY 最近一个月")
+
+with chart_col2:
+    st.markdown("#### QQQ")
+    df_qqq_1m = load_recent_stock_data("QQQ.US", selected_date)
+    if df_qqq_1m.empty:
+        st.warning("暂无 QQQ 最近一个月数据")
+    else:
+        create_stock_charts(df_qqq_1m, "QQQ 最近一个月")
 
 st.subheader("市场简述：")
 

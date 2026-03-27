@@ -9,19 +9,9 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from data_models.option_quote import OptionQuote
 from utils.logger import logger
-
+from utils.time_utils import get_eastern_now
 config = Config.from_env()
 ctx = QuoteContext(config)
-
-def get_eastern_time():
-    """获取美东当前时间"""
-    # 美东时区
-    eastern = pytz.timezone('US/Eastern')
-    # 获取当前UTC时间并转换为美东时间
-    utc_now = datetime.now(pytz.UTC)
-    eastern_time = utc_now.astimezone(eastern)
-    return eastern_time
-
 
 def get_option_chain_info_by_data(underlying_symbol: str, expiry_date: date,  strike_price_range: tuple[float, float]):
     try:
@@ -82,10 +72,9 @@ if __name__ == "__main__":
         underlying_symbol = item.get("stock_code")
         expiry_dates = item.get("expiry_dates")
         strike_price_range = item.get("strike_price_range")
+        update_time = get_eastern_now().strftime('%Y-%m-%d %H:%M:%S')
         for expiry_date in expiry_dates:
             expiry_date = date.fromisoformat(expiry_date)
-            eastern_time = get_eastern_time()
-            update_time = eastern_time.strftime('%Y-%m-%d %H:%M:%S')
             list_option_symbol = get_option_chain_info_by_data(underlying_symbol, expiry_date, strike_price_range)
             list_option_quote = get_option_quote(list_option_symbol, expiry_date, update_time)
             # 保存到数据库

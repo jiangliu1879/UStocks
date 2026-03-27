@@ -13,6 +13,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.logger import setup_logger
 from data_models.stock_data_min import StockDataMin
 from data_models.stock_data import StockData
+from utils.time_utils import get_eastern_now
 from utils.longport_utils import LongportUtils
 from utils.time_utils import to_eastern_time
 
@@ -165,13 +166,11 @@ if __name__ == "__main__":
     logger.info("[__main__] 🚀 演示股票数据获取方法")
     logger.info("[__main__] " + "=" * 50)
     
-    # 示例1: 获取单个股票数据到数据库
-    # logger.info("[__main__] 📊 示例1: 获取单个股票数据到数据库")
-    # list_stock_codes = StockData.get_stock_codes()
-    # logger.info(f"[__main__] 股票代码列表: {list_stock_codes}")
-    # for stock_code in list_stock_codes:
-    #     result = get_single_stock_data_to_db(stock_code, date(2026, 3, 25), date(2026, 3, 25))
-    #     logger.info(f"[__main__] {stock_code},结果: {'成功' if result else '失败'}")
+    # 获取所有股票数据到数据库
+    logger.info("[__main__] 获取所有股票数据到数据库")
+    eastern_today = get_eastern_now().date()
+    result = get_all_stocks_data_to_db(eastern_today, eastern_today)
+    logger.info(f"[__main__] 结果: {result}")
 
     # pair_years = [(2000, 2002), (2003, 2005), (2006, 2007), (2008, 2010), (2011, 2013), (2014, 2016), (2017, 2019), (2020, 2022), (2023, 2025)]
     # for start_year, end_year in pair_years:
@@ -180,9 +179,9 @@ if __name__ == "__main__":
     #     import time
     #     time.sleep(10)
 
-    stock_code = "NVDA.US"
-    result = get_single_stock_data_to_db_by_minutes(stock_code, date(2026, 3, 25), date(2026, 3, 25))
-    if result:
-        logger.info(f"[__main__] ✅ {stock_code} 获取成功")
-    else:
-        logger.warning(f"[__main__] ❌ {stock_code} 获取失败")
+    # stock_code = "NVDA.US"
+    # result = get_single_stock_data_to_db_by_minutes(stock_code, date(2026, 3, 25), date(2026, 3, 25))
+    # if result:
+    #     logger.info(f"[__main__] ✅ {stock_code} 获取成功")
+    # else:
+    #     logger.warning(f"[__main__] ❌ {stock_code} 获取失败")

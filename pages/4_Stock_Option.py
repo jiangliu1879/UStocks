@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import os
 import sys
+import json
 from datetime import datetime, date
 
 import pandas as pd
@@ -21,10 +22,53 @@ CACHE_TTL_SECONDS = 300
 
 
 @st.cache_data(ttl=CACHE_TTL_SECONDS)
-def get_latest_option_data():
-    """读取 update_time 最新日期的全部期权数据，返回 (latest_date_str, list of OptionQuote)。"""
-    latest_date_str, all_records = OptionQuote.query_by_latest_update_date(limit=50000)
-    return latest_date_str, all_records
+def load_stock_option_config():
+    """读取 stock_option_info.json，返回 [{stock_code, expiry_dates, ...}, ...]。"""
+    cfg_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "stock_option_info.json")
+    with open(cfg_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return data if isinstance(data, list) else [data]
+
+
+@st.cache_data(ttl=CACHE_TTL_SECONDS)
+def get_latest_records_for_stock_and_expiries(stock_code: str, expiry_dates: tuple[str, ...]):
+    """
+    从数据库读取指定 stock_code + expiry_dates 的数据，并仅保留 latest update_time 的那一批。
+    Returns: (latest_update_time, list[OptionQuote])
+    """
+    records = OptionQuote.query(
+        conditions={"underlying_symbol": stock_code},
+        limit=100000,
+        order_by="update_time DESC",
+    )
+    if not records:
+        return None, []
+
+    expiry_set = set(expiry_dates)
+    matched = [r for r in records if str(r.expiry_date)[:10] in expiry_set]
+    if not matched:
+        return None, []
+
+    # 取该筛选子集中的最新 update_time
+    latest_update_time = max(str(r.update_time) for r in matched)
+    latest_records = [r for r in matched if str(r.update_time) == latest_update_time]
+    return latest_update_time, latest_records
+
+
+@st.cache_data(ttl=CACHE_TTL_SECONDS)
+def get_all_records_for_stock_and_expiries(stock_code: str, expiry_dates: tuple[str, ...]):
+    """
+    从数据库读取指定 stock_code + expiry_dates 的全部期权数据（不限 update_time）。
+    """
+    records = OptionQuote.query(
+        conditions={"underlying_symbol": stock_code},
+        limit=100000,
+        order_by="update_time DESC",
+    )
+    if not records:
+        return []
+    expiry_set = set(expiry_dates)
+    return [r for r in records if str(r.expiry_date)[:10] in expiry_set]
 
 
 def build_option_df(records):
@@ -133,92 +177,126 @@ def chart_oi_by_strike(df_filtered: pd.DataFrame, title: str, update_time: str):
     st.caption(f"数据更新时间: {update_time}")
 
 
-def predict_range_from_options(df_filtered: pd.DataFrame, filtered_quotes: list) -> dict | None:
+def build_max_pain_timeseries(filtered_quotes: list) -> pd.DataFrame:
     """
-    根据筛选出的期权成交量、持仓量预测股价波动范围。
-    返回 dict: max_pain_oi, max_pain_vol, range_oi (low, high), range_vol (low, high)。
+    将筛选出的全部期权数据按 update_time 分组，计算每组 max_pain_oi/max_pain_vol。
     """
-    if df_filtered.empty:
-        return None
-    # Max Pain：基于持仓量/成交量的预期收敛价
-    max_pain_oi = max_pain_vol = None
-    if filtered_quotes:
+    if not filtered_quotes:
+        return pd.DataFrame()
+    grouped = {}
+    for q in filtered_quotes:
+        k = str(q.update_time)
+        grouped.setdefault(k, []).append(q)
+
+    rows = []
+    for update_time, quotes in grouped.items():
         try:
-            mp = calculate_max_pain(filtered_quotes)
-            max_pain_oi = mp.max_pain_oi
-            max_pain_vol = mp.max_pain_vol
+            mp = calculate_max_pain(quotes)
+            rows.append(
+                {
+                    "update_time": pd.to_datetime(update_time),
+                    "max_pain_oi": float(mp.max_pain_oi) if mp.max_pain_oi is not None else None,
+                    "max_pain_vol": float(mp.max_pain_vol) if mp.max_pain_vol is not None else None,
+                }
+            )
         except Exception:
-            pass
-    # 按行权价汇总 Call+Put 的 OI 与 Volume
-    by_strike = df_filtered.groupby("strike_price").agg(
-        open_interest=("open_interest", "sum"),
-        volume=("volume", "sum"),
-    ).reset_index()
-    by_strike = by_strike.sort_values("strike_price")
-    total_oi = by_strike["open_interest"].sum()
-    total_vol = by_strike["volume"].sum()
-    if total_oi == 0 and total_vol == 0:
-        return {
-            "max_pain_oi": max_pain_oi,
-            "max_pain_vol": max_pain_vol,
-            "range_oi": (None, None),
-            "range_vol": (None, None),
-        }
-    # 预测区间：覆盖中间 80% 持仓量/成交量的行权价区间
-    def range_from_cumsum(values, total, pct_low=0.1, pct_high=0.9):
-        if total == 0:
-            return None, None
-        cum = values.cumsum()
-        n = len(by_strike)
-        low_pos = (cum >= pct_low * total).argmax() if (cum >= pct_low * total).any() else 0
-        high_pos = (cum >= pct_high * total).argmax() if (cum >= pct_high * total).any() else n - 1
-        low_strike = by_strike.iloc[min(low_pos, n - 1)]["strike_price"]
-        high_strike = by_strike.iloc[min(high_pos, n - 1)]["strike_price"]
-        return float(low_strike), float(high_strike)
+            continue
+    if not rows:
+        return pd.DataFrame()
+    return pd.DataFrame(rows).sort_values("update_time")
 
-    range_oi = range_from_cumsum(by_strike["open_interest"], total_oi) if total_oi else (None, None)
-    range_vol = range_from_cumsum(by_strike["volume"], total_vol) if total_vol else (None, None)
 
-    return {
-        "max_pain_oi": max_pain_oi,
-        "max_pain_vol": max_pain_vol,
-        "range_oi": range_oi,
-        "range_vol": range_vol,
-    }
+def chart_max_pain_timeseries(df_mp: pd.DataFrame):
+    """绘制 max pain 时间序列（OI / Volume 两条曲线）。"""
+    if df_mp.empty:
+        st.warning("暂无可用于计算 max pain 曲线的数据")
+        return
+    fig = go.Figure()
+    fig.add_trace(
+        go.Scatter(
+            x=df_mp["update_time"],
+            y=df_mp["max_pain_oi"],
+            mode="lines+markers",
+            name="Max Pain（持仓量）",
+            line=dict(color="#1f77b4", width=2),
+            marker=dict(size=5),
+            hovertemplate="时间: %{x}<br>Max Pain(OI): %{y:.2f}<extra></extra>",
+        )
+    )
+    fig.add_trace(
+        go.Scatter(
+            x=df_mp["update_time"],
+            y=df_mp["max_pain_vol"],
+            mode="lines+markers",
+            name="Max Pain（成交量）",
+            line=dict(color="#ff7f0e", width=2),
+            marker=dict(size=5),
+            hovertemplate="时间: %{x}<br>Max Pain(Vol): %{y:.2f}<extra></extra>",
+        )
+    )
+    fig.update_layout(
+        title="Max Pain 曲线（按 update_time）",
+        xaxis_title="update_time",
+        yaxis_title="Max Pain",
+        height=420,
+        hovermode="x unified",
+    )
+    st.plotly_chart(fig, use_container_width=True)
 
 
 def main():
     st.title("📊 期权分布")
 
-    latest_update_time, all_records = get_latest_option_data()
-    if not all_records:
-        st.warning("暂无期权数据（或未找到最新 update_time 的记录）")
+    config_items = load_stock_option_config()
+    if not config_items:
+        st.warning("stock_option_info.json 为空，无法加载股票和到期日配置")
         st.stop()
 
-    df = build_option_df(all_records)
-    stock_codes = sorted(df["underlying_symbol"].dropna().unique().tolist())
+    stock_codes = [item.get("stock_code") for item in config_items if item.get("stock_code")]
     if not stock_codes:
-        st.warning("最新一批数据中无股票代码")
+        st.warning("stock_option_info.json 中没有有效 stock_code")
         st.stop()
 
-    # 侧边栏：股票下拉 + 该股票下的到期日 checkbox，默认选最近到期日
+    stock_to_expiry = {
+        item.get("stock_code"): [str(d)[:10] for d in item.get("expiry_dates", [])]
+        for item in config_items
+        if item.get("stock_code")
+    }
+
+    # 侧边栏：股票下拉 + 该股票下的到期日 checkbox，默认选第一个到期日
     with st.sidebar:
         st.subheader("筛选")
-        selected_stock = st.selectbox("股票代码 (stock_code)", options=stock_codes, key="opt_stock")
-        df_stock = df[df["underlying_symbol"] == selected_stock]
-        expiry_dates = sorted([str(e)[:10] for e in df_stock["expiry_date"].dropna().unique()])
+        selected_stock = st.selectbox("股票代码 (stock_code)", options=stock_codes, index=0, key="opt_stock")
+        expiry_dates = stock_to_expiry.get(selected_stock, [])
         if not expiry_dates:
-            st.warning(f"{selected_stock} 无到期日数据")
+            st.warning(f"{selected_stock} 在 stock_option_info.json 中无到期日配置")
             st.stop()
 
-        # 默认选最近的到期日：按日期升序，第一个为最近
+        # 默认选第一个到期日
         default_expiry = expiry_dates[0]
         if st.session_state.get("opt_last_stock") != selected_stock:
             st.session_state["opt_last_stock"] = selected_stock
             for ed in expiry_dates:
                 st.session_state[f"opt_exp_{selected_stock}_{ed}"] = ed == default_expiry
 
-        st.write("**期权到期日**")
+        # 全选开关：勾选=全部到期日选中；取消=全部不选
+        all_key = f"opt_exp_all_{selected_stock}"
+        last_all_key = f"opt_exp_all_last_{selected_stock}"
+        if all_key not in st.session_state:
+            st.session_state[all_key] = False
+        if last_all_key not in st.session_state:
+            st.session_state[last_all_key] = st.session_state[all_key]
+        all_col1, all_col2 = st.columns([3, 1])
+        with all_col1:
+            st.write("**期权到期日**")
+        with all_col2:
+            curr_all = st.checkbox("全选", key=all_key)
+            prev_all = st.session_state.get(last_all_key, False)
+            if curr_all != prev_all:
+                for ed in expiry_dates:
+                    st.session_state[f"opt_exp_{selected_stock}_{ed}"] = curr_all
+                st.session_state[last_all_key] = curr_all
+
         selected_expiries = []
         for ed in expiry_dates:
             key = f"opt_exp_{selected_stock}_{ed}"
@@ -229,6 +307,18 @@ def main():
         st.info("请至少勾选一个到期日")
         st.stop()
 
+    all_selected_records = get_all_records_for_stock_and_expiries(
+        selected_stock, tuple(selected_expiries)
+    )
+    if not all_selected_records:
+        st.warning("当前股票/到期日筛选下没有可用数据")
+        st.stop()
+
+    # 分布图仅展示筛选数据中的最新 update_time 批次
+    latest_update_time = max(str(r.update_time) for r in all_selected_records)
+    latest_records = [r for r in all_selected_records if str(r.update_time) == latest_update_time]
+
+    df = build_option_df(latest_records)
     df_filtered = df[
         (df["underlying_symbol"] == selected_stock) & (df["expiry_date"].isin(selected_expiries))
     ].copy()
@@ -236,11 +326,7 @@ def main():
         st.warning("当前筛选无数据")
         st.stop()
 
-    filtered_quotes = [
-        r for r in all_records
-        if r.underlying_symbol == selected_stock and str(r.expiry_date)[:10] in selected_expiries
-    ]
-    pred = predict_range_from_options(df_filtered, filtered_quotes)
+    df_mp = build_max_pain_timeseries(all_selected_records)
 
     expiry_label = "、".join(selected_expiries) if len(selected_expiries) <= 3 else f"{len(selected_expiries)} 个到期日"
     st.subheader(f"成交量分布 — {selected_stock}（{expiry_label}）")
@@ -256,32 +342,9 @@ def main():
         update_time=latest_update_time,
     )
 
-    # 通过筛选出的期权成交量、持仓量预测股价波动范围
-    if pred:
-        st.subheader("📐 预测股价波动范围")
-        c1, c2, c3, c4 = st.columns(4)
-        with c1:
-            if pred["max_pain_oi"] is not None:
-                st.metric("Max Pain（持仓量）", f"${pred['max_pain_oi']:,.2f}", help="基于持仓量计算的最大痛点价格")
-            else:
-                st.metric("Max Pain（持仓量）", "—", help="暂无数据")
-        with c2:
-            if pred["max_pain_vol"] is not None:
-                st.metric("Max Pain（成交量）", f"${pred['max_pain_vol']:,.0f}", help="基于成交量计算的最大痛点价格")
-            else:
-                st.metric("Max Pain（成交量）", "—", help="暂无数据")
-        with c3:
-            r_oi = pred["range_oi"]
-            if r_oi[0] is not None and r_oi[1] is not None:
-                st.metric("基于持仓量预测区间", f"${r_oi[0]:,.0f} — ${r_oi[1]:,.0f}", help="覆盖约 80% 持仓量的行权价区间")
-            else:
-                st.metric("基于持仓量预测区间", "—", help="暂无数据")
-        with c4:
-            r_vol = pred["range_vol"]
-            if r_vol[0] is not None and r_vol[1] is not None:
-                st.metric("基于成交量预测区间", f"${r_vol[0]:,.0f} — ${r_vol[1]:,.0f}", help="覆盖约 80% 成交量的行权价区间")
-            else:
-                st.metric("基于成交量预测区间", "—", help="暂无数据")
+    # 通过筛选出的全部期权数据，按 update_time 分组计算并绘制 max pain 曲线
+    st.subheader("📐 Max Pain 曲线（预测股价波动范围）")
+    chart_max_pain_timeseries(df_mp)
 
 if __name__ == "__main__":
     main()
