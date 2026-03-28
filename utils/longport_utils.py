@@ -95,3 +95,13 @@ class LongportUtils:
                 if isinstance(d, date):
                     out.append(d)
         return sorted(set(out))
+
+    @staticmethod
+    def get_ticker_price(stock_code: str) -> float:
+        resp = ctx.quote([stock_code])
+        if not resp:
+            return 0.0
+        for item in resp:
+            if item.symbol == stock_code:
+                return float(item.last_done)
+        return 0.0

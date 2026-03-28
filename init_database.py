@@ -396,6 +396,49 @@ def create_option_quote_table():
         db_manager.close_connection(connection)
         return False
 
+def create_option_chain_snapshot_table():
+    """
+    根据 OptionChainSnashot 模型创建 option_chain_snapshot 数据表
+    """
+    connection = db_manager.get_connection()
+    if not connection:
+        return False
+
+    try:
+        cursor = connection.cursor()
+        create_table_sql = """
+        CREATE TABLE IF NOT EXISTS option_chain_snapshot(
+            id BIGINT AUTO_INCREMENT PRIMARY KEY,
+            underlying_ticker VARCHAR(32) NOT NULL COMMENT '标的代码',
+            ticker VARCHAR(64) NOT NULL COMMENT '期权代码',
+            expiration_date DATE NOT NULL COMMENT '到期日期',
+            strike_price DECIMAL(10, 2) NOT NULL COMMENT '行权价',
+            volume BIGINT COMMENT '成交量',
+            open_interest BIGINT COMMENT '持仓量',
+            implied_volatility DECIMAL(10, 6) COMMENT '隐含波动率',
+            contract_type VARCHAR(32) COMMENT '合约类型',
+            delta DECIMAL(12, 8) COMMENT 'Delta',
+            gamma DECIMAL(12, 8) COMMENT 'Gamma',
+            theta DECIMAL(12, 8) COMMENT 'Theta',
+            vega DECIMAL(12, 8) COMMENT 'Vega',
+            update_time DATETIME NOT NULL COMMENT '更新时间',
+            INDEX idx_underlying_ticker (underlying_ticker),
+            INDEX idx_expiration_date (expiration_date),
+            INDEX idx_update_time (update_time),
+            UNIQUE KEY uk_option_chain_snapshot (ticker, expiration_date, update_time)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='期权链快照表';
+        """
+        cursor.execute(create_table_sql)
+        connection.commit()
+        logger.info("[create_option_chain_snapshot_table] 数据表 option_chain_snapshot 创建成功（或已存在）")
+        cursor.close()
+        db_manager.close_connection(connection)
+        return True
+    except Error as e:
+        logger.error(f"[create_option_chain_snapshot_table] 创建数据表时出错: {e}", exc_info=True)
+        db_manager.close_connection(connection)
+        return False
+
 def create_max_pain_table():
     """
     根据MaxPain类创建max_pain数据表
@@ -411,18 +454,18 @@ def create_max_pain_table():
         create_table_sql = """
         CREATE TABLE IF NOT EXISTS max_pain (
             id BIGINT AUTO_INCREMENT PRIMARY KEY,
-            underlying_symbol VARCHAR(32) NOT NULL COMMENT '标的股票代码',
+            underlying_ticker VARCHAR(32) NOT NULL COMMENT '标的股票代码',
             expiry_date DATE NOT NULL COMMENT '到期日期',
             update_time DATETIME NOT NULL COMMENT '更新时间',
             max_pain_oi DECIMAL(15, 2) COMMENT '最大痛点持仓量',
-            max_pain_vol INT COMMENT '最大痛点成交量',
-            stock_price DECIMAL(10, 2) COMMENT '股票价格',
-            sum_vol INT COMMENT '总成交量',
-            sum_oi INT COMMENT '总持仓量',
-            INDEX idx_underlying_symbol (underlying_symbol),
+            max_pain_vol DECIMAL(15, 2) COMMENT '最大痛点成交量',
+            ticker_price DECIMAL(10, 2) COMMENT '标的价格',
+            sum_vol DECIMAL(18, 2) COMMENT '总成交量',
+            sum_oi DECIMAL(18, 2) COMMENT '总持仓量',
+            INDEX idx_underlying_ticker (underlying_ticker),
             INDEX idx_expiry_date (expiry_date),
             INDEX idx_update_time (update_time),
-            UNIQUE KEY uk_max_pain (underlying_symbol, expiry_date, update_time, stock_price, sum_vol, sum_oi)
+            UNIQUE KEY uk_max_pain (underlying_ticker, expiry_date, update_time, ticker_price, sum_vol, sum_oi)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='最大痛点表';
         """
         
@@ -602,15 +645,20 @@ if __name__ == "__main__":
     
     # 创建数据库
     if create_database():
-        if create_option_quote_table():
-            logger.info("[__main__] 数据表 option_quote 创建成功（或已存在）")
-        else:
-            logger.error("[__main__] 数据表 option_quote 创建失败！")
-
-        # if create_max_pain_table():
-        #     logger.info("[__main__] 数据表 max_pain 创建成功（或已存在）")
+        # if create_option_quote_table():
+        #     logger.info("[__main__] 数据表 option_quote 创建成功（或已存在）")
         # else:
-        #     logger.error("[__main__] 数据表 max_pain 创建失败！")
+        #     logger.error("[__main__] 数据表 option_quote 创建失败！")
+
+        # if create_option_chain_snapshot_table():
+        #     logger.info("[__main__] 数据表 option_chain_snapshot 创建成功（或已存在）")
+        # else:
+        #     logger.error("[__main__] 数据表 option_chain_snapshot 创建失败！")
+
+        if create_max_pain_table():
+            logger.info("[__main__] 数据表 max_pain 创建成功（或已存在）")
+        else:
+            logger.error("[__main__] 数据表 max_pain 创建失败！")
 
         # if create_stock_data_table():
         #     logger.info("[__main__] 数据表 stock_data 创建成功（或已存在）")
