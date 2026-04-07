@@ -622,6 +622,44 @@ def create_stock_data_min_table():
         db_manager.close_connection(connection)
         return False
 
+
+def create_stock_data_realtime_table():
+    """
+    根据 StockDataRealTime 类创建 stock_data_realtime 数据表
+    """
+    connection = db_manager.get_connection()
+    if not connection:
+        return False
+    try:
+        cursor = connection.cursor()
+        create_table_sql = """
+        CREATE TABLE IF NOT EXISTS stock_data_realtime (
+            id BIGINT AUTO_INCREMENT PRIMARY KEY,
+            symbol VARCHAR(32) NOT NULL COMMENT '股票代码',
+            last_done DECIMAL(15, 4) COMMENT '最新成交价',
+            prev_close DECIMAL(15, 4) COMMENT '前收盘价',
+            open DECIMAL(15, 4) COMMENT '开盘价',
+            high DECIMAL(15, 4) COMMENT '最高价',
+            low DECIMAL(15, 4) COMMENT '最低价',
+            timestamp VARCHAR(50) NOT NULL COMMENT '时间戳',
+            volume DECIMAL(20, 4) COMMENT '成交量',
+            turnover DECIMAL(20, 4) COMMENT '成交额',
+            INDEX idx_symbol (symbol),
+            INDEX idx_timestamp (timestamp),
+            UNIQUE KEY uk_stock_data_realtime (symbol, timestamp)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='股票实时行情表';
+        """
+        cursor.execute(create_table_sql)
+        connection.commit()
+        logger.info("[create_stock_data_realtime_table] 数据表 stock_data_realtime 创建成功（或已存在）")
+        cursor.close()
+        db_manager.close_connection(connection)
+        return True
+    except Error as e:
+        logger.error(f"[create_stock_data_realtime_table] 创建数据表时出错: {e}", exc_info=True)
+        db_manager.close_connection(connection)
+        return False
+
 def test_connection():
     """
     测试数据库连接
@@ -655,10 +693,10 @@ if __name__ == "__main__":
         # else:
         #     logger.error("[__main__] 数据表 option_chain_snapshot 创建失败！")
 
-        if create_max_pain_table():
-            logger.info("[__main__] 数据表 max_pain 创建成功（或已存在）")
-        else:
-            logger.error("[__main__] 数据表 max_pain 创建失败！")
+        # if create_max_pain_table():
+        #     logger.info("[__main__] 数据表 max_pain 创建成功（或已存在）")
+        # else:
+        #     logger.error("[__main__] 数据表 max_pain 创建失败！")
 
         # if create_stock_data_table():
         #     logger.info("[__main__] 数据表 stock_data 创建成功（或已存在）")
@@ -675,10 +713,15 @@ if __name__ == "__main__":
         # else:
         #     logger.error("[__main__] 数据表 stock_valuation 创建失败！")
 
-        # if create_stock_data_min_table():
-        #     logger.info("[__main__] 数据表 stock_data_min 创建成功（或已存在）")
+        if create_stock_data_min_table():
+            logger.info("[__main__] 数据表 stock_data_min 创建成功（或已存在）")
+        else:
+            logger.error("[__main__] 数据表 stock_data_min 创建失败！")
+
+        # if create_stock_data_realtime_table():
+        #     logger.info("[__main__] 数据表 stock_data_realtime 创建成功（或已存在）")
         # else:
-        #     logger.error("[__main__] 数据表 stock_data_min 创建失败！")
+        #     logger.error("[__main__] 数据表 stock_data_realtime 创建失败！")
     else:
         logger.error("[__main__] 数据库创建失败！")
 

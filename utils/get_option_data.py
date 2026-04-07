@@ -70,6 +70,8 @@ if __name__ == "__main__":
 
     for item in stock_option_info:
         underlying_symbol = item.get("stock_code")
+        if underlying_symbol == "SPY.US":
+            continue
         expiry_dates = item.get("expiry_dates")
         strike_price_range = item.get("strike_price_range")
         update_time = get_eastern_now().strftime('%Y-%m-%d %H:%M:%S')

@@ -105,3 +105,14 @@ class LongportUtils:
             if item.symbol == stock_code:
                 return float(item.last_done)
         return 0.0
+
+
+    @staticmethod
+    def get_stock_data_realtime(stock_code: str) -> dict:
+        resp = ctx.quote([stock_code])
+        if not resp:
+            return {}
+        for item in resp:
+            if item.symbol == stock_code:
+                return item.to_dict()
+        return {}

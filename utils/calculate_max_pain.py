@@ -10,6 +10,7 @@ from data_models.max_pain import MaxPain
 # 添加 utils 目录到路径以便导入同目录下的模块
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from utils.logger import setup_logger
+from utils.longport_utils import LongportUtils
 
 # 创建模块级别的日志记录器
 logger = setup_logger('CalculateMaxPain')
@@ -17,19 +18,23 @@ logger = setup_logger('CalculateMaxPain')
 def calculate_max_pain(option_quotes: List[OptionQuote]) -> MaxPain:
     """
     计算最大痛点（Max Pain）
-    
-    Max Pain 是指期权到期时，使得所有期权持有者总损失最大的股票价格。
-    计算方法：
-    1. 对于每个可能的行权价，计算如果股票在该价格到期时的总损失
-    2. 看涨期权（CALL）：如果到期价格 > 行权价，损失 = (到期价格 - 行权价) * 持仓量/成交量
-    3. 看跌期权（PUT）：如果到期价格 < 行权价，损失 = (行权价 - 到期价格) * 持仓量/成交量
-    4. 找到总损失最大的行权价
-    
+
+    常见定义：在到期时，使「所有未平仓合约若按内在价值行权，卖方需支付的总金额」最小的标的价。
+    等价于：最小化 sum(内在价值 × 权重)，权重此处为 open_interest 或 volume。
+
+    对候选价：仅遍历链上出现的行权价（分段线性，极小值必出现在行权价节点）。
+
+    对每条合约：
+    - CALL：若结算价 S > K，内在价值 = S - K
+    - PUT：若 S < K，内在价值 = K - S
+
+    变量名中的 profit 实为「期权买方总内在价值」（卖方支出）；取使该值最小的 S 作为 max pain。
+
     Args:
         option_quotes: 期权报价列表
-        
+
     Returns:
-        MaxPain对象，包含基于持仓量和成交量的最大痛点价格
+        MaxPain：max_pain_oi / max_pain_vol 分别为按持仓量、按成交量加权得到的最小总内在价值对应的行权价
     """
     if not option_quotes:
         raise ValueError("期权报价列表不能为空")
@@ -50,32 +55,35 @@ def calculate_max_pain(option_quotes: List[OptionQuote]) -> MaxPain:
     # 按照 key（行权价）从小到大排序
     strikes_dict = dict(sorted(strikes_dict.items(), key=lambda x: x[0]))
  
-    # 计算每个行权价作为到期价格时的总损失
+    # 对每个候选结算价 S，计算买方总内在价值（OI / Volume 加权）；取最小者对应的行权价
     max_pain_oi_price = None
     max_pain_vol_price = None
-    max_pain_oi_profit = sys.float_info.max
-    max_pain_vol_profit = sys.float_info.max
+    max_pain_oi_total = sys.float_info.max
+    max_pain_vol_total = sys.float_info.max
 
     for potential_settlement in strikes_dict.keys():
-        total_profit_oi = 0.0  # 基于持仓量的总收益
-        total_profit_vol = 0.0  # 基于成交量的总收益
+        total_intrinsic_oi = 0.0
+        total_intrinsic_vol = 0.0
 
         for strike_price in strikes_dict.keys():
             for quote in strikes_dict[strike_price]:
-                if quote.direction.upper() == 'CALL':
+                d = (quote.direction or "").upper()
+                if d == "CALL":
                     if strike_price < potential_settlement:
-                        total_profit_oi += quote.open_interest * (potential_settlement - strike_price)
-                        total_profit_vol += quote.volume * (potential_settlement - strike_price)
-                elif quote.direction.upper() == 'PUT':
+                        iv = potential_settlement - strike_price
+                        total_intrinsic_oi += quote.open_interest * iv
+                        total_intrinsic_vol += quote.volume * iv
+                elif d == "PUT":
                     if strike_price > potential_settlement:
-                        total_profit_oi += quote.open_interest * (strike_price - potential_settlement)
-                        total_profit_vol += quote.volume * (strike_price - potential_settlement)
+                        iv = strike_price - potential_settlement
+                        total_intrinsic_oi += quote.open_interest * iv
+                        total_intrinsic_vol += quote.volume * iv
 
-        if total_profit_oi < max_pain_oi_profit:
-            max_pain_oi_profit = total_profit_oi
+        if total_intrinsic_oi < max_pain_oi_total:
+            max_pain_oi_total = total_intrinsic_oi
             max_pain_oi_price = potential_settlement
-        if total_profit_vol < max_pain_vol_profit:
-            max_pain_vol_profit = total_profit_vol
+        if total_intrinsic_vol < max_pain_vol_total:
+            max_pain_vol_total = total_intrinsic_vol
             max_pain_vol_price = potential_settlement
     
     sum_vol = 0
@@ -86,19 +94,19 @@ def calculate_max_pain(option_quotes: List[OptionQuote]) -> MaxPain:
     # 创建 MaxPain 对象
     return MaxPain(
         underlying_symbol=underlying_symbol,
-        expiry_date=expiry_date,
+        expiry_date=str(expiry_date) if expiry_date is not None else "",
         update_time=update_time,
-        max_pain_oi=max_pain_oi_price if max_pain_oi_price is not None else 0.0,
-        max_pain_vol=int(max_pain_vol_price) if max_pain_vol_price is not None else 0,
+        max_pain_oi=float(max_pain_oi_price) if max_pain_oi_price is not None else 0.0,
+        max_pain_vol=float(max_pain_vol_price) if max_pain_vol_price is not None else 0.0,
         sum_vol=sum_vol,
-        sum_oi=sum_oi
+        sum_oi=sum_oi,
     )
 if __name__ == "__main__":
     underlying_symbol = "NVDA.US"
     expiry_date = date(2026, 1, 23)
     update_time = "2026-01-19 21:24:52"
 
-    stock_price = get_stock_realtime_price(underlying_symbol)
+    stock_price = LongportUtils.get_ticker_price(underlying_symbol)
 
     # 查询指定标的、到期日期和更新时间的所有期权报价
     expiry_date_str = expiry_date.strftime('%Y-%m-%d')

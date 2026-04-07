@@ -188,7 +188,7 @@ def run_snapshot_task_every_15min_until_close(
 
 if __name__ == "__main__":
     underlying_ticker = "SPY"
-    expiration_date = "2026-03-27"
+    expiration_date = "2026-04-06"
     strike_price_range = [500, 750]
     limit = 250
     sort = "ticker"

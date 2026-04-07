@@ -167,10 +167,10 @@ if __name__ == "__main__":
     logger.info("[__main__] " + "=" * 50)
     
     # 获取所有股票数据到数据库
-    logger.info("[__main__] 获取所有股票数据到数据库")
-    eastern_today = get_eastern_now().date()
-    result = get_all_stocks_data_to_db(eastern_today, eastern_today)
-    logger.info(f"[__main__] 结果: {result}")
+    # logger.info("[__main__] 获取所有股票数据到数据库")
+    # eastern_today = get_eastern_now().date()
+    # result = get_all_stocks_data_to_db(eastern_today, eastern_today)
+    # logger.info(f"[__main__] 结果: {result}")
 
     # pair_years = [(2000, 2002), (2003, 2005), (2006, 2007), (2008, 2010), (2011, 2013), (2014, 2016), (2017, 2019), (2020, 2022), (2023, 2025)]
     # for start_year, end_year in pair_years:
@@ -179,9 +179,12 @@ if __name__ == "__main__":
     #     import time
     #     time.sleep(10)
 
-    # stock_code = "NVDA.US"
-    # result = get_single_stock_data_to_db_by_minutes(stock_code, date(2026, 3, 25), date(2026, 3, 25))
-    # if result:
-    #     logger.info(f"[__main__] ✅ {stock_code} 获取成功")
-    # else:
-    #     logger.warning(f"[__main__] ❌ {stock_code} 获取失败")
+
+     # 获取数据库中所有股票代码
+    stock_codes = StockData.get_stock_codes()
+    for stock_code in stock_codes:
+        result = get_single_stock_data_to_db(stock_code, date(2026, 3, 28), date(2026, 4, 5))
+        if result:
+            logger.info(f"[__main__] ✅ {stock_code} 获取成功")
+        else:
+            logger.warning(f"[__main__] ❌ {stock_code} 获取失败")

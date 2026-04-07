@@ -180,3 +180,21 @@ class MaxPain:
     def get_by_underlying_symbol(cls, underlying_symbol: str, limit: Optional[int] = None, order_by: Optional[str] = None) -> List['MaxPain']:
         """兼容旧接口名。"""
         return cls.get_by_underlying_ticker(underlying_symbol, limit=limit, order_by=order_by)
+
+    @classmethod
+    def fetch_all(cls) -> List['MaxPain']:
+        """读取 max_pain 表全部记录。"""
+        connection = db_manager.get_connection()
+        if not connection:
+            return []
+        try:
+            cursor = connection.cursor(dictionary=True)
+            cursor.execute("SELECT * FROM max_pain")
+            rows = cursor.fetchall()
+            cursor.close()
+            db_manager.close_connection(connection)
+            return [cls.from_dict(row) for row in rows]
+        except Error as e:
+            logger.error(f"[MaxPain::fetch_all] 读取全部数据失败: {e}", exc_info=True)
+            db_manager.close_connection(connection)
+            return []

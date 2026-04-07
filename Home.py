@@ -10,7 +10,6 @@ import os
 import sys
 import numpy as np
 import asyncio
-from google import genai
 
 # Add the parent directory to the path to import models
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
