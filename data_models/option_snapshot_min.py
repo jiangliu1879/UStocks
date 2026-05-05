@@ -6,11 +6,11 @@ from init_database import db_manager
 from mysql.connector import Error
 from utils.logger import setup_logger
 
-logger = setup_logger('OptionChainSnapshot')
+logger = setup_logger('OptionSnapshotMin')
 
-class OptionChainSnapshot:
+class OptionSnapshotMin:
     """
-    期权链快照数据模型（OptionChainSnapshot）。
+    期权快照分钟数据模型（OptionSnapshotMin）
     """
 
     def __init__(
@@ -44,8 +44,8 @@ class OptionChainSnapshot:
         self.update_time = update_time
 
     @staticmethod
-    def from_dict(data: Dict) -> "OptionChainSnapshot":
-        return OptionChainSnapshot(
+    def from_dict(data: Dict) -> "OptionSnapshotMin":
+        return OptionSnapshotMin(
             underlying_ticker=str(data.get("underlying_ticker", "")),
             ticker=str(data.get("ticker", "")),
             expiration_date=str(data.get("expiration_date", "")),
@@ -71,7 +71,7 @@ class OptionChainSnapshot:
         try:
             cursor = connection.cursor()
             sql = """
-            INSERT INTO option_chain_snapshot (underlying_ticker, ticker, expiration_date, strike_price, volume, open_interest, implied_volatility, contract_type, delta, gamma, theta, vega, update_time)
+            INSERT INTO option_snapshot_min (underlying_ticker, ticker, expiration_date, strike_price, volume, open_interest, implied_volatility, contract_type, delta, gamma, theta, vega, update_time)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             ON DUPLICATE KEY UPDATE
                 underlying_ticker = VALUES(underlying_ticker),
@@ -108,7 +108,7 @@ class OptionChainSnapshot:
             cursor.close()
             db_manager.close_connection(connection)
         except Error as e:
-            logger.error(f"[OptionChainSnapshot::save] 保存期权链快照数据时出错: {e}", exc_info=True)
+            logger.error(f"[OptionSnapshotMin::save] 保存期权快照分钟数据时出错: {e}", exc_info=True)
             db_manager.close_connection(connection)
             return False
         return True

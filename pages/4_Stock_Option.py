@@ -13,9 +13,9 @@ import plotly.graph_objects as go
 import streamlit as st
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from data_models.option_quote import OptionQuote
+from data_models.option_snapshot_day import OptionSnapshotDay
 from utils.calculate_max_pain import calculate_max_pain
-
+from utils.longport_utils import LongportUtils
 st.set_page_config(page_title="期权分布", page_icon="📊", layout="wide")
 
 CACHE_TTL_SECONDS = 300
@@ -34,9 +34,9 @@ def load_stock_option_config():
 def get_latest_records_for_stock_and_expiries(stock_code: str, expiry_dates: tuple[str, ...]):
     """
     从数据库读取指定 stock_code + expiry_dates 的数据，并仅保留 latest update_time 的那一批。
-    Returns: (latest_update_time, list[OptionQuote])
+    Returns: (latest_update_time, list[OptionSnapshotDay])
     """
-    records = OptionQuote.query(
+    records = OptionSnapshotDay.query(
         conditions={"underlying_symbol": stock_code},
         limit=100000,
         order_by="update_time DESC",
@@ -60,7 +60,7 @@ def get_all_records_for_stock_and_expiries(stock_code: str, expiry_dates: tuple[
     """
     从数据库读取指定 stock_code + expiry_dates 的全部期权数据（不限 update_time）。
     """
-    records = OptionQuote.query(
+    records = OptionSnapshotDay.query(
         conditions={"underlying_symbol": stock_code},
         limit=100000,
         order_by="update_time DESC",
@@ -72,7 +72,7 @@ def get_all_records_for_stock_and_expiries(stock_code: str, expiry_dates: tuple[
 
 
 def build_option_df(records):
-    """将 OptionQuote 列表转为 DataFrame，含 strike_price, direction, volume, open_interest, expiry_date, underlying_symbol。"""
+    """将 OptionSnapshotDay 列表转为 DataFrame，含 strike_price, direction, volume, open_interest, expiry_date, underlying_symbol。"""
     if not records:
         return pd.DataFrame()
     rows = []
@@ -177,21 +177,21 @@ def chart_oi_by_strike(df_filtered: pd.DataFrame, title: str, update_time: str):
     st.caption(f"数据更新时间: {update_time}")
 
 
-def build_max_pain_timeseries(filtered_quotes: list) -> pd.DataFrame:
+def build_max_pain_timeseries(filtered_snapshots: list) -> pd.DataFrame:
     """
     将筛选出的全部期权数据按 update_time 分组，计算每组 max_pain_oi/max_pain_vol。
     """
-    if not filtered_quotes:
+    if not filtered_snapshots:
         return pd.DataFrame()
     grouped = {}
-    for q in filtered_quotes:
-        k = str(q.update_time)
+    for s in filtered_snapshots:
+        k = str(s.update_time)
         grouped.setdefault(k, []).append(q)
 
     rows = []
-    for update_time, quotes in grouped.items():
+    for update_time, snapshots in grouped.items():
         try:
-            mp = calculate_max_pain(quotes)
+            mp = calculate_max_pain(snapshots)
             rows.append(
                 {
                     "update_time": pd.to_datetime(update_time),

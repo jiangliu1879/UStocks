@@ -10,12 +10,12 @@ from mysql.connector import Error
 from utils.logger import setup_logger
 
 # 创建模块级别的日志记录器
-logger = setup_logger('OptionQuote')
+logger = setup_logger('OptionSnapshotDay')
 
 
-class OptionQuote:
+class OptionSnapshotDay:
     """
-    Represents option quote data for a specific stock.
+    Represents option snapshot day data for a specific stock.
     """
     def __init__(self, underlying_symbol: str, expiry_date: str, update_time: str, strike_price: float, option_symbol: str, direction: str, last_done: float, prev_close: float, high: float, low: float, volume: int, turnover: float, open_interest: int, implied_volatility: float, historical_volatility: float, contract_multiplier: int, contract_type: str, contract_size: int, id: Optional[int] = None):
         self.id = id
@@ -54,7 +54,7 @@ class OptionQuote:
             
             # 使用 INSERT ... ON DUPLICATE KEY UPDATE 处理唯一约束
             insert_sql = """
-            INSERT INTO option_quote (
+            INSERT INTO option_snapshot_day (
                 underlying_symbol, expiry_date, update_time, strike_price, option_symbol,
                 direction, last_done, prev_close, high, low, volume, turnover,
                 open_interest, implied_volatility, historical_volatility, contract_multiplier,
@@ -116,23 +116,23 @@ class OptionQuote:
             return True
             
         except Error as e:
-            logger.error(f"[OptionQuote::save] 保存期权报价数据时出错: {e}", exc_info=True)
+            logger.error(f"[OptionSnapshotDay::save] 保存期权快照日数据时出错: {e}", exc_info=True)
             db_manager.close_connection(connection)
             return False
 
     @classmethod
-    def batch_save(cls, quotes: List['OptionQuote'], batch_size: int = 1000) -> int:
+    def batch_save(cls, snapshots: List['OptionSnapshotDay'], batch_size: int = 1000) -> int:
         """
         批量保存多条数据到数据库
         
         Args:
-            quotes: OptionQuote对象列表
+            snapshots: OptionSnapshotDay对象列表
             batch_size: 每批处理的记录数量，默认1000条
             
         Returns:
             int: 成功保存的记录数量
         """
-        if not quotes:
+        if not snapshots:
             return 0
         
         connection = db_manager.get_connection()
@@ -144,7 +144,7 @@ class OptionQuote:
             
             # 使用 INSERT ... ON DUPLICATE KEY UPDATE 处理唯一约束
             insert_sql = """
-            INSERT INTO option_quote (
+            INSERT INTO option_snapshot_day (
                 underlying_symbol, expiry_date, update_time, strike_price, option_symbol,
                 direction, last_done, prev_close, high, low, volume, turnover,
                 open_interest, implied_volatility, historical_volatility, contract_multiplier,
@@ -175,27 +175,27 @@ class OptionQuote:
             
             # 准备批量数据，确保所有值都是 MySQL 可以接受的类型
             values_list = []
-            for quote in quotes:
+            for snapshot in snapshots:
                 # 确保所有值都转换为基本类型，处理 None 值
                 values = (
-                    str(quote.underlying_symbol) if quote.underlying_symbol is not None else None,
-                    str(quote.expiry_date) if quote.expiry_date is not None else None,
-                    str(quote.update_time) if quote.update_time is not None else None,
-                    float(quote.strike_price) if quote.strike_price is not None else None,
-                    str(quote.option_symbol) if quote.option_symbol is not None else None,
-                    str(quote.direction) if quote.direction is not None else None,
-                    float(quote.last_done) if quote.last_done is not None else None,
-                    float(quote.prev_close) if quote.prev_close is not None else None,
-                    float(quote.high) if quote.high is not None else None,
-                    float(quote.low) if quote.low is not None else None,
-                    int(quote.volume) if quote.volume is not None else None,
-                    float(quote.turnover) if quote.turnover is not None else None,
-                    int(quote.open_interest) if quote.open_interest is not None else None,
-                    float(quote.implied_volatility) if quote.implied_volatility is not None else None,
-                    float(quote.historical_volatility) if quote.historical_volatility is not None else None,
-                    int(quote.contract_multiplier) if quote.contract_multiplier is not None else None,
-                    str(quote.contract_type) if quote.contract_type is not None else None,
-                    int(quote.contract_size) if quote.contract_size is not None else None
+                    str(snapshot.underlying_symbol) if snapshot.underlying_symbol is not None else None,
+                    str(snapshot.expiry_date) if snapshot.expiry_date is not None else None,
+                    str(snapshot.update_time) if snapshot.update_time is not None else None,
+                    float(snapshot.strike_price) if snapshot.strike_price is not None else None,
+                    str(snapshot.option_symbol) if snapshot.option_symbol is not None else None,
+                    str(snapshot.direction) if snapshot.direction is not None else None,
+                    float(snapshot.last_done) if snapshot.last_done is not None else None,
+                    float(snapshot.prev_close) if snapshot.prev_close is not None else None,
+                    float(snapshot.high) if snapshot.high is not None else None,
+                    float(snapshot.low) if snapshot.low is not None else None,
+                    int(snapshot.volume) if snapshot.volume is not None else None,
+                    float(snapshot.turnover) if snapshot.turnover is not None else None,
+                    int(snapshot.open_interest) if snapshot.open_interest is not None else None,
+                    float(snapshot.implied_volatility) if snapshot.implied_volatility is not None else None,
+                    float(snapshot.historical_volatility) if snapshot.historical_volatility is not None else None,
+                    int(snapshot.contract_multiplier) if snapshot.contract_multiplier is not None else None,
+                    str(snapshot.contract_type) if snapshot.contract_type is not None else None,
+                    int(snapshot.contract_size) if snapshot.contract_size is not None else None
                 )
                 values_list.append(values)
             
@@ -210,27 +210,27 @@ class OptionQuote:
             cursor.close()
             db_manager.close_connection(connection)
             
-            logger.info(f"[OptionQuote::batch_save] 批量保存期权报价完成，共保存 {saved_count} 条记录")
+            logger.info(f"[OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 {saved_count} 条记录")
             return saved_count
             
         except Error as e:
-            logger.error(f"[OptionQuote::batch_save] 批量保存期权报价数据时出错: {e}", exc_info=True)
+            logger.error(f"[OptionSnapshotDay::batch_save] 批量保存期权快照日数据时出错: {e}", exc_info=True)
             connection.rollback()
             db_manager.close_connection(connection)
             return 0
 
     @staticmethod
-    def from_dict(data: Dict) -> 'OptionQuote':
+    def from_dict(data: Dict) -> 'OptionSnapshotDay':
         """
-        从字典创建OptionQuote对象
+        从字典创建OptionSnapshotDay对象
         
         Args:
             data: 包含字段数据的字典
             
         Returns:
-            OptionQuote对象
+            OptionSnapshotDay对象
         """
-        return OptionQuote(
+        return OptionSnapshotDay(
             id=data.get('id'),
             underlying_symbol=data['underlying_symbol'],
             expiry_date=str(data['expiry_date']),
@@ -253,7 +253,7 @@ class OptionQuote:
         )
 
     @classmethod
-    def query(cls, conditions: Dict, limit: Optional[int] = None, order_by: Optional[str] = None) -> List['OptionQuote']:
+    def query(cls, conditions: Dict, limit: Optional[int] = None, order_by: Optional[str] = None) -> List['OptionSnapshotDay']:
         """
         根据条件查询多条记录
         
@@ -299,7 +299,7 @@ class OptionQuote:
             return [cls.from_dict(row) for row in rows]
             
         except Error as e:
-            logger.error(f"[OptionQuote::query] 查询期权报价数据时出错: {e}", exc_info=True)
+            logger.error(f"[OptionSnapshotDay::query] 查询期权快照日数据时出错: {e}", exc_info=True)
             db_manager.close_connection(connection)
             return []
 
@@ -308,14 +308,14 @@ class OptionQuote:
         """
         读取 update_time 最新日期的全部期权数据。
         Returns:
-            (latest_date_str, list of OptionQuote)，latest_date_str 为 'YYYY-MM-DD'
+            (latest_date_str, list of OptionSnapshotDay)，latest_date_str 为 'YYYY-MM-DD'
         """
         connection = db_manager.get_connection()
         if not connection:
             return None, []
         try:
             cursor = connection.cursor(dictionary=True)
-            cursor.execute("SELECT MAX(DATE(update_time)) AS d FROM option_quote")
+            cursor.execute("SELECT MAX(DATE(update_time)) AS d FROM option_snapshot_day")
             row = cursor.fetchone()
             if not row or not row.get("d"):
                 cursor.close()
@@ -327,7 +327,7 @@ class OptionQuote:
             else:
                 latest_date_str = str(latest_date)[:10]
             cursor.execute(
-                "SELECT * FROM option_quote WHERE DATE(update_time) = %s ORDER BY underlying_symbol, expiry_date, strike_price LIMIT %s",
+                "SELECT * FROM option_snapshot_day WHERE DATE(update_time) = %s ORDER BY underlying_symbol, expiry_date, strike_price LIMIT %s",
                 (latest_date_str, limit),
             )
             rows = cursor.fetchall()
@@ -335,7 +335,7 @@ class OptionQuote:
             db_manager.close_connection(connection)
             return latest_date_str, [cls.from_dict(r) for r in rows]
         except Error as e:
-            logger.error(f"[OptionQuote::query_by_latest_update_date] 查询出错: {e}", exc_info=True)
+            logger.error(f"[OptionSnapshotDay::query_by_latest_update_date] 查询出错: {e}", exc_info=True)
             db_manager.close_connection(connection)
             return None, []
 

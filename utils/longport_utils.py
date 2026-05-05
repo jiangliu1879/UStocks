@@ -7,6 +7,9 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.logger import setup_logger
 from datetime import time
 from utils.time_utils import get_eastern_now
+from data_models.stock_data_min import StockDataMin
+from utils.time_utils import to_eastern_time
+from data_models.option_snapshot_day import OptionSnapshotDay
 logger = setup_logger('LongportUtils')
 
 config = Config.from_env()
@@ -41,10 +44,37 @@ class LongportUtils:
         return end_time
 
     @staticmethod
-    def get_history_candlesticks_by_date(stock_code: str, period: Period, adjust_type: AdjustType, start_date: date, end_date: date):
+    def get_stock_data_by_min(stock_code: str, interval: int, adjusted: bool, start_date: date, end_date: date) -> list[StockDataMin]:
+        period = Period.Min_1
+        if interval == 5:
+            period = Period.Min_5
+        elif interval == 10:
+            period = Period.Min_10
+        elif interval == 30:
+            period = Period.Min_30
+        elif interval == 60:
+            period = Period.Min_60
+
         # 获取历史K线数据
-        resp = ctx.history_candlesticks_by_date(stock_code, period, adjust_type, start_date, end_date)
-        return resp
+        resp = ctx.history_candlesticks_by_date(stock_code, period, AdjustType.ForwardAdjust if adjusted else AdjustType.NoAdjust, start_date, end_date)
+        data_list = []
+        for candle in resp:
+            candle_eastern = to_eastern_time(candle.timestamp)
+            # 直接构建批量数据，依赖表唯一键 + ON DUPLICATE KEY UPDATE 去重/更新
+            data_list.append(StockDataMin(
+                stock_code=stock_code,
+                timestamp=candle_eastern.strftime('%Y-%m-%d %H:%M:%S'),
+                open=candle.open,
+                high=candle.high,
+                low=candle.low,
+                close=candle.close,
+                volume=candle.volume,
+                turnover=candle.turnover,
+                vw=0,
+                interval=interval
+            ))
+
+        return data_list
 
 
     @staticmethod
@@ -94,7 +124,7 @@ class LongportUtils:
                 d = getattr(item, "date", None) or getattr(item, "expiry_date", None)
                 if isinstance(d, date):
                     out.append(d)
-        return sorted(set(out))
+        return sorted(set(out)) 
 
     @staticmethod
     def get_ticker_price(stock_code: str) -> float:
@@ -116,3 +146,52 @@ class LongportUtils:
             if item.symbol == stock_code:
                 return item.to_dict()
         return {}
+
+    @staticmethod
+    def get_option_chain_info_by_data(underlying_symbol: str, expiry_date: date,  strike_price_range: tuple[float, float]):
+        try:
+            resp = ctx.option_chain_info_by_date(underlying_symbol, expiry_date)
+            list_option_symbol = []
+            for item in resp:
+                if float(item.price) >= strike_price_range[0] and float(item.price) <= strike_price_range[1]:
+                    list_option_symbol.append(item.call_symbol)
+                    list_option_symbol.append(item.put_symbol)
+        except Exception as e:
+            logger.error(f"获取期权链信息失败: {e}", exc_info=True)
+            return []
+        return list_option_symbol
+
+    @staticmethod
+    def get_option_snapshots_by_day(list_option_symbol: list[str], expiry_date: date, update_time: str):
+        try:
+            resp = ctx.option_quote(list_option_symbol)
+
+            list_option_snapshots = []
+            expiry_date_str = expiry_date.strftime('%Y-%m-%d')
+            for item in resp:
+                list_option_snapshots.append(
+                    OptionSnapshotDay(
+                        underlying_symbol=item.underlying_symbol,
+                        expiry_date=expiry_date_str,
+                        update_time=update_time,
+                        strike_price=float(item.strike_price),
+                        option_symbol=item.symbol,
+                        direction=str(item.direction).split(".")[1],
+                        last_done=float(item.last_done),
+                        prev_close=float(item.prev_close),
+                        high=float(item.high),
+                        low=float(item.low),
+                        volume=int(item.volume),
+                        turnover=float(item.turnover),
+                        open_interest=int(item.open_interest),
+                        implied_volatility=float(item.implied_volatility),
+                        historical_volatility=float(item.historical_volatility),
+                        contract_multiplier=int(item.contract_multiplier),
+                        contract_type=str(item.contract_type).split(".")[1],
+                        contract_size=int(item.contract_size),
+                )
+            )
+        except Exception as e:
+            logger.error(f"获取期权行情失败: {e}", exc_info=True)
+            return []
+        return list_option_snapshots            

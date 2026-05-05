@@ -5,7 +5,7 @@ import os
 
 # 添加项目根目录到 Python 路径
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from data_models.option_quote import OptionQuote
+from data_models.option_snapshot_day import OptionSnapshotDay
 from data_models.max_pain import MaxPain
 # 添加 utils 目录到路径以便导入同目录下的模块
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -15,7 +15,7 @@ from utils.longport_utils import LongportUtils
 # 创建模块级别的日志记录器
 logger = setup_logger('CalculateMaxPain')
 
-def calculate_max_pain(option_quotes: List[OptionQuote]) -> MaxPain:
+def calculate_max_pain(option_snapshots: List[OptionSnapshotDay]) -> MaxPain:
     """
     计算最大痛点（Max Pain）
 
@@ -31,23 +31,23 @@ def calculate_max_pain(option_quotes: List[OptionQuote]) -> MaxPain:
     变量名中的 profit 实为「期权买方总内在价值」（卖方支出）；取使该值最小的 S 作为 max pain。
 
     Args:
-        option_quotes: 期权报价列表
+        option_snapshots: 期权报价列表
 
     Returns:
         MaxPain：max_pain_oi / max_pain_vol 分别为按持仓量、按成交量加权得到的最小总内在价值对应的行权价
     """
-    if not option_quotes:
+    if not option_snapshots:
         raise ValueError("期权报价列表不能为空")
     
     # 从第一个报价中获取公共信息
-    first_quote = option_quotes[0]
+    first_quote = option_snapshots[0]
     underlying_symbol = first_quote.underlying_symbol
     expiry_date = first_quote.expiry_date
     update_time = first_quote.update_time
     
     # 按行权价和方向分组期权
     strikes_dict = {}
-    for quote in option_quotes:
+    for quote in option_snapshots:
         if quote.strike_price not in strikes_dict.keys():
             strikes_dict[quote.strike_price] = []
         strikes_dict[quote.strike_price].append(quote)

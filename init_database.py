@@ -345,9 +345,9 @@ def create_database():
             pass
         return False
 
-def create_option_quote_table():
+def create_option_snapshot_day_table():
     """
-    根据OptionQuote类创建option_quote数据表
+    根据OptionSnapshotDay类创建option_snapshot_day数据表
     """
     connection = db_manager.get_connection()
     if not connection:
@@ -358,7 +358,7 @@ def create_option_quote_table():
         
         # 根据OptionQuote类的字段定义创建表结构
         create_table_sql = """
-        CREATE TABLE IF NOT EXISTS option_quote(
+        CREATE TABLE IF NOT EXISTS option_snapshot_day(
             id BIGINT AUTO_INCREMENT PRIMARY KEY,
             underlying_symbol VARCHAR(32) NOT NULL COMMENT '标的股票代码',
             expiry_date DATE NOT NULL COMMENT '到期日期',
@@ -387,18 +387,18 @@ def create_option_quote_table():
         
         cursor.execute(create_table_sql)
         connection.commit()
-        logger.info(f"[create_option_quote_table] 数据表 option_quote 创建成功（或已存在）")
+        logger.info(f"[create_option_snapshot_day_table] 数据表 option_snapshot_day 创建成功（或已存在）")
         cursor.close()
         db_manager.close_connection(connection)
         return True
     except Error as e:
-        logger.error(f"[create_option_quote_table] 创建数据表时出错: {e}", exc_info=True)
+        logger.error(f"[create_option_snapshot_day_table] 创建数据表时出错: {e}", exc_info=True)
         db_manager.close_connection(connection)
         return False
 
-def create_option_chain_snapshot_table():
+def create_option_snapshot_min_table():
     """
-    根据 OptionChainSnashot 模型创建 option_chain_snapshot 数据表
+    根据 OptionSnapshotMin 模型创建 option_snapshot_min 数据表
     """
     connection = db_manager.get_connection()
     if not connection:
@@ -407,7 +407,7 @@ def create_option_chain_snapshot_table():
     try:
         cursor = connection.cursor()
         create_table_sql = """
-        CREATE TABLE IF NOT EXISTS option_chain_snapshot(
+        CREATE TABLE IF NOT EXISTS option_snapshot_min(
             id BIGINT AUTO_INCREMENT PRIMARY KEY,
             underlying_ticker VARCHAR(32) NOT NULL COMMENT '标的代码',
             ticker VARCHAR(64) NOT NULL COMMENT '期权代码',
@@ -425,17 +425,17 @@ def create_option_chain_snapshot_table():
             INDEX idx_underlying_ticker (underlying_ticker),
             INDEX idx_expiration_date (expiration_date),
             INDEX idx_update_time (update_time),
-            UNIQUE KEY uk_option_chain_snapshot (ticker, expiration_date, update_time)
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='期权链快照表';
+            UNIQUE KEY uk_option_snapshot_min (ticker, expiration_date, update_time)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='期权快照表';
         """
         cursor.execute(create_table_sql)
         connection.commit()
-        logger.info("[create_option_chain_snapshot_table] 数据表 option_chain_snapshot 创建成功（或已存在）")
+        logger.info("[create_option_snapshot_min_table] 数据表 option_snapshot_min 创建成功（或已存在）")
         cursor.close()
         db_manager.close_connection(connection)
         return True
     except Error as e:
-        logger.error(f"[create_option_chain_snapshot_table] 创建数据表时出错: {e}", exc_info=True)
+        logger.error(f"[create_option_snapshot_min_table] 创建数据表时出错: {e}", exc_info=True)
         db_manager.close_connection(connection)
         return False
 
@@ -605,6 +605,7 @@ def create_stock_data_min_table():
             close DECIMAL(10, 2) COMMENT '收盘价',
             volume BIGINT COMMENT '成交量',
             turnover DECIMAL(15, 2) COMMENT '成交额',
+            vw DECIMAL(15, 2) COMMENT '成交量加权平均价',
             `interval` INT COMMENT '间隔时间',
             INDEX idx_stock_code (stock_code),
             INDEX idx_timestamp (timestamp),
@@ -622,10 +623,9 @@ def create_stock_data_min_table():
         db_manager.close_connection(connection)
         return False
 
-
-def create_stock_data_realtime_table():
+def create_trading_time_table():
     """
-    根据 StockDataRealTime 类创建 stock_data_realtime 数据表
+    根据TradingTime类创建trading_time数据表
     """
     connection = db_manager.get_connection()
     if not connection:
@@ -633,30 +633,25 @@ def create_stock_data_realtime_table():
     try:
         cursor = connection.cursor()
         create_table_sql = """
-        CREATE TABLE IF NOT EXISTS stock_data_realtime (
+        CREATE TABLE IF NOT EXISTS trading_time (
             id BIGINT AUTO_INCREMENT PRIMARY KEY,
-            symbol VARCHAR(32) NOT NULL COMMENT '股票代码',
-            last_done DECIMAL(15, 4) COMMENT '最新成交价',
-            prev_close DECIMAL(15, 4) COMMENT '前收盘价',
-            open DECIMAL(15, 4) COMMENT '开盘价',
-            high DECIMAL(15, 4) COMMENT '最高价',
-            low DECIMAL(15, 4) COMMENT '最低价',
-            timestamp VARCHAR(50) NOT NULL COMMENT '时间戳',
-            volume DECIMAL(20, 4) COMMENT '成交量',
-            turnover DECIMAL(20, 4) COMMENT '成交额',
-            INDEX idx_symbol (symbol),
-            INDEX idx_timestamp (timestamp),
-            UNIQUE KEY uk_stock_data_realtime (symbol, timestamp)
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='股票实时行情表';
+            trading_day VARCHAR(32) NOT NULL COMMENT '交易日期',
+            market_open_time VARCHAR(32) NOT NULL COMMENT '市场开盘时间',
+            market_close_time VARCHAR(32) NOT NULL COMMENT '市场收盘时间',
+            INDEX idx_trading_day (trading_day),
+            INDEX idx_market_open_time (market_open_time),
+            INDEX idx_market_close_time (market_close_time),
+            UNIQUE KEY uk_trading_time (trading_day, market_open_time, market_close_time)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='交易时间表';
         """
         cursor.execute(create_table_sql)
         connection.commit()
-        logger.info("[create_stock_data_realtime_table] 数据表 stock_data_realtime 创建成功（或已存在）")
+        logger.info("[create_trading_time_table] 数据表 trading_time 创建成功（或已存在）")
         cursor.close()
         db_manager.close_connection(connection)
         return True
     except Error as e:
-        logger.error(f"[create_stock_data_realtime_table] 创建数据表时出错: {e}", exc_info=True)
+        logger.error(f"[create_trading_time_table] 创建数据表时出错: {e}", exc_info=True)
         db_manager.close_connection(connection)
         return False
 
@@ -683,45 +678,45 @@ if __name__ == "__main__":
     
     # 创建数据库
     if create_database():
-        # if create_option_quote_table():
-        #     logger.info("[__main__] 数据表 option_quote 创建成功（或已存在）")
-        # else:
-        #     logger.error("[__main__] 数据表 option_quote 创建失败！")
+        if create_option_snapshot_day_table():
+            logger.info("[__main__] 数据表 option_quote 创建成功（或已存在）")
+        else:
+            logger.error("[__main__] 数据表 option_quote 创建失败！")
 
-        # if create_option_chain_snapshot_table():
-        #     logger.info("[__main__] 数据表 option_chain_snapshot 创建成功（或已存在）")
-        # else:
-        #     logger.error("[__main__] 数据表 option_chain_snapshot 创建失败！")
+        if create_option_snapshot_min_table():
+            logger.info("[__main__] 数据表 option_chain_snapshot 创建成功（或已存在）")
+        else:
+            logger.error("[__main__] 数据表 option_chain_snapshot 创建失败！")
 
-        # if create_max_pain_table():
-        #     logger.info("[__main__] 数据表 max_pain 创建成功（或已存在）")
-        # else:
-        #     logger.error("[__main__] 数据表 max_pain 创建失败！")
+        if create_max_pain_table():
+            logger.info("[__main__] 数据表 max_pain 创建成功（或已存在）")
+        else:
+            logger.error("[__main__] 数据表 max_pain 创建失败！")
 
-        # if create_stock_data_table():
-        #     logger.info("[__main__] 数据表 stock_data 创建成功（或已存在）")
-        # else:
-        #     logger.error("[__main__] 数据表 stock_data 创建失败！")
+        if create_stock_data_table():
+            logger.info("[__main__] 数据表 stock_data 创建成功（或已存在）")
+        else:
+            logger.error("[__main__] 数据表 stock_data 创建失败！")
 
-        # if create_stock_split_table():
-        #     logger.info("[__main__] 数据表 stock_split 创建成功（或已存在）")
-        # else:
-        #     logger.error("[__main__] 数据表 stock_split 创建失败！")
+        if create_stock_split_table():
+            logger.info("[__main__] 数据表 stock_split 创建成功（或已存在）")
+        else:
+            logger.error("[__main__] 数据表 stock_split 创建失败！")
 
-        # if create_stock_valuation_table():
-        #     logger.info("[__main__] 数据表 stock_valuation 创建成功（或已存在）")
-        # else:
-        #     logger.error("[__main__] 数据表 stock_valuation 创建失败！")
+        if create_stock_valuation_table():
+            logger.info("[__main__] 数据表 stock_valuation 创建成功（或已存在）")
+        else:
+            logger.error("[__main__] 数据表 stock_valuation 创建失败！")
 
         if create_stock_data_min_table():
             logger.info("[__main__] 数据表 stock_data_min 创建成功（或已存在）")
         else:
             logger.error("[__main__] 数据表 stock_data_min 创建失败！")
 
-        # if create_stock_data_realtime_table():
-        #     logger.info("[__main__] 数据表 stock_data_realtime 创建成功（或已存在）")
-        # else:
-        #     logger.error("[__main__] 数据表 stock_data_realtime 创建失败！")
+        if create_trading_time_table():
+            logger.info("[__main__] 数据表 trading_time 创建成功（或已存在）")
+        else:
+            logger.error("[__main__] 数据表 trading_time 创建失败！")
     else:
         logger.error("[__main__] 数据库创建失败！")
 

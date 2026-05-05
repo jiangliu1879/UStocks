@@ -2540,3 +2540,1248 @@ mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL serve
 2026-04-07 21:26:52 - UStocks - INFO - 保存到数据库成功，共保存 114 条期权报价记录: TEM.US - 2026-04-10 - [20, 80]
 2026-04-07 21:27:02 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 66 条记录
 2026-04-07 21:27:02 - UStocks - INFO - 保存到数据库成功，共保存 66 条期权报价记录: TEM.US - 2026-04-17 - [20, 80]
+2026-04-07 21:27:13 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 90 条记录
+2026-04-07 21:27:13 - UStocks - INFO - 保存到数据库成功，共保存 90 条期权报价记录: TEM.US - 2026-04-24 - [20, 80]
+2026-04-07 21:27:23 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 66 条记录
+2026-04-07 21:27:23 - UStocks - INFO - 保存到数据库成功，共保存 66 条期权报价记录: TEM.US - 2026-05-01 - [20, 80]
+2026-04-07 21:27:33 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 56 条记录
+2026-04-07 21:27:33 - UStocks - INFO - 保存到数据库成功，共保存 56 条期权报价记录: TEM.US - 2026-05-08 - [20, 80]
+2026-04-07 21:27:44 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 24 条记录
+2026-04-07 21:27:44 - UStocks - INFO - 保存到数据库成功，共保存 24 条期权报价记录: TEM.US - 2026-05-15 - [20, 80]
+2026-04-07 21:27:54 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 56 条记录
+2026-04-07 21:27:54 - UStocks - INFO - 保存到数据库成功，共保存 56 条期权报价记录: TEM.US - 2026-05-22 - [20, 80]
+2026-04-07 21:28:34 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 84 条记录
+2026-04-07 21:28:34 - UStocks - INFO - 保存到数据库成功，共保存 84 条期权报价记录: HOOD.US - 2026-04-10 - [40, 90]
+2026-04-07 21:28:45 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 58 条记录
+2026-04-07 21:28:45 - UStocks - INFO - 保存到数据库成功，共保存 58 条期权报价记录: HOOD.US - 2026-04-17 - [40, 90]
+2026-04-07 21:28:55 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 76 条记录
+2026-04-07 21:28:55 - UStocks - INFO - 保存到数据库成功，共保存 76 条期权报价记录: HOOD.US - 2026-04-24 - [40, 90]
+2026-04-07 21:29:06 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 74 条记录
+2026-04-07 21:29:06 - UStocks - INFO - 保存到数据库成功，共保存 74 条期权报价记录: HOOD.US - 2026-05-01 - [40, 90]
+2026-04-07 21:29:16 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 66 条记录
+2026-04-07 21:29:16 - UStocks - INFO - 保存到数据库成功，共保存 66 条期权报价记录: HOOD.US - 2026-05-08 - [40, 90]
+2026-04-07 21:29:26 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 22 条记录
+2026-04-07 21:29:26 - UStocks - INFO - 保存到数据库成功，共保存 22 条期权报价记录: HOOD.US - 2026-05-15 - [40, 90]
+2026-04-07 21:29:37 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 60 条记录
+2026-04-07 21:29:37 - UStocks - INFO - 保存到数据库成功，共保存 60 条期权报价记录: HOOD.US - 2026-05-22 - [40, 90]
+2026-04-07 21:30:17 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 118 条记录
+2026-04-07 21:30:17 - UStocks - INFO - 保存到数据库成功，共保存 118 条期权报价记录: COIN.US - 2026-04-10 - [120, 220]
+2026-04-07 21:30:27 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 68 条记录
+2026-04-07 21:30:27 - UStocks - INFO - 保存到数据库成功，共保存 68 条期权报价记录: COIN.US - 2026-04-17 - [120, 220]
+2026-04-07 21:30:38 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 60 条记录
+2026-04-07 21:30:38 - UStocks - INFO - 保存到数据库成功，共保存 60 条期权报价记录: COIN.US - 2026-04-24 - [120, 220]
+2026-04-07 21:30:48 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 42 条记录
+2026-04-07 21:30:48 - UStocks - INFO - 保存到数据库成功，共保存 42 条期权报价记录: COIN.US - 2026-05-01 - [120, 220]
+2026-04-07 21:30:58 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 42 条记录
+2026-04-07 21:30:58 - UStocks - INFO - 保存到数据库成功，共保存 42 条期权报价记录: COIN.US - 2026-05-08 - [120, 220]
+2026-04-07 21:31:09 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 38 条记录
+2026-04-07 21:31:09 - UStocks - INFO - 保存到数据库成功，共保存 38 条期权报价记录: COIN.US - 2026-05-15 - [120, 220]
+2026-04-07 21:31:19 - OptionQuote - INFO - [OptionQuote::batch_save] 批量保存期权报价完成，共保存 42 条记录
+2026-04-07 21:31:19 - UStocks - INFO - 保存到数据库成功，共保存 42 条期权报价记录: COIN.US - 2026-05-22 - [120, 220]
+2026-04-07 21:31:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-04-07 21:31:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-04-29 17:21:46 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-04-29 17:21:47 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-04-29 17:23:22 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-04-29 17:23:22 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-04-29 17:23:46 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-04-29 17:23:46 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-04-29 17:28:47 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-04-29 17:28:47 - GetStockData - INFO - [__main__] ==================================================
+2026-04-29 17:28:47 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-04-29 17:28:47 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-04-29 17:28:47 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 18 条记录
+2026-04-29 17:28:47 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 18 条 AAPL.US 的数据到数据库
+2026-04-29 17:28:47 - GetStockData - INFO - [__main__] ✅ AAPL.US 获取成功
+2026-04-29 17:28:48 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 18 条记录
+2026-04-29 17:28:48 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 18 条 COIN.US 的数据到数据库
+2026-04-29 17:28:48 - GetStockData - INFO - [__main__] ✅ COIN.US 获取成功
+2026-04-29 17:28:48 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 18 条记录
+2026-04-29 17:28:48 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 18 条 HIMS.US 的数据到数据库
+2026-04-29 17:28:48 - GetStockData - INFO - [__main__] ✅ HIMS.US 获取成功
+2026-04-29 17:28:48 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 18 条记录
+2026-04-29 17:28:48 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 18 条 HOOD.US 的数据到数据库
+2026-04-29 17:28:48 - GetStockData - INFO - [__main__] ✅ HOOD.US 获取成功
+2026-04-29 17:28:49 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 18 条记录
+2026-04-29 17:28:49 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 18 条 MSFT.US 的数据到数据库
+2026-04-29 17:28:49 - GetStockData - INFO - [__main__] ✅ MSFT.US 获取成功
+2026-04-29 17:28:49 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 18 条记录
+2026-04-29 17:28:49 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 18 条 NVDA.US 的数据到数据库
+2026-04-29 17:28:49 - GetStockData - INFO - [__main__] ✅ NVDA.US 获取成功
+2026-04-29 17:28:50 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 18 条记录
+2026-04-29 17:28:50 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 18 条 PLTR.US 的数据到数据库
+2026-04-29 17:28:50 - GetStockData - INFO - [__main__] ✅ PLTR.US 获取成功
+2026-04-29 17:28:50 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 18 条记录
+2026-04-29 17:28:50 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 18 条 QQQ.US 的数据到数据库
+2026-04-29 17:28:50 - GetStockData - INFO - [__main__] ✅ QQQ.US 获取成功
+2026-04-29 17:28:51 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 18 条记录
+2026-04-29 17:28:51 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 18 条 SNOW.US 的数据到数据库
+2026-04-29 17:28:51 - GetStockData - INFO - [__main__] ✅ SNOW.US 获取成功
+2026-04-29 17:28:51 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 18 条记录
+2026-04-29 17:28:51 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 18 条 SPY.US 的数据到数据库
+2026-04-29 17:28:51 - GetStockData - INFO - [__main__] ✅ SPY.US 获取成功
+2026-04-29 17:28:52 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 18 条记录
+2026-04-29 17:28:52 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 18 条 TEM.US 的数据到数据库
+2026-04-29 17:28:52 - GetStockData - INFO - [__main__] ✅ TEM.US 获取成功
+2026-04-29 17:28:52 - StockData - INFO - [StockData::batch_save] 批量保存股票数据完成，共保存 18 条记录
+2026-04-29 17:28:52 - GetStockData - INFO - [get_single_stock_data_to_db] 成功保存 18 条 TSLA.US 的数据到数据库
+2026-04-29 17:28:52 - GetStockData - INFO - [__main__] ✅ TSLA.US 获取成功
+2026-04-29 17:28:52 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-04-29 17:28:52 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-04-29 17:37:03 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-04-29 17:37:03 - GetStockData - INFO - [__main__] ==================================================
+2026-04-29 17:37:04 - GetStockData - ERROR - [get_single_stock_data_to_db] 保存 SPY.US 数据到数据库时出错: 'builtins.Period' object has no attribute 'value'
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/utils/get_stock_data.py", line 150, in get_single_stock_data_to_db_by_minutes
+    interval=interval.value
+             ^^^^^^^^^^^^^^
+AttributeError: 'builtins.Period' object has no attribute 'value'
+2026-04-29 17:37:04 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-04-29 17:37:04 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-04-29 21:16:19 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-04-29 21:16:19 - GetStockData - INFO - [__main__] ==================================================
+2026-04-29 21:16:19 - GetStockData - ERROR - [get_single_stock_data_to_db] 保存 SPY.US 数据到数据库时出错: 'builtins.Period' object has no attribute 'value'
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/utils/get_stock_data.py", line 150, in get_single_stock_data_to_db_by_minutes
+    interval=interval.value
+             ^^^^^^^^^^^^^^
+AttributeError: 'builtins.Period' object has no attribute 'value'
+2026-04-29 21:16:19 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-04-29 21:16:19 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-04-29 21:17:34 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-04-29 21:17:34 - GetStockData - INFO - [__main__] ==================================================
+2026-04-29 21:17:34 - GetStockData - ERROR - [get_single_stock_data_to_db] 获取 SPY.US 数据时出错: type object 'builtins.Period' has no attribute 'Hour_1'
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/utils/get_stock_data.py", line 141, in get_single_stock_data_to_db_by_minutes
+    elif interval == Period.Hour_1:
+                     ^^^^^^^^^^^^^
+AttributeError: type object 'builtins.Period' has no attribute 'Hour_1'
+2026-04-29 21:17:34 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-04-29 21:17:34 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-04-29 21:18:37 - GetStockData - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-04-29 21:18:37 - GetStockData - INFO - [__main__] ==================================================
+2026-04-29 21:18:37 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-04-29 21:18:38 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-04-29 21:18:38 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 1000 条记录
+2026-04-29 21:18:38 - GetStockData - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 1000 条 SPY.US 的数据到数据库
+2026-04-29 21:18:38 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-04-29 21:18:38 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 10:29:47 - InitDatabase - INFO - [__main__] 开始初始化数据库...
+2026-05-04 10:29:47 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 10:29:47 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 10:29:47 - InitDatabase - INFO - [create_database] 数据库 ustocks 创建成功（或已存在）
+2026-05-04 10:29:47 - InitDatabase - INFO - [create_option_quote_table] 数据表 option_quote 创建成功（或已存在）
+2026-05-04 10:29:47 - InitDatabase - INFO - [__main__] 数据表 option_quote 创建成功（或已存在）
+2026-05-04 10:29:47 - InitDatabase - INFO - [create_option_chain_min_table] 数据表 option_chain_min 创建成功（或已存在）
+2026-05-04 10:29:47 - InitDatabase - INFO - [__main__] 数据表 option_chain_snapshot 创建成功（或已存在）
+2026-05-04 10:29:47 - InitDatabase - INFO - [__main__] 数据库初始化完成！
+2026-05-04 10:29:47 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 10:29:47 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 10:32:32 - InitDatabase - INFO - [__main__] 开始初始化数据库...
+2026-05-04 10:32:32 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 10:32:32 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 10:32:33 - InitDatabase - INFO - [create_database] 数据库 ustocks 创建成功（或已存在）
+2026-05-04 10:32:33 - InitDatabase - INFO - [create_option_quote_table] 数据表 option_quote 创建成功（或已存在）
+2026-05-04 10:32:33 - InitDatabase - INFO - [__main__] 数据表 option_quote 创建成功（或已存在）
+2026-05-04 10:32:33 - InitDatabase - INFO - [create_option_chain_min_table] 数据表 option_chain_min 创建成功（或已存在）
+2026-05-04 10:32:33 - InitDatabase - INFO - [__main__] 数据表 option_chain_snapshot 创建成功（或已存在）
+2026-05-04 10:32:33 - InitDatabase - INFO - [create_max_pain_table] 数据表 max_pain 创建成功（或已存在）
+2026-05-04 10:32:33 - InitDatabase - INFO - [__main__] 数据表 max_pain 创建成功（或已存在）
+2026-05-04 10:32:33 - InitDatabase - INFO - [__main__] 数据库初始化完成！
+2026-05-04 10:32:33 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 10:32:33 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 10:33:10 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 10:33:10 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 10:35:34 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 10:35:34 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 10:35:35 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 10:35:35 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 10:35:35 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 1000 条记录
+2026-05-04 10:35:35 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 1000 条 SPY.US 的数据到数据库
+2026-05-04 10:35:35 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 10:35:35 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 10:37:31 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 10:37:31 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 10:37:31 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 10:37:31 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 10:45:21 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 10:45:21 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 10:45:21 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 10:45:21 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 10:47:17 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 10:47:17 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 10:47:17 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:47:17 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 10:47:17 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 10:47:50 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 10:47:50 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 10:47:50 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 10:47:51 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 10:47:51 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:47:51 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:47:51 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 10:47:51 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 10:56:25 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 10:56:25 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 10:56:25 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:26 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 10:56:26 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 10:56:26 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:26 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:26 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:26 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:27 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:27 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:28 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:28 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:28 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:28 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:29 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:29 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:29 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:29 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:29 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:30 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:30 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:30 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:31 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:31 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:32 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:32 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:32 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:32 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:33 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:33 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:33 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:33 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:34 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:34 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:34 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:35 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:35 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:36 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:36 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:36 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:36 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:36 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:37 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:37 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:37 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:38 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:38 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:39 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:39 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:39 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:39 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:40 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:40 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:40 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:40 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:41 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:41 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:42 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:42 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:42 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:42 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:43 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:43 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:43 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:43 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:43 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:44 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:44 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:44 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:45 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:45 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:46 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:46 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:46 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:46 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:47 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:47 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:47 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:47 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:48 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:48 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:48 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:49 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:49 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:50 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:50 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:50 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:50 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:50 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:51 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:51 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:51 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:52 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:52 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:53 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:53 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:53 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:53 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:54 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:54 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:54 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:54 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:55 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:55 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:56 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:56 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:56 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:56 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:57 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:57 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:57 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:57 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:58 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:58 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:56:59 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:59 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:56:59 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:56:59 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:57:00 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:57:00 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:57:00 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:57:00 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:57:01 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:57:01 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:57:01 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:57:01 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:57:02 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:57:02 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:57:03 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:57:03 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:57:03 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:57:03 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:57:04 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:57:04 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:57:04 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:57:04 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:57:05 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:57:05 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 10:57:06 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:57:06 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:57:06 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:57:06 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:57:07 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:57:07 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:57:07 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:57:07 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:57:08 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 390 条记录
+2026-05-04 10:57:08 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 10:57:08 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 10:57:08 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 15:36:37 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 15:36:37 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 15:36:42 - InitDatabase - INFO - [__main__] 开始初始化数据库...
+2026-05-04 15:36:42 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 15:36:43 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 15:36:43 - InitDatabase - INFO - [create_database] 数据库 ustocks 创建成功（或已存在）
+2026-05-04 15:36:43 - InitDatabase - INFO - [create_option_quote_table] 数据表 option_quote 创建成功（或已存在）
+2026-05-04 15:36:43 - InitDatabase - INFO - [__main__] 数据表 option_quote 创建成功（或已存在）
+2026-05-04 15:36:43 - InitDatabase - INFO - [create_option_chain_min_table] 数据表 option_chain_min 创建成功（或已存在）
+2026-05-04 15:36:43 - InitDatabase - INFO - [__main__] 数据表 option_chain_snapshot 创建成功（或已存在）
+2026-05-04 15:36:43 - InitDatabase - INFO - [create_max_pain_table] 数据表 max_pain 创建成功（或已存在）
+2026-05-04 15:36:43 - InitDatabase - INFO - [__main__] 数据表 max_pain 创建成功（或已存在）
+2026-05-04 15:36:43 - InitDatabase - INFO - [create_stock_data_table] 数据表 stock_data 创建成功（或已存在）
+2026-05-04 15:36:43 - InitDatabase - INFO - [__main__] 数据表 stock_data 创建成功（或已存在）
+2026-05-04 15:36:43 - InitDatabase - INFO - [create_stock_split_table] 数据表 stock_split 创建成功（或已存在）
+2026-05-04 15:36:43 - InitDatabase - INFO - [__main__] 数据表 stock_split 创建成功（或已存在）
+2026-05-04 15:36:43 - InitDatabase - INFO - [create_stock_valuation_table] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-04 15:36:43 - InitDatabase - INFO - [__main__] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-04 15:36:43 - InitDatabase - INFO - [create_stock_data_min_table] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-04 15:36:43 - InitDatabase - INFO - [__main__] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-04 15:36:43 - InitDatabase - INFO - [__main__] 数据库初始化完成！
+2026-05-04 15:36:43 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 15:36:43 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 16:25:53 - InitDatabase - INFO - [__main__] 开始初始化数据库...
+2026-05-04 16:25:53 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 16:25:53 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 16:25:53 - InitDatabase - INFO - [create_database] 数据库 ustocks 创建成功（或已存在）
+2026-05-04 16:25:53 - InitDatabase - INFO - [create_option_quote_table] 数据表 option_quote 创建成功（或已存在）
+2026-05-04 16:25:53 - InitDatabase - INFO - [__main__] 数据表 option_quote 创建成功（或已存在）
+2026-05-04 16:25:53 - InitDatabase - INFO - [create_option_chain_min_table] 数据表 option_chain_min 创建成功（或已存在）
+2026-05-04 16:25:54 - InitDatabase - INFO - [__main__] 数据表 option_chain_snapshot 创建成功（或已存在）
+2026-05-04 16:25:54 - InitDatabase - INFO - [create_max_pain_table] 数据表 max_pain 创建成功（或已存在）
+2026-05-04 16:25:54 - InitDatabase - INFO - [__main__] 数据表 max_pain 创建成功（或已存在）
+2026-05-04 16:25:54 - InitDatabase - INFO - [create_stock_data_table] 数据表 stock_data 创建成功（或已存在）
+2026-05-04 16:25:54 - InitDatabase - INFO - [__main__] 数据表 stock_data 创建成功（或已存在）
+2026-05-04 16:25:54 - InitDatabase - INFO - [create_stock_split_table] 数据表 stock_split 创建成功（或已存在）
+2026-05-04 16:25:54 - InitDatabase - INFO - [__main__] 数据表 stock_split 创建成功（或已存在）
+2026-05-04 16:25:54 - InitDatabase - INFO - [create_stock_valuation_table] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-04 16:25:54 - InitDatabase - INFO - [__main__] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-04 16:25:54 - InitDatabase - INFO - [create_stock_data_min_table] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-04 16:25:54 - InitDatabase - INFO - [__main__] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-04 16:25:54 - InitDatabase - INFO - [__main__] 数据库初始化完成！
+2026-05-04 16:25:54 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 16:25:54 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 17:07:19 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 17:07:19 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 17:07:19 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:07:19 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:08:10 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 17:08:10 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 17:08:10 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:08:10 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:12:40 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 17:12:40 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 17:12:40 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 17:12:40 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:12:40 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:12:59 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 17:12:59 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 17:12:59 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 17:12:59 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 17:12:59 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 17:12:59 - StockDataMin - ERROR - [StockDataMin::batch_save] 批量保存股票数据时出错: Failed executing the operation; Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/stock_data_min.py", line 157, in batch_save
+    cursor.executemany(insert_sql, batch)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 470, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 424, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2026-05-04 17:12:59 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 17:13:00 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 17:13:00 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 17:13:00 - StockDataMin - ERROR - [StockDataMin::batch_save] 批量保存股票数据时出错: Failed executing the operation; Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/stock_data_min.py", line 157, in batch_save
+    cursor.executemany(insert_sql, batch)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 470, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 424, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2026-05-04 17:13:01 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 17:13:01 - StockDataMin - ERROR - [StockDataMin::batch_save] 批量保存股票数据时出错: Failed executing the operation; Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/stock_data_min.py", line 157, in batch_save
+    cursor.executemany(insert_sql, batch)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 470, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 424, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2026-05-04 17:13:01 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 17:13:01 - StockDataMin - ERROR - [StockDataMin::batch_save] 批量保存股票数据时出错: Failed executing the operation; Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/stock_data_min.py", line 157, in batch_save
+    cursor.executemany(insert_sql, batch)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 470, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 424, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2026-05-04 17:13:02 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 17:13:02 - StockDataMin - ERROR - [StockDataMin::batch_save] 批量保存股票数据时出错: Failed executing the operation; Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/stock_data_min.py", line 157, in batch_save
+    cursor.executemany(insert_sql, batch)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 470, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 424, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2026-05-04 17:13:02 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 17:13:03 - StockDataMin - ERROR - [StockDataMin::batch_save] 批量保存股票数据时出错: Failed executing the operation; Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/stock_data_min.py", line 157, in batch_save
+    cursor.executemany(insert_sql, batch)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 470, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 424, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2026-05-04 17:13:03 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 17:13:03 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 17:13:03 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 17:13:04 - StockDataMin - ERROR - [StockDataMin::batch_save] 批量保存股票数据时出错: Failed executing the operation; Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/stock_data_min.py", line 157, in batch_save
+    cursor.executemany(insert_sql, batch)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 470, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 424, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2026-05-04 17:13:04 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 17:13:05 - StockDataMin - ERROR - [StockDataMin::batch_save] 批量保存股票数据时出错: Failed executing the operation; Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/stock_data_min.py", line 157, in batch_save
+    cursor.executemany(insert_sql, batch)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 470, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 424, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2026-05-04 17:13:05 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 17:13:05 - StockDataMin - ERROR - [StockDataMin::batch_save] 批量保存股票数据时出错: Failed executing the operation; Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/stock_data_min.py", line 157, in batch_save
+    cursor.executemany(insert_sql, batch)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 470, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 424, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2026-05-04 17:13:05 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 17:13:06 - StockDataMin - ERROR - [StockDataMin::batch_save] 批量保存股票数据时出错: Failed executing the operation; Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/stock_data_min.py", line 157, in batch_save
+    cursor.executemany(insert_sql, batch)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 470, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 424, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2026-05-04 17:13:06 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 17:13:06 - StockDataMin - ERROR - [StockDataMin::batch_save] 批量保存股票数据时出错: Failed executing the operation; Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/stock_data_min.py", line 157, in batch_save
+    cursor.executemany(insert_sql, batch)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 470, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 424, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2026-05-04 17:13:06 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 17:13:06 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 17:13:07 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 17:13:07 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 17:13:08 - StockDataMin - ERROR - [StockDataMin::batch_save] 批量保存股票数据时出错: Failed executing the operation; Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/stock_data_min.py", line 157, in batch_save
+    cursor.executemany(insert_sql, batch)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 470, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 424, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2026-05-04 17:13:08 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 17:13:08 - StockDataMin - ERROR - [StockDataMin::batch_save] 批量保存股票数据时出错: Failed executing the operation; Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/stock_data_min.py", line 157, in batch_save
+    cursor.executemany(insert_sql, batch)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 470, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 424, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2026-05-04 17:13:09 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 17:13:09 - StockDataMin - ERROR - [StockDataMin::batch_save] 批量保存股票数据时出错: Failed executing the operation; Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/stock_data_min.py", line 157, in batch_save
+    cursor.executemany(insert_sql, batch)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 470, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 424, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2026-05-04 17:13:09 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 17:13:09 - StockDataMin - ERROR - [StockDataMin::batch_save] 批量保存股票数据时出错: Failed executing the operation; Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/stock_data_min.py", line 157, in batch_save
+    cursor.executemany(insert_sql, batch)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 470, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 424, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2026-05-04 17:13:10 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 390 条 SPY.US 的数据到数据库
+2026-05-04 17:13:10 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 17:13:10 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:13:10 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 17:14:30 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 17:14:30 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 17:14:31 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 17:14:31 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 17:14:31 - StockDataMin - ERROR - [StockDataMin::batch_save] 批量保存股票数据时出错: Failed executing the operation; Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/stock_data_min.py", line 157, in batch_save
+    cursor.executemany(insert_sql, batch)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 470, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 424, in _batch_insert
+    raise InterfaceError(f"Failed executing the operation; {err}") from None
+mysql.connector.errors.InterfaceError: Failed executing the operation; Not all parameters were used in the SQL statement
+2026-05-04 17:14:31 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 1000 条 SPY.US 的数据到数据库
+2026-05-04 17:14:31 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:14:31 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 17:16:34 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 17:16:34 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 17:16:34 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 17:16:35 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 17:16:35 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 1000 条记录
+2026-05-04 17:16:35 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 1000 条 SPY.US 的数据到数据库
+2026-05-04 17:16:35 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:16:35 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 17:18:27 - InitDatabase - INFO - [__main__] 开始初始化数据库...
+2026-05-04 17:18:27 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 17:18:28 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 17:18:28 - InitDatabase - INFO - [create_database] 数据库 ustocks 创建成功（或已存在）
+2026-05-04 17:18:28 - InitDatabase - INFO - [create_option_quote_table] 数据表 option_quote 创建成功（或已存在）
+2026-05-04 17:18:28 - InitDatabase - INFO - [__main__] 数据表 option_quote 创建成功（或已存在）
+2026-05-04 17:18:28 - InitDatabase - INFO - [create_option_chain_min_table] 数据表 option_chain_min 创建成功（或已存在）
+2026-05-04 17:18:28 - InitDatabase - INFO - [__main__] 数据表 option_chain_snapshot 创建成功（或已存在）
+2026-05-04 17:18:28 - InitDatabase - INFO - [create_max_pain_table] 数据表 max_pain 创建成功（或已存在）
+2026-05-04 17:18:28 - InitDatabase - INFO - [__main__] 数据表 max_pain 创建成功（或已存在）
+2026-05-04 17:18:28 - InitDatabase - INFO - [create_stock_data_table] 数据表 stock_data 创建成功（或已存在）
+2026-05-04 17:18:28 - InitDatabase - INFO - [__main__] 数据表 stock_data 创建成功（或已存在）
+2026-05-04 17:18:28 - InitDatabase - INFO - [create_stock_split_table] 数据表 stock_split 创建成功（或已存在）
+2026-05-04 17:18:28 - InitDatabase - INFO - [__main__] 数据表 stock_split 创建成功（或已存在）
+2026-05-04 17:18:28 - InitDatabase - INFO - [create_stock_valuation_table] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-04 17:18:28 - InitDatabase - INFO - [__main__] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-04 17:18:29 - InitDatabase - INFO - [create_stock_data_min_table] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-04 17:18:29 - InitDatabase - INFO - [__main__] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-04 17:18:29 - InitDatabase - INFO - [__main__] 数据库初始化完成！
+2026-05-04 17:18:29 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:18:29 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 17:19:58 - InitDatabase - INFO - [__main__] 开始初始化数据库...
+2026-05-04 17:19:58 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 17:19:59 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 17:19:59 - InitDatabase - INFO - [create_database] 数据库 ustocks 创建成功（或已存在）
+2026-05-04 17:19:59 - InitDatabase - INFO - [create_option_quote_table] 数据表 option_quote 创建成功（或已存在）
+2026-05-04 17:19:59 - InitDatabase - INFO - [__main__] 数据表 option_quote 创建成功（或已存在）
+2026-05-04 17:19:59 - InitDatabase - INFO - [create_option_chain_min_table] 数据表 option_chain_min 创建成功（或已存在）
+2026-05-04 17:19:59 - InitDatabase - INFO - [__main__] 数据表 option_chain_snapshot 创建成功（或已存在）
+2026-05-04 17:19:59 - InitDatabase - INFO - [create_max_pain_table] 数据表 max_pain 创建成功（或已存在）
+2026-05-04 17:19:59 - InitDatabase - INFO - [__main__] 数据表 max_pain 创建成功（或已存在）
+2026-05-04 17:19:59 - InitDatabase - INFO - [create_stock_data_table] 数据表 stock_data 创建成功（或已存在）
+2026-05-04 17:19:59 - InitDatabase - INFO - [__main__] 数据表 stock_data 创建成功（或已存在）
+2026-05-04 17:19:59 - InitDatabase - INFO - [create_stock_split_table] 数据表 stock_split 创建成功（或已存在）
+2026-05-04 17:19:59 - InitDatabase - INFO - [__main__] 数据表 stock_split 创建成功（或已存在）
+2026-05-04 17:19:59 - InitDatabase - INFO - [create_stock_valuation_table] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-04 17:19:59 - InitDatabase - INFO - [__main__] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-04 17:19:59 - InitDatabase - INFO - [create_stock_data_min_table] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-04 17:19:59 - InitDatabase - INFO - [__main__] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-04 17:19:59 - InitDatabase - INFO - [__main__] 数据库初始化完成！
+2026-05-04 17:19:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:19:59 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 17:20:11 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 17:20:11 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 17:20:12 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 17:20:12 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:20:12 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:22:53 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 17:22:53 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 17:22:53 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 17:22:53 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:22:53 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:23:20 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 17:23:20 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 17:23:21 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 17:23:21 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:23:21 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:26:12 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:26:12 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:27:47 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:27:47 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:28:12 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:28:12 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:28:52 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:28:52 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:30:40 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:30:40 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:34:06 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:34:06 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:35:58 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:35:58 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:36:04 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:36:04 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:37:20 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:37:20 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:38:07 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 17:38:07 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 17:38:07 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 17:38:07 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:38:07 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:38:31 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 17:38:31 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 17:38:31 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY.US 的数据
+2026-05-04 17:38:31 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:38:31 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:39:40 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 17:39:40 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 17:40:16 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:40:16 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:44:26 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 17:44:26 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 17:44:26 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:44:26 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 17:45:33 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 17:45:33 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 17:45:33 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 17:45:34 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 17:45:34 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 1000 条记录
+2026-05-04 17:45:34 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 1000 条 SPY.US 的数据到数据库
+2026-05-04 17:45:34 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:45:34 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 17:49:33 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 17:49:33 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 17:49:54 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 17:49:54 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 17:50:00 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 75999 条记录
+2026-05-04 17:50:00 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 75999 条 SPY 的数据到数据库
+2026-05-04 17:50:00 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 17:50:00 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 18:01:13 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 18:01:13 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 18:01:13 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 18:01:13 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 18:01:53 - InitDatabase - INFO - [__main__] 开始初始化数据库...
+2026-05-04 18:01:53 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 18:01:54 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 18:01:54 - InitDatabase - INFO - [create_database] 数据库 ustocks 创建成功（或已存在）
+2026-05-04 18:01:54 - InitDatabase - INFO - [create_option_quote_table] 数据表 option_quote 创建成功（或已存在）
+2026-05-04 18:01:54 - InitDatabase - INFO - [__main__] 数据表 option_quote 创建成功（或已存在）
+2026-05-04 18:01:54 - InitDatabase - INFO - [create_option_chain_min_table] 数据表 option_chain_min 创建成功（或已存在）
+2026-05-04 18:01:54 - InitDatabase - INFO - [__main__] 数据表 option_chain_snapshot 创建成功（或已存在）
+2026-05-04 18:01:54 - InitDatabase - INFO - [create_max_pain_table] 数据表 max_pain 创建成功（或已存在）
+2026-05-04 18:01:54 - InitDatabase - INFO - [__main__] 数据表 max_pain 创建成功（或已存在）
+2026-05-04 18:01:54 - InitDatabase - INFO - [create_stock_data_table] 数据表 stock_data 创建成功（或已存在）
+2026-05-04 18:01:54 - InitDatabase - INFO - [__main__] 数据表 stock_data 创建成功（或已存在）
+2026-05-04 18:01:54 - InitDatabase - INFO - [create_stock_split_table] 数据表 stock_split 创建成功（或已存在）
+2026-05-04 18:01:54 - InitDatabase - INFO - [__main__] 数据表 stock_split 创建成功（或已存在）
+2026-05-04 18:01:54 - InitDatabase - INFO - [create_stock_valuation_table] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-04 18:01:54 - InitDatabase - INFO - [__main__] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-04 18:01:54 - InitDatabase - INFO - [create_stock_data_min_table] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-04 18:01:54 - InitDatabase - INFO - [__main__] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-04 18:01:54 - InitDatabase - INFO - [__main__] 数据库初始化完成！
+2026-05-04 18:01:54 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 18:01:54 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 21:48:40 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 21:48:40 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 21:49:08 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 21:49:08 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 21:58:47 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 21:58:47 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 21:59:19 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 21:59:19 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 22:09:23 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 22:09:23 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 22:09:43 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 22:09:43 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 22:10:00 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 22:10:00 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 22:13:15 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 22:13:15 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 22:13:17 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 22:13:18 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 22:13:18 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 1853 条记录
+2026-05-04 22:13:18 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 1853 条 SPY 的数据到数据库
+2026-05-04 22:13:18 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 22:13:18 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 22:31:31 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 22:31:31 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 22:32:08 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 22:32:08 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 23:07:46 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 23:07:46 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 23:10:45 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 23:10:45 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 23:10:58 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 23:10:58 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 23:12:34 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 23:12:34 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 23:18:51 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 23:18:51 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 23:19:00 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 23:19:00 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 23:20:01 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 23:20:01 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 23:20:11 - InitDatabase - INFO - [__main__] 开始初始化数据库...
+2026-05-04 23:20:11 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 23:20:12 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 23:20:12 - InitDatabase - INFO - [create_database] 数据库 ustocks 创建成功（或已存在）
+2026-05-04 23:20:12 - InitDatabase - INFO - [create_option_quote_table] 数据表 option_quote 创建成功（或已存在）
+2026-05-04 23:20:12 - InitDatabase - INFO - [__main__] 数据表 option_quote 创建成功（或已存在）
+2026-05-04 23:20:12 - InitDatabase - INFO - [create_option_chain_min_table] 数据表 option_chain_min 创建成功（或已存在）
+2026-05-04 23:20:12 - InitDatabase - INFO - [__main__] 数据表 option_chain_snapshot 创建成功（或已存在）
+2026-05-04 23:20:12 - InitDatabase - INFO - [create_max_pain_table] 数据表 max_pain 创建成功（或已存在）
+2026-05-04 23:20:12 - InitDatabase - INFO - [__main__] 数据表 max_pain 创建成功（或已存在）
+2026-05-04 23:20:12 - InitDatabase - INFO - [create_stock_data_table] 数据表 stock_data 创建成功（或已存在）
+2026-05-04 23:20:12 - InitDatabase - INFO - [__main__] 数据表 stock_data 创建成功（或已存在）
+2026-05-04 23:20:12 - InitDatabase - INFO - [create_stock_split_table] 数据表 stock_split 创建成功（或已存在）
+2026-05-04 23:20:12 - InitDatabase - INFO - [__main__] 数据表 stock_split 创建成功（或已存在）
+2026-05-04 23:20:12 - InitDatabase - INFO - [create_stock_valuation_table] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-04 23:20:12 - InitDatabase - INFO - [__main__] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-04 23:20:13 - InitDatabase - INFO - [create_stock_data_min_table] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-04 23:20:13 - InitDatabase - INFO - [__main__] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-04 23:20:13 - InitDatabase - INFO - [__main__] 数据库初始化完成！
+2026-05-04 23:20:13 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 23:20:13 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 23:22:26 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 23:22:26 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 23:22:28 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 23:22:28 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 23:22:54 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 23:22:54 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 23:22:55 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 23:22:55 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 23:23:18 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 23:23:18 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 23:23:19 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 23:23:19 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 23:23:53 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-04 23:23:53 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-04 23:24:05 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-04 23:24:06 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-04 23:24:06 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 526 条记录
+2026-05-04 23:24:06 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 526 条 SPY 的数据到数据库
+2026-05-04 23:24:06 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 23:24:06 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-04 23:25:32 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 23:25:32 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 23:25:57 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 23:25:57 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-04 23:27:18 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-04 23:27:18 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-05 08:35:57 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 08:35:57 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-05 08:55:21 - InitDatabase - INFO - [__main__] 开始初始化数据库...
+2026-05-05 08:55:21 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 08:55:21 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 08:55:21 - InitDatabase - INFO - [create_database] 数据库 ustocks 创建成功（或已存在）
+2026-05-05 08:55:21 - InitDatabase - INFO - [create_option_quote_table] 数据表 option_quote 创建成功（或已存在）
+2026-05-05 08:55:21 - InitDatabase - INFO - [__main__] 数据表 option_quote 创建成功（或已存在）
+2026-05-05 08:55:21 - InitDatabase - INFO - [create_option_chain_min_table] 数据表 option_chain_min 创建成功（或已存在）
+2026-05-05 08:55:21 - InitDatabase - INFO - [__main__] 数据表 option_chain_snapshot 创建成功（或已存在）
+2026-05-05 08:55:21 - InitDatabase - INFO - [create_max_pain_table] 数据表 max_pain 创建成功（或已存在）
+2026-05-05 08:55:21 - InitDatabase - INFO - [__main__] 数据表 max_pain 创建成功（或已存在）
+2026-05-05 08:55:21 - InitDatabase - INFO - [create_stock_data_table] 数据表 stock_data 创建成功（或已存在）
+2026-05-05 08:55:21 - InitDatabase - INFO - [__main__] 数据表 stock_data 创建成功（或已存在）
+2026-05-05 08:55:22 - InitDatabase - INFO - [create_stock_split_table] 数据表 stock_split 创建成功（或已存在）
+2026-05-05 08:55:22 - InitDatabase - INFO - [__main__] 数据表 stock_split 创建成功（或已存在）
+2026-05-05 08:55:22 - InitDatabase - INFO - [create_stock_valuation_table] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-05 08:55:22 - InitDatabase - INFO - [__main__] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-05 08:55:22 - InitDatabase - INFO - [create_stock_data_min_table] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-05 08:55:22 - InitDatabase - INFO - [__main__] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-05 08:55:22 - InitDatabase - INFO - [__main__] 数据库初始化完成！
+2026-05-05 08:55:22 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 08:55:22 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-05 09:10:26 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 09:10:26 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-05 09:10:56 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 09:10:56 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-05 09:23:04 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 09:23:04 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-05 09:23:42 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 09:23:42 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-05 09:29:35 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 09:29:35 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-05 09:33:13 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 09:33:13 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-05 09:42:23 - InitDatabase - INFO - [__main__] 开始初始化数据库...
+2026-05-05 09:42:23 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 09:42:24 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 09:42:24 - InitDatabase - INFO - [create_database] 数据库 ustocks 创建成功（或已存在）
+2026-05-05 09:42:24 - InitDatabase - INFO - [create_option_quote_table] 数据表 option_quote 创建成功（或已存在）
+2026-05-05 09:42:24 - InitDatabase - INFO - [__main__] 数据表 option_quote 创建成功（或已存在）
+2026-05-05 09:42:24 - InitDatabase - INFO - [create_option_chain_min_table] 数据表 option_chain_min 创建成功（或已存在）
+2026-05-05 09:42:24 - InitDatabase - INFO - [__main__] 数据表 option_chain_snapshot 创建成功（或已存在）
+2026-05-05 09:42:24 - InitDatabase - INFO - [create_max_pain_table] 数据表 max_pain 创建成功（或已存在）
+2026-05-05 09:42:24 - InitDatabase - INFO - [__main__] 数据表 max_pain 创建成功（或已存在）
+2026-05-05 09:42:24 - InitDatabase - INFO - [create_stock_data_table] 数据表 stock_data 创建成功（或已存在）
+2026-05-05 09:42:24 - InitDatabase - INFO - [__main__] 数据表 stock_data 创建成功（或已存在）
+2026-05-05 09:42:24 - InitDatabase - INFO - [create_stock_split_table] 数据表 stock_split 创建成功（或已存在）
+2026-05-05 09:42:24 - InitDatabase - INFO - [__main__] 数据表 stock_split 创建成功（或已存在）
+2026-05-05 09:42:24 - InitDatabase - INFO - [create_stock_valuation_table] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-05 09:42:24 - InitDatabase - INFO - [__main__] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-05 09:42:24 - InitDatabase - INFO - [create_stock_data_min_table] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-05 09:42:24 - InitDatabase - INFO - [__main__] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-05 09:42:24 - InitDatabase - INFO - [create_trading_time_table] 数据表 trading_time 创建成功（或已存在）
+2026-05-05 09:42:25 - InitDatabase - INFO - [__main__] 数据表 trading_time 创建成功（或已存在）
+2026-05-05 09:42:25 - InitDatabase - INFO - [__main__] 数据库初始化完成！
+2026-05-05 09:42:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 09:42:25 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-05 09:45:10 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 09:45:11 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 09:45:11 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 09:45:11 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 1 个连接
+2026-05-05 09:53:55 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 09:53:55 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-05 09:54:05 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 09:54:05 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 09:54:05 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 09:54:05 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 1 个连接
+2026-05-05 10:05:26 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-05 10:05:26 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-05 10:05:26 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 10:05:26 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 10:05:28 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY 的数据
+2026-05-05 10:05:28 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 10:05:28 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 1 个连接
+2026-05-05 10:07:06 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-05 10:07:06 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-05 10:07:06 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 10:07:06 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 10:07:08 - GetStockDataByMin - WARNING - [get_single_stock_data_to_db_by_minutes] 未获取到 SPY 的数据
+2026-05-05 10:07:08 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 10:07:08 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 1 个连接
+2026-05-05 10:07:57 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 10:07:57 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 10:07:58 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 10:07:58 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 1 个连接
+2026-05-05 10:08:16 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 10:08:16 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 10:08:19 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 10:08:19 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 1 个连接
+2026-05-05 10:08:59 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 10:08:59 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 10:09:04 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 10:09:04 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 1 个连接
+2026-05-05 10:09:41 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 10:09:41 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 10:11:01 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 10:11:01 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 10:11:11 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 10:11:11 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 1 个连接
+2026-05-05 10:12:33 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 10:12:33 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 10:12:41 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 10:12:41 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 1 个连接
+2026-05-05 10:13:37 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 10:13:37 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 10:13:46 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 10:13:46 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 1 个连接
+2026-05-05 10:15:37 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-05 10:15:37 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-05 10:15:37 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 10:15:37 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 10:15:46 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 7820 条记录
+2026-05-05 10:15:46 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 7820 条 SPY 的数据到数据库
+2026-05-05 10:15:46 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 10:15:46 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 1 个连接
+2026-05-05 10:18:09 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-05 10:18:09 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-05 10:18:09 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 10:18:10 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 10:18:21 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 7820 条记录
+2026-05-05 10:18:21 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 7820 条 SPY 的数据到数据库
+2026-05-05 10:18:21 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 10:18:21 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 1 个连接
+2026-05-05 10:22:36 - GetStockDataByMin - INFO - [__main__] 🚀 演示股票数据获取方法
+2026-05-05 10:22:36 - GetStockDataByMin - INFO - [__main__] ==================================================
+2026-05-05 10:22:36 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 10:22:36 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 10:22:40 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 7820 条记录
+2026-05-05 10:22:40 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 7820 条 SPY 的数据到数据库
+2026-05-05 10:22:40 - GetStockDataByMin - INFO - [__main__] 2025-01-01 ~ 2025-01-31: 成功
+2026-05-05 10:22:47 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 7429 条记录
+2026-05-05 10:22:47 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 7429 条 SPY 的数据到数据库
+2026-05-05 10:22:47 - GetStockDataByMin - INFO - [__main__] 2025-02-01 ~ 2025-02-28: 成功
+2026-05-05 10:23:08 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 8211 条记录
+2026-05-05 10:23:08 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 8211 条 SPY 的数据到数据库
+2026-05-05 10:23:08 - GetStockDataByMin - INFO - [__main__] 2025-03-01 ~ 2025-03-31: 成功
+2026-05-05 10:23:16 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 8211 条记录
+2026-05-05 10:23:16 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 8211 条 SPY 的数据到数据库
+2026-05-05 10:23:16 - GetStockDataByMin - INFO - [__main__] 2025-04-01 ~ 2025-04-30: 成功
+2026-05-05 10:23:24 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 8211 条记录
+2026-05-05 10:23:24 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 8211 条 SPY 的数据到数据库
+2026-05-05 10:23:24 - GetStockDataByMin - INFO - [__main__] 2025-05-01 ~ 2025-05-31: 成功
+2026-05-05 10:23:32 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 7820 条记录
+2026-05-05 10:23:32 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 7820 条 SPY 的数据到数据库
+2026-05-05 10:23:32 - GetStockDataByMin - INFO - [__main__] 2025-06-01 ~ 2025-06-30: 成功
+2026-05-05 10:23:41 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 8422 条记录
+2026-05-05 10:23:41 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 8422 条 SPY 的数据到数据库
+2026-05-05 10:23:41 - GetStockDataByMin - INFO - [__main__] 2025-07-01 ~ 2025-07-31: 成功
+2026-05-05 10:23:49 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 8211 条记录
+2026-05-05 10:23:49 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 8211 条 SPY 的数据到数据库
+2026-05-05 10:23:49 - GetStockDataByMin - INFO - [__main__] 2025-08-01 ~ 2025-08-31: 成功
+2026-05-05 10:23:58 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 8211 条记录
+2026-05-05 10:23:58 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 8211 条 SPY 的数据到数据库
+2026-05-05 10:23:58 - GetStockDataByMin - INFO - [__main__] 2025-09-01 ~ 2025-09-30: 成功
+2026-05-05 10:24:11 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 8993 条记录
+2026-05-05 10:24:11 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 8993 条 SPY 的数据到数据库
+2026-05-05 10:24:11 - GetStockDataByMin - INFO - [__main__] 2025-10-01 ~ 2025-10-31: 成功
+2026-05-05 10:24:28 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 7249 条记录
+2026-05-05 10:24:28 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 7249 条 SPY 的数据到数据库
+2026-05-05 10:24:28 - GetStockDataByMin - INFO - [__main__] 2025-11-01 ~ 2025-11-30: 成功
+2026-05-05 10:25:10 - StockDataMin - INFO - [StockDataMin::batch_save] 批量保存股票数据完成，共保存 8422 条记录
+2026-05-05 10:25:10 - GetStockDataByMin - INFO - [get_single_stock_data_to_db_by_minutes] 成功保存 8422 条 SPY 的数据到数据库
+2026-05-05 10:25:10 - GetStockDataByMin - INFO - [__main__] 2025-12-01 ~ 2025-12-31: 成功
+2026-05-05 10:25:10 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 10:25:10 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 1 个连接
+2026-05-05 10:43:00 - InitDatabase - INFO - [__main__] 开始初始化数据库...
+2026-05-05 10:43:00 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 10:43:01 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 10:43:01 - InitDatabase - INFO - [create_database] 数据库 ustocks 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [create_option_quote_table] 数据表 option_quote 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [__main__] 数据表 option_quote 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [create_option_snapshot_min_table] 数据表 option_snapshot_min 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [__main__] 数据表 option_chain_snapshot 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [create_max_pain_table] 数据表 max_pain 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [__main__] 数据表 max_pain 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [create_stock_data_table] 数据表 stock_data 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [__main__] 数据表 stock_data 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [create_stock_split_table] 数据表 stock_split 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [__main__] 数据表 stock_split 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [create_stock_valuation_table] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [__main__] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [create_stock_data_min_table] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [__main__] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [create_trading_time_table] 数据表 trading_time 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [__main__] 数据表 trading_time 创建成功（或已存在）
+2026-05-05 10:43:01 - InitDatabase - INFO - [__main__] 数据库初始化完成！
+2026-05-05 10:43:01 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 10:43:01 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-05 10:55:38 - GetOptionSnapshotByMin - WARNING - [run_snapshot_and_max_pain_once] 无法计算 MaxPain（快照数据为空或无有效行权价）
+2026-05-05 10:55:38 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 10:55:38 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-05 10:56:44 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 10:56:44 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 0 个连接
+2026-05-05 11:10:09 - InitDatabase - INFO - [__main__] 开始初始化数据库...
+2026-05-05 11:10:09 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 11:10:10 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 11:10:10 - InitDatabase - INFO - [create_database] 数据库 ustocks 创建成功（或已存在）
+2026-05-05 11:10:10 - InitDatabase - INFO - [create_option_snapshot_day_table] 数据表 option_snapshot_day 创建成功（或已存在）
+2026-05-05 11:10:10 - InitDatabase - INFO - [__main__] 数据表 option_quote 创建成功（或已存在）
+2026-05-05 11:10:10 - InitDatabase - INFO - [create_option_snapshot_min_table] 数据表 option_snapshot_min 创建成功（或已存在）
+2026-05-05 11:10:10 - InitDatabase - INFO - [__main__] 数据表 option_chain_snapshot 创建成功（或已存在）
+2026-05-05 11:10:10 - InitDatabase - INFO - [create_max_pain_table] 数据表 max_pain 创建成功（或已存在）
+2026-05-05 11:10:10 - InitDatabase - INFO - [__main__] 数据表 max_pain 创建成功（或已存在）
+2026-05-05 11:10:10 - InitDatabase - INFO - [create_stock_data_table] 数据表 stock_data 创建成功（或已存在）
+2026-05-05 11:10:10 - InitDatabase - INFO - [__main__] 数据表 stock_data 创建成功（或已存在）
+2026-05-05 11:10:10 - InitDatabase - INFO - [create_stock_split_table] 数据表 stock_split 创建成功（或已存在）
+2026-05-05 11:10:10 - InitDatabase - INFO - [__main__] 数据表 stock_split 创建成功（或已存在）
+2026-05-05 11:10:10 - InitDatabase - INFO - [create_stock_valuation_table] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-05 11:10:10 - InitDatabase - INFO - [__main__] 数据表 stock_valuation 创建成功（或已存在）
+2026-05-05 11:10:11 - InitDatabase - INFO - [create_stock_data_min_table] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-05 11:10:11 - InitDatabase - INFO - [__main__] 数据表 stock_data_min 创建成功（或已存在）
+2026-05-05 11:10:11 - InitDatabase - INFO - [create_trading_time_table] 数据表 trading_time 创建成功（或已存在）
+2026-05-05 11:10:11 - InitDatabase - INFO - [__main__] 数据表 trading_time 创建成功（或已存在）
+2026-05-05 11:10:11 - InitDatabase - INFO - [__main__] 数据库初始化完成！
+2026-05-05 11:10:11 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 11:10:11 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-05 11:14:22 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 11:14:23 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 11:14:38 - MaxPain - INFO - [MaxPain::save] 保存最大痛点数据成功: SPY - 2026-05-05 - 2026-05-04 23:14:21
+2026-05-05 11:14:38 - GetOptionSnapshotByMin - INFO - [run_snapshot_and_max_pain_once] MaxPain 已保存: SPY 2026-05-05 OI=718.0 VOL=718.0 update_time=2026-05-04 23:14:21
+2026-05-05 11:14:38 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 11:14:38 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-05 11:46:13 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 11:46:14 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 11:46:14 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 48 条记录
+2026-05-05 11:46:14 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 48 条期权报价记录: NVDA.US - 2026-05-06 - [100, 200]
+2026-05-05 11:46:24 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 52 条记录
+2026-05-05 11:46:24 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 52 条期权报价记录: NVDA.US - 2026-05-08 - [100, 200]
+2026-05-05 11:46:35 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 50 条记录
+2026-05-05 11:46:35 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 50 条期权报价记录: NVDA.US - 2026-05-11 - [100, 200]
+2026-05-05 11:46:45 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 50 条记录
+2026-05-05 11:46:45 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 50 条期权报价记录: NVDA.US - 2026-05-13 - [100, 200]
+2026-05-05 11:46:55 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 52 条记录
+2026-05-05 11:46:55 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 52 条期权报价记录: NVDA.US - 2026-05-15 - [100, 200]
+2026-05-05 11:47:06 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 32 条记录
+2026-05-05 11:47:06 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 32 条期权报价记录: NVDA.US - 2026-05-18 - [100, 200]
+2026-05-05 11:47:43 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 11:47:43 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 11:47:43 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 48 条记录
+2026-05-05 11:47:43 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 48 条期权报价记录: NVDA.US - 2026-05-06 - [100, 200]
+2026-05-05 11:47:54 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 52 条记录
+2026-05-05 11:47:54 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 52 条期权报价记录: NVDA.US - 2026-05-08 - [100, 200]
+2026-05-05 11:47:56 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 11:47:57 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 11:48:04 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 50 条记录
+2026-05-05 11:48:04 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 50 条期权报价记录: NVDA.US - 2026-05-11 - [100, 200]
+2026-05-05 11:48:14 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 50 条记录
+2026-05-05 11:48:14 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 50 条期权报价记录: NVDA.US - 2026-05-13 - [100, 200]
+2026-05-05 11:48:25 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 52 条记录
+2026-05-05 11:48:25 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 52 条期权报价记录: NVDA.US - 2026-05-15 - [100, 200]
+2026-05-05 11:48:35 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 32 条记录
+2026-05-05 11:48:35 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 32 条期权报价记录: NVDA.US - 2026-05-18 - [100, 200]
+2026-05-05 11:48:45 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 52 条记录
+2026-05-05 11:48:45 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 52 条期权报价记录: NVDA.US - 2026-05-22 - [100, 200]
+2026-05-05 11:48:56 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 42 条记录
+2026-05-05 11:48:56 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 42 条期权报价记录: NVDA.US - 2026-05-29 - [100, 200]
+2026-05-05 11:49:06 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 42 条记录
+2026-05-05 11:49:06 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 42 条期权报价记录: NVDA.US - 2026-06-05 - [100, 200]
+2026-05-05 11:49:16 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 42 条记录
+2026-05-05 11:49:16 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 42 条期权报价记录: NVDA.US - 2026-06-12 - [100, 200]
+2026-05-05 11:49:27 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 166 条记录
+2026-05-05 11:49:27 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 166 条期权报价记录: NVDA.US - 2026-06-18 - [100, 200]
+2026-05-05 11:50:07 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 142 条记录
+2026-05-05 11:50:07 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 142 条期权报价记录: PLTR.US - 2026-05-08 - [80, 200]
+2026-05-05 11:50:17 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 86 条记录
+2026-05-05 11:50:17 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 86 条期权报价记录: PLTR.US - 2026-05-15 - [80, 200]
+2026-05-05 11:50:28 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 142 条记录
+2026-05-05 11:50:28 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 142 条期权报价记录: PLTR.US - 2026-05-22 - [80, 200]
+2026-05-05 11:50:38 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 108 条记录
+2026-05-05 11:50:38 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 108 条期权报价记录: PLTR.US - 2026-05-29 - [80, 200]
+2026-05-05 11:50:48 - LongportUtils - ERROR - 获取期权行情失败: OpenApiException: (kind=ErrorKind.OpenApi, code=301607, trace_id=) Too many option securities request within one minute
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/utils/longport_utils.py", line 167, in get_option_snapshots_by_day
+    resp = ctx.option_quote(list_option_symbol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+longport.OpenApiException: OpenApiException: (kind=ErrorKind.OpenApi, code=301607, trace_id=) Too many option securities request within one minute
+2026-05-05 11:50:48 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 0 条期权报价记录: PLTR.US - 2026-06-05 - [80, 200]
+2026-05-05 11:50:58 - LongportUtils - ERROR - 获取期权行情失败: OpenApiException: (kind=ErrorKind.OpenApi, code=301607, trace_id=) Too many option securities request within one minute
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/utils/longport_utils.py", line 167, in get_option_snapshots_by_day
+    resp = ctx.option_quote(list_option_symbol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+longport.OpenApiException: OpenApiException: (kind=ErrorKind.OpenApi, code=301607, trace_id=) Too many option securities request within one minute
+2026-05-05 11:50:58 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 0 条期权报价记录: PLTR.US - 2026-06-12 - [80, 200]
+2026-05-05 11:51:08 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 11:51:08 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-05 11:51:09 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 58 条记录
+2026-05-05 11:51:09 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 58 条期权报价记录: PLTR.US - 2026-06-18 - [80, 200]
+2026-05-05 11:51:10 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 初始化连接池，创建 2 个连接...
+2026-05-05 11:51:10 - InitDatabase - INFO - [DatabaseConnectionManager::_initialize_pool] 连接池初始化完成，当前连接数: 2
+2026-05-05 11:51:49 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 112 条记录
+2026-05-05 11:51:49 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 112 条期权报价记录: TEM.US - 2026-05-08 - [20, 80]
+2026-05-05 11:51:59 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 64 条记录
+2026-05-05 11:51:59 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 64 条期权报价记录: TEM.US - 2026-05-15 - [20, 80]
+2026-05-05 11:52:10 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 112 条记录
+2026-05-05 11:52:10 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 112 条期权报价记录: TEM.US - 2026-05-22 - [20, 80]
+2026-05-05 11:52:20 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 74 条记录
+2026-05-05 11:52:20 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 74 条期权报价记录: TEM.US - 2026-05-29 - [20, 80]
+2026-05-05 11:52:30 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 74 条记录
+2026-05-05 11:52:30 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 74 条期权报价记录: TEM.US - 2026-06-05 - [20, 80]
+2026-05-05 11:52:41 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 60 条记录
+2026-05-05 11:52:41 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 60 条期权报价记录: TEM.US - 2026-06-12 - [20, 80]
+2026-05-05 11:52:51 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 26 条记录
+2026-05-05 11:52:51 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 26 条期权报价记录: TEM.US - 2026-06-18 - [20, 80]
+2026-05-05 11:53:31 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 78 条记录
+2026-05-05 11:53:31 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 78 条期权报价记录: HOOD.US - 2026-05-08 - [40, 90]
+2026-05-05 11:53:42 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 38 条记录
+2026-05-05 11:53:42 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 38 条期权报价记录: HOOD.US - 2026-05-15 - [40, 90]
+2026-05-05 11:53:52 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 78 条记录
+2026-05-05 11:53:52 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 78 条期权报价记录: HOOD.US - 2026-05-22 - [40, 90]
+2026-05-05 11:54:02 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 74 条记录
+2026-05-05 11:54:02 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 74 条期权报价记录: HOOD.US - 2026-05-29 - [40, 90]
+2026-05-05 11:54:13 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 74 条记录
+2026-05-05 11:54:13 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 74 条期权报价记录: HOOD.US - 2026-06-05 - [40, 90]
+2026-05-05 11:54:23 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 64 条记录
+2026-05-05 11:54:23 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 64 条期权报价记录: HOOD.US - 2026-06-12 - [40, 90]
+2026-05-05 11:54:33 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 26 条记录
+2026-05-05 11:54:33 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 26 条期权报价记录: HOOD.US - 2026-06-18 - [40, 90]
+2026-05-05 11:55:14 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 86 条记录
+2026-05-05 11:55:14 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 86 条期权报价记录: COIN.US - 2026-05-08 - [120, 220]
+2026-05-05 11:55:24 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 54 条记录
+2026-05-05 11:55:24 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 54 条期权报价记录: COIN.US - 2026-05-15 - [120, 220]
+2026-05-05 11:55:34 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 86 条记录
+2026-05-05 11:55:34 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 86 条期权报价记录: COIN.US - 2026-05-22 - [120, 220]
+2026-05-05 11:55:45 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 42 条记录
+2026-05-05 11:55:45 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 42 条期权报价记录: COIN.US - 2026-05-29 - [120, 220]
+2026-05-05 11:55:55 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 42 条记录
+2026-05-05 11:55:55 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 42 条期权报价记录: COIN.US - 2026-06-05 - [120, 220]
+2026-05-05 11:56:06 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 42 条记录
+2026-05-05 11:56:06 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 42 条期权报价记录: COIN.US - 2026-06-12 - [120, 220]
+2026-05-05 11:56:16 - OptionSnapshotDay - INFO - [OptionSnapshotDay::batch_save] 批量保存期权快照日完成，共保存 38 条记录
+2026-05-05 11:56:16 - GetOptionSnapshotByDay - INFO - 保存到数据库成功，共保存 38 条期权报价记录: COIN.US - 2026-06-18 - [120, 220]
+2026-05-05 11:56:56 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 关闭连接池中的所有连接...
+2026-05-05 11:56:56 - InitDatabase - INFO - [DatabaseConnectionManager::close_all_connections] 已关闭 2 个连接
+2026-05-05 14:52:48 - OptionSnapshotDay - ERROR - [OptionSnapshotDay::query] 查询期权快照日数据时出错: 1146 (42S02): Table 'ustocks.option_quote' doesn't exist
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'ustocks.option_quote' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/option_snapshot_day.py", line 294, in query
+    cursor.execute(sql, tuple(values))
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'ustocks.option_quote' doesn't exist
+2026-05-05 14:52:51 - OptionSnapshotDay - ERROR - [OptionSnapshotDay::query] 查询期权快照日数据时出错: 1146 (42S02): Table 'ustocks.option_quote' doesn't exist
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'ustocks.option_quote' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/option_snapshot_day.py", line 294, in query
+    cursor.execute(sql, tuple(values))
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'ustocks.option_quote' doesn't exist
+2026-05-05 14:52:52 - OptionSnapshotDay - ERROR - [OptionSnapshotDay::query] 查询期权快照日数据时出错: 1146 (42S02): Table 'ustocks.option_quote' doesn't exist
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'ustocks.option_quote' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/option_snapshot_day.py", line 294, in query
+    cursor.execute(sql, tuple(values))
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'ustocks.option_quote' doesn't exist
+2026-05-05 14:52:52 - OptionSnapshotDay - ERROR - [OptionSnapshotDay::query] 查询期权快照日数据时出错: 1146 (42S02): Table 'ustocks.option_quote' doesn't exist
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'ustocks.option_quote' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/option_snapshot_day.py", line 294, in query
+    cursor.execute(sql, tuple(values))
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'ustocks.option_quote' doesn't exist
+2026-05-05 14:52:53 - OptionSnapshotDay - ERROR - [OptionSnapshotDay::query] 查询期权快照日数据时出错: 1146 (42S02): Table 'ustocks.option_quote' doesn't exist
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'ustocks.option_quote' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zego/UStocks/data_models/option_snapshot_day.py", line 294, in query
+    cursor.execute(sql, tuple(values))
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/site-packages/mysql/connector/connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'ustocks.option_quote' doesn't exist

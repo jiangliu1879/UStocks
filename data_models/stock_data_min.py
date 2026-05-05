@@ -12,13 +12,12 @@ from utils.logger import setup_logger
 # 创建模块级别的日志记录器
 logger = setup_logger('StockDataMin')
 
-
 class StockDataMin:
     """
     Represents historical stock price data including OHLCV (Open, High, Low, Close, Volume)
     and additional metrics like turnover.
     """
-    def __init__(self, stock_code: str, timestamp: str, open: float, high: float, low: float, close: float, volume: int, turnover: float, interval: int, id: Optional[int] = None):
+    def __init__(self, stock_code: str, timestamp: str, open: float, high: float, low: float, close: float, volume: int, turnover: float, vw: float, interval: int, id: Optional[int] = None):
         self.id = id
         self.stock_code = stock_code
         self.timestamp = timestamp
@@ -28,6 +27,7 @@ class StockDataMin:
         self.close = close
         self.volume = volume
         self.turnover = turnover
+        self.vw = vw
         self.interval = interval
         
     def save(self) -> bool:
@@ -47,9 +47,9 @@ class StockDataMin:
             # 使用 INSERT ... ON DUPLICATE KEY UPDATE 处理唯一约束
             insert_sql = """
             INSERT INTO stock_data_min (
-                stock_code, timestamp, open, high, low, close, volume, turnover, `interval`
+                stock_code, timestamp, open, high, low, close, volume, turnover, vw, `interval`
             ) VALUES (
-                %s, %s, %s, %s, %s, %s, %s, %s, %s
+                %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
             )
             ON DUPLICATE KEY UPDATE
                 stock_code = VALUES(stock_code),
@@ -60,6 +60,7 @@ class StockDataMin:
                 close = VALUES(close),
                 volume = VALUES(volume),
                 turnover = VALUES(turnover),
+                vw = VALUES(vw),
                 `interval` = VALUES(`interval`)
             """
             
@@ -73,6 +74,7 @@ class StockDataMin:
                 float(self.close) if self.close is not None else None,
                 int(self.volume) if self.volume is not None else None,
                 float(self.turnover) if self.turnover is not None else None,
+                float(self.vw) if self.vw is not None else None,
                 int(self.interval) if self.interval is not None else None,
             )
             
@@ -116,9 +118,9 @@ class StockDataMin:
             
             insert_sql = """
             INSERT INTO stock_data_min (
-                stock_code, timestamp, open, high, low, close, volume, turnover, `interval`
+                stock_code, timestamp, open, high, low, close, volume, turnover, vw, `interval`
             ) VALUES (
-                %s, %s, %s, %s, %s, %s, %s, %s, %s
+                %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
             )
             ON DUPLICATE KEY UPDATE
                 stock_code = VALUES(stock_code),
@@ -129,6 +131,7 @@ class StockDataMin:
                 close = VALUES(close),
                 volume = VALUES(volume),
                 turnover = VALUES(turnover),
+                vw = VALUES(vw),
                 `interval` = VALUES(`interval`)
             """
             
@@ -143,6 +146,7 @@ class StockDataMin:
                     float(item.close) if item.close is not None else None,
                     int(item.volume) if item.volume is not None else None,
                     float(item.turnover) if item.turnover is not None else None,
+                    float(item.vw) if item.vw is not None else None,
                     int(item.interval) if item.interval is not None else None,
                 )
                 values_list.append(values)
@@ -187,6 +191,7 @@ class StockDataMin:
             close=float(data['close']) if data.get('close') is not None else None,
             volume=int(data['volume']) if data.get('volume') is not None else None,
             turnover=float(data['turnover']) if data.get('turnover') is not None else None,
+            vw=float(data['vw']) if data.get('vw') is not None else None,
             interval=int(data['interval']) if data.get('interval') is not None else None,
         )
 

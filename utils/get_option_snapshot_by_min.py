@@ -1,18 +1,18 @@
 import sys
 import os
-from datetime import datetime
 import time
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.massive_utils import MassiveUtils
 from utils.logger import setup_logger
-logger = setup_logger('GetOptionChainSnapshot')
-from data_models.option_chain_snashot import OptionChainSnapshot
+from data_models.option_snapshot_min import OptionSnapshotMin
 from data_models.max_pain import MaxPain
 from utils.longport_utils import LongportUtils
 from utils.time_utils import get_eastern_now
 
-def get_option_chain_snapshot(underlying_ticker: str, expiration_date: str, strike_price_range: list[float], limit: int = 250, sort: str = "ticker", update_time: str = None):
-    list_option_chain_snapshot = []
+logger = setup_logger('GetOptionSnapshotByMin')
+
+def get_option_snapshot_min(underlying_ticker: str, expiration_date: str, strike_price_range: list[float], limit: int = 250, sort: str = "ticker", update_time: str = None):
+    list_option_snapshot_min = []
 
     def _to_int(v, default=0):
         return int(v) if v is not None else default
@@ -30,7 +30,7 @@ def get_option_chain_snapshot(underlying_ticker: str, expiration_date: str, stri
             greeks = getattr(option_chain, "greeks", None)
             details = getattr(option_chain, "details", None)
             underlying_asset = getattr(option_chain, "underlying_asset", None)
-            option_chain_snapshot = OptionChainSnapshot(
+            option_snapshot_min = OptionSnapshotMin(
                 underlying_ticker=_to_str(getattr(underlying_asset, "ticker", None)),
                 ticker=_to_str(getattr(details, "ticker", None)),
                 expiration_date=_to_str(getattr(details, "expiration_date", None)),
@@ -45,22 +45,22 @@ def get_option_chain_snapshot(underlying_ticker: str, expiration_date: str, stri
                 vega=_to_float(getattr(greeks, "vega", None)),
                 update_time=update_time,
             )
-            option_chain_snapshot.save()
-            list_option_chain_snapshot.append(option_chain_snapshot)
+            option_snapshot_min.save()
+            list_option_snapshot_min.append(option_snapshot_min)
     except Exception as e:
-        logger.error(f"[GetOptionChainSnapshot::get_option_chain_snapshot] 获取期权链快照失败: {e}", exc_info=True)
+        logger.error(f"[get_option_snapshot_min] 获取期权快照分钟数据失败: {e}", exc_info=True)
         return []
-    return list_option_chain_snapshot
+    return list_option_snapshot_min
 
 
-def _get_direction(snapshot: OptionChainSnapshot) -> str:
+def _get_direction(option_snapshot_min: OptionSnapshotMin) -> str:
     """从 contract_type/ticker 推断方向：CALL 或 PUT。"""
-    ct = (snapshot.contract_type or "").lower()
+    ct = (option_snapshot_min.contract_type or "").lower()
     if "call" in ct:
         return "CALL"
     if "put" in ct:
         return "PUT"
-    ticker = (snapshot.ticker or "").upper()
+    ticker = (option_snapshot_min.ticker or "").upper()
     if "C" in ticker and "P" not in ticker:
         return "CALL"
     if "P" in ticker and "C" not in ticker:
@@ -68,14 +68,14 @@ def _get_direction(snapshot: OptionChainSnapshot) -> str:
     return ""
 
 
-def calculate_max_pain_from_snapshots(list_option_chain_snapshot: list[OptionChainSnapshot], ticker_price: float) -> MaxPain | None:
+def calculate_max_pain_from_snapshots(list_option_snapshot_min: list[OptionSnapshotMin], ticker_price: float) -> MaxPain | None:
     """
-    使用 list_option_chain_snapshot 计算 max_pain（基于 open_interest 和 volume）。
+    使用 list_option_snapshot_min 计算 max_pain（基于 open_interest 和 volume）。
     """
-    if not list_option_chain_snapshot:
+    if not list_option_snapshot_min:
         return None
 
-    strikes = sorted({float(s.strike_price) for s in list_option_chain_snapshot if s.strike_price is not None})
+    strikes = sorted({float(s.strike_price) for s in list_option_snapshot_min if s.strike_price is not None})
     if not strikes:
         return None
 
@@ -87,7 +87,7 @@ def calculate_max_pain_from_snapshots(list_option_chain_snapshot: list[OptionCha
     for settlement in strikes:
         total_loss_oi = 0.0
         total_loss_vol = 0.0
-        for s in list_option_chain_snapshot:
+        for s in list_option_snapshot_min:
             strike = float(s.strike_price) if s.strike_price is not None else 0.0
             oi = float(s.open_interest) if s.open_interest is not None else 0.0
             vol = float(s.volume) if s.volume is not None else 0.0
@@ -107,9 +107,9 @@ def calculate_max_pain_from_snapshots(list_option_chain_snapshot: list[OptionCha
             min_loss_vol = total_loss_vol
             max_pain_vol_price = settlement
 
-    first = list_option_chain_snapshot[0]
-    sum_vol = sum(float(s.volume) if s.volume is not None else 0.0 for s in list_option_chain_snapshot)
-    sum_oi = sum(float(s.open_interest) if s.open_interest is not None else 0.0 for s in list_option_chain_snapshot)
+    first = list_option_snapshot_min[0]
+    sum_vol = sum(float(s.volume) if s.volume is not None else 0.0 for s in list_option_snapshot_min)
+    sum_oi = sum(float(s.open_interest) if s.open_interest is not None else 0.0 for s in list_option_snapshot_min)
     return MaxPain(
         underlying_ticker=first.underlying_ticker,
         expiry_date=first.expiration_date,
@@ -131,7 +131,7 @@ def run_snapshot_and_max_pain_once(
 ) -> MaxPain | None:
     """执行一次快照抓取 + max_pain 计算与保存。"""
     update_time = get_eastern_now().strftime('%Y-%m-%d %H:%M:%S')
-    snapshots = get_option_chain_snapshot(
+    list_option_snapshot_min = get_option_snapshot_min(
         underlying_ticker=underlying_ticker,
         expiration_date=expiration_date,
         strike_price_range=strike_price_range,
@@ -140,7 +140,7 @@ def run_snapshot_and_max_pain_once(
         update_time=update_time,
     )
     ticker_price = LongportUtils.get_ticker_price(f"{underlying_ticker}.US")
-    max_pain = calculate_max_pain_from_snapshots(snapshots, ticker_price)
+    max_pain = calculate_max_pain_from_snapshots(list_option_snapshot_min, ticker_price)
     if max_pain:
         max_pain.save()
         logger.info(
@@ -188,8 +188,8 @@ def run_snapshot_task_every_15min_until_close(
 
 if __name__ == "__main__":
     underlying_ticker = "SPY"
-    expiration_date = "2026-04-06"
-    strike_price_range = [500, 750]
+    expiration_date = "2026-05-05"
+    strike_price_range = [650, 750]
     limit = 250
     sort = "ticker"
     run_snapshot_task_every_15min_until_close(
